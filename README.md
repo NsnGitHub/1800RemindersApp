@@ -49,7 +49,7 @@ Arian Sharif
 main.html
 
 Johnny Hui
-index.html
+updated index.html
 
 Anson Chan
 profile.html
