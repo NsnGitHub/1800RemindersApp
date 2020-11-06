@@ -14,6 +14,9 @@
     <!-- Firebase CSS for Authentication UI     -->
     <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.6.1/firebase-ui-auth.css" />
 
+    <!-- JQuery-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
     <style>
         .search-bar {
             width: 60%;
@@ -39,61 +42,67 @@
         }
 
         body {
-        background-image: url("images/homebackground.jpg");
-        color: aliceblue;
+            background-image: url("images/homebackground.jpg");
+            color: aliceblue;
         }
+
+        .searchContainer {
+            display:flex;
+            margin-top: 1rem;
+            margin-bottom: 3rem;
+        }
+
     </style>
 </head>
 
 <body>
 
-    
+
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand" href="#">NameOfTheAPP</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
         </button>
-      
+
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-              <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Reminders</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Calendar</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Online Forums</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Profile</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Help</a>
-            </li>
-            
-          </ul>
-          <form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-          </form>
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Reminders</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Calendar</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Online Forums</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Profile</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Help</a>
+                </li>
+
+            </ul>
+            <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form>
         </div>
-      </nav>
+    </nav>
 
 
     <br />
     <div id="bottom">
-        <div class="search-bar">
-            <input class="form-control" type="text" placeholder="Search for discussions" aria-label="Search">
+        <div class="searchContainer">
+            <div class="search-bar">
+                <input class="form-control" type="text" placeholder="Search for discussions" aria-label="Search">
+            </div>
+            <button type="button" class="btn btn-primary" id="searchButton">Search</button>
         </div>
-        <br />
-        <button type="button" class="btn btn-primary">Search</button>
-        <br />
-        <br />
-        <br />
         <form>
             <h3>Some featured discussions</h3>
             <br />
@@ -135,7 +144,7 @@
             </div>
             <br />
 
-            <div class="form">
+            <div class="form" id="create">
                 <label for="exampleFormControlTextarea1">Create new post</label>
                 <textarea class="form-control" id="TextArea" rows="5"></textarea>
             </div>
@@ -143,6 +152,18 @@
         <br />
         <button type="button" class="btn btn-primary">Create</button>
     </div>
+
+    <!-- JQuery Scripts -->
+    <script>
+        $(document).ready(function () {
+            $(".btn-primary").css({"background": "#6351ce","border-color": "#6351ce"});
+            $("#searchButton").css("margin-left", "1rem");
+            $(".searchContainer").css("justify-content", "center");
+        });
+    </script>
+
+
+
 </body>
 
 </html>
