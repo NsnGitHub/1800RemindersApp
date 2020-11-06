@@ -16,6 +16,7 @@
     <!-- Temp. place to put css styling, will import to a stylesheet in the future -->
     <style>
       body {
+        background-image: url("images/homebackground.jpg");
         min-width: 1400px;
       }
       .cardContainer{
@@ -121,10 +122,13 @@
       $(document).ready(function(){
         $(".card").css({"width":"30%", "float":"left", "margin":"1.5rem"});
         $(".progress").css("margin-top", "1.5rem");
-        $(".card-header").css("font-size", "15pt");
+        $(".card").css("background-color", "lightgrey");
+        $(".card-header").css({"font-size":"15pt", "background-color":"darkgrey"});
         $(".card-text").css("font-size", "18pt");
         $(".nav-item").css("margin-left", "1rem");
         $(".navbar-brand").css("margin-left", "1rem");
+        $(".btn-primary").css({"background":"blueviolet", "border-color":"purple"});
+        $(".jumbotron").css({"width":"95%", "margin":"0px auto", "margin-top":"2rem", "margin-bottom":"2rem", "background-color":"lightgrey"});
       });
     </script>
 </body>
