@@ -46,11 +46,11 @@ Tips for file naming files and folders:
 
 
 Arian Sharif 
-main.html
+updated main.html
 
 Johnny Hui
 updated index.html
 
 Anson Chan
-profile.html
+updated profile.html
 
