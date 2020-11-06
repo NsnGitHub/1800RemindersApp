@@ -10,12 +10,34 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
         integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 
+    <!-- JQuery-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- Temp. place to put css styling, will import to a stylesheet in the future -->
+    <style>
+      body {
+        min-width: 1400px;
+      }
+      .cardContainer{
+        display: flex;
+        justify-content: center;
+      }
+
+      #streak {
+        font-size: 25pt;
+        font-weight: bold;
+      }
+
+      #streakMessage {
+        font-size: 20pt;
+      }
+    </style>
 </head>
 
 <body>
 
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">NameOFTheAPP</a>
+        <a class="navbar-brand" href="#">NameOfTheAPP</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -28,20 +50,19 @@
             <li class="nav-item">
               <a class="nav-link" href="#">Reminders</a>
             </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Profile
-              </a>
-              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="#">Action</a>
-                <a class="dropdown-item" href="#">Another action</a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#">Something else here</a>
-              </div>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Calendar</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+              <a class="nav-link" href="#">Online Forums</a>
             </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Profile</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Help</a>
+            </li>
+            
           </ul>
           <form class="form-inline my-2 my-lg-0">
             <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
@@ -50,7 +71,62 @@
         </div>
       </nav>
 
-      <h4>Some interesting stuff here!</h4>
+      <div class="jumbotron">
+        <h1 class="display-4">Welcome to Comp1800HabitTrackerAppNameThatWeDidn'tCreateYet</h1>
+        <p class="lead">We hope to help you conquer your bad habits</p>
+        <hr class="my-4">
+        <p id="streakMessage">You are on a <span id="streak">90</span> day streak</p>
+        <div class="progress">
+          <div class="progress-bar bg-success" role="progressbar" style="width: 100%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">100%</div>
+        </div>
+      </div>
+
+      <div class="cardContainer">
+        <div class="card">
+          <div class="card-header">
+            <b>Track your habits</b>
+          </div>
+          <div class="card-body">
+            <p class="card-text">Log your completion daily</p>
+            <p><br/></p>
+            <a href="#" class="btn btn-primary">Calendar</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <b>Set your reminders</b>
+          </div>
+          <div class="card-body">
+            <p class="card-text">Add or edit your customized reminders</p>
+            <p><br/></p>
+            <a href="#" class="btn btn-primary">Reminders</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <b>Share your success</b>
+          </div>
+          <div class="card-body">
+            <p class="card-text">Interact with people on the same journey</p>
+            <p><br/></p>
+            <a href="#" class="btn btn-primary">Online Forums</a>
+          </div>
+        </div>
+    </div>
+
+    <!-- JQuery to edit some Bootstrap CSS -->
+    <script>
+      $(document).ready(function(){
+        $(".card").css({"width":"30%", "float":"left", "margin":"1.5rem"});
+        $(".progress").css("margin-top", "1.5rem");
+        $(".card-header").css("font-size", "15pt");
+        $(".card-text").css("font-size", "18pt");
+        $(".nav-item").css("margin-left", "1rem");
+        $(".navbar-brand").css("margin-left", "1rem");
+      });
+    </script>
 </body>
 
 </html>
