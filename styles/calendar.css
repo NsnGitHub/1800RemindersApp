@@ -3,7 +3,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: "Raleway";
-    color: white;
+    color: black;
 }
 
 html {
@@ -21,7 +21,7 @@ html {
 }
 
 .calendar {
-    background-color: #222227;
+    background-color: lightgrey;
     width: 75rem;
     height: 57rem;
     box-shadow: 0 0.5rem 3rem rgba(0, 0, 0, 0.4);
@@ -34,8 +34,8 @@ html {
     align-items: center;
     justify-content: center;
     text-align: center;
-    height: 10rem;
-    background-color: #6351ce;
+    height: 12rem;
+    background-color: darkgrey;
     text-shadow: 0 0.3rem 0.5rem rgba(0, 0, 0, 0.5);
 }
 
@@ -84,15 +84,15 @@ html {
 }
 
 .nextday {
-    opacity: 0.4;
+    opacity: 0.6;
 }
 
 .prevday {
-    opacity: 0.4;
+    opacity: 0.6;
 }
 
 .today {
-    background-color: #6351ce;
+    background-color:darkgrey;
 }
 
 #success {
@@ -105,6 +105,10 @@ html {
     background-color: red;
     color: red;
     border-color: darkred;
+}
+
+.btn {
+    width: 90px;
 }
 
 @media (min-width: 1200px) {
