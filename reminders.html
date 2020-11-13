@@ -2,132 +2,164 @@
 <html>
 
 <head>
-    <meta charset="utf-8">
-    <title>My BCIT Project</title>
-    <meta name="COMP1800 Project" content="Health Application">
-    <meta name="author" content="Team 22">
+  <meta charset="utf-8">
+  <title>My BCIT Project</title>
+  <meta name="COMP1800 Project" content="Health Application">
+  <meta name="author" content="Team 22">
+  
 
-    <!-- Bootstrap for Mobile-first, and JQuery -->
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <!-- Bootstrap for Mobile-first, and JQuery -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 
-    <!-- Optional styles and scripts of your own -->
-    <style>
-        .cardContainer{
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-      }
+  <!-- Optional styles and scripts of your own -->
 
-      body {
-        background-image: url("images/homebackground.jpg");
-      }
-    </style>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet">
+      
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Raleway";
+      color: black;
+    }
+
+    html {
+      font-size: 12pt;
+    }
+
+    .cardContainer {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    body {
+      background-color: #12121f;
+    }
+
+  </style>
 
 </head>
 
 <body>
 
-    <!-------------------------------------->
-    <!-- The following is HTML for layout -->
-    <!-------------------------------------->
-    <!-- Header Navigation Bar -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">NameOfTheAPP</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-      
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-              <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Reminders</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Calendar</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Online Forums</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Profile</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Help</a>
-            </li>
-            
-          </ul>
-          <form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-          </form>
-        </div>
-      </nav>
+  <!-------------------------------------->
+  <!-- The following is HTML for layout -->
+  <!-------------------------------------->
+  <!-- Header Navigation Bar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="main.html">NameOfTheAPP</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
-    <div class="jumbotron">
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="main.html">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="reminders.html">Reminders</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="calendar.html">Calendar</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="discussions.html">Online Forums</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Profile</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Help</a>
+        </li>
+
+      </ul>
+      <form class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+      </form>
+    </div>
+  </nav>
+
+  <div class="jumbotron">
     <h1 class="display-4">Your Reminders</h1>
     <p class="lead">It's simple: Green to add, yellow to modify, red to delete</p>
-    
-    </div>
 
-    <div class="cardContainer">
-      <div class="card">
-        <h5 class="card-header">The Reminder's Name</h5>
-        <div class="card-body">
-          <p class="card-text">Reminder descriptions along with alert scheduling</p>
-          <button type="button" class="btn btn-warning">Modify</button>
-          <button type="button" class="btn btn-danger">Delete</button>
-        </div>
-      </div>
+  </div>
 
-      <div class="card">
-        <h5 class="card-header">The Reminder's Name</h5>
-        <div class="card-body">
-          <p class="card-text">Reminder descriptions along with alert scheduling</p>
-          <button type="button" class="btn btn-warning">Modify</button>
-          <button type="button" class="btn btn-danger">Delete</button>
-        </div>
-      </div>
-
-      <div class="card">
-        <h5 class="card-header">Add a reminder</h5>
-        <div class="card-body">
-            <button type="button" class="btn btn-success">Add Reminder</button>
-        </div>
+  <div class="cardContainer">
+    <div class="card">
+      <h5 class="card-header">The Reminder's Name</h5>
+      <div class="card-body">
+        <p class="card-text">Reminder descriptions along with alert scheduling</p>
+        <button type="button" class="btn btn-warning">Modify</button>
+        <button type="button" class="btn btn-danger">Delete</button>
       </div>
     </div>
 
-    <!----------------------------------------------->
-    <!-- JS: Boostrap, Firebase, API related    -->
-    <!----------------------------------------------->
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
-    </script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
-    </script>
+    <div class="card">
+      <h5 class="card-header">The Reminder's Name</h5>
+      <div class="card-body">
+        <p class="card-text">Reminder descriptions along with alert scheduling</p>
+        <button type="button" class="btn btn-warning">Modify</button>
+        <button type="button" class="btn btn-danger">Delete</button>
+      </div>
+    </div>
 
-    <!--------------------------------------------------------------------->
-    <!-- JS files: Your own JavaScript functions included here    -->
-    <!--------------------------------------------------------------------->
-    <!--------------------------------------------------------------------->
+    <div class="card">
+      <h5 class="card-header">Add a reminder</h5>
+      <div class="card-body">
+        <button type="button" class="btn btn-success">Add Reminder</button>
+      </div>
+    </div>
+  </div>
 
-    <script>
-        $(document).ready(function() {
-            $(".jumbotron").css({"width":"95%", "margin":"0px auto", "margin-top":"2rem", "background-color":"lightgrey"});
-            $(".card").css({"width":"95%", "margin-top":"1.5rem", "background-color":"lightgrey"});
-            $(".card-header").css({"font-size":"15pt", "background-color":"darkgrey"});
-            $(".nav-item").css("margin-left", "1rem");
-            $(".navbar-brand").css("margin-left", "1rem");
-        });
-    </script>
+  <!----------------------------------------------->
+  <!-- JS: Boostrap, Firebase, API related    -->
+  <!----------------------------------------------->
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+  </script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
+  </script>
+
+  <!--------------------------------------------------------------------->
+  <!-- JS files: Your own JavaScript functions included here    -->
+  <!--------------------------------------------------------------------->
+  <!--------------------------------------------------------------------->
+
+  <script>
+    $(document).ready(function () {
+      $(".jumbotron").css({
+        "width": "95%",
+        "margin": "0px auto",
+        "margin-top": "2rem",
+        "background-color": "lightgrey"
+      });
+      $(".card").css({
+        "width": "95%",
+        "margin-top": "1.5rem",
+        "background-color": "lightgrey"
+      });
+      $(".card-header").css({
+        "font-size": "15pt",
+        "background-color": "darkgrey"
+      });
+    });
+  </script>
 
 
 </body>
+
 </html>
