@@ -23,7 +23,7 @@ html {
 .calendar {
     background-color: #222227;
     width: 75rem;
-    height: 50rem;
+    height: 57rem;
     box-shadow: 0 0.5rem 3rem rgba(0, 0, 0, 0.4);
 }
 
@@ -79,10 +79,32 @@ html {
     display: flex;
     align-items: center;
     justify-content: center;
+
+    
 }
 
 .nextday {
     opacity: 0.4;
+}
+
+.prevday {
+    opacity: 0.4;
+}
+
+.today {
+    background-color: #6351ce;
+}
+
+#success {
+    background-color: green;
+    color: green;
+    border-color: darkgreen
+}
+
+#fail {
+    background-color: red;
+    color: red;
+    border-color: darkred;
 }
 
 @media (min-width: 1200px) {
