@@ -52,6 +52,10 @@
             margin-bottom: 3rem;
         }
 
+        #exampleInputName{
+            width: 80%;
+        }
+
     </style>
 </head>
 
@@ -99,7 +103,7 @@
     <div id="bottom">
         <div class="searchContainer">
             <div class="search-bar">
-                <input class="form-control" type="text" placeholder="Search for discussions" aria-label="Search">
+                <input id="search-bar" class="form-control" type="text" placeholder="Search for discussions" aria-label="Search">
             </div>
             <button type="button" class="btn btn-primary" id="searchButton">Search</button>
         </div>
@@ -144,23 +148,38 @@
             </div>
             <br />
 
+            <div class="form-group">
+                <label for="exampleInputName">Discussion topic</label>
+                <input type="email" class="form-control" id="exampleInputName" aria-describedby="emailHelp" placeholder="">
+                <small id="emailHelp" class="form-text text-muted"></small>
+              </div>
+
+
             <div class="form" id="create">
-                <label for="exampleFormControlTextarea1">Create new post</label>
+                <label for="TextArea">Create new post</label>
                 <textarea class="form-control" id="TextArea" rows="5"></textarea>
             </div>
         </form>
         <br />
-        <button type="button" class="btn btn-primary">Create</button>
+        <button type="button" id = "createButton"  class="btn btn-primary">Create</button>
     </div>
 
     <!-- JQuery Scripts -->
-    <script>
-        $(document).ready(function () {
-            $(".btn-primary").css({"background": "#6351ce","border-color": "#6351ce"});
-            $("#searchButton").css("margin-left", "1rem");
-            $(".searchContainer").css("justify-content", "center");
-        });
-    </script>
+
+
+    <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-app.js"></script>
+
+  <!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
+  <script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-analytics.js"></script>
+
+  <!-- Add Firebase products that you want to use -->
+  <script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-firestore.js"></script>
+
+
+    <script src="scripts/1800_database.js"></script>
+    <script src="scripts/discussions.js"></script>
 
 
 
