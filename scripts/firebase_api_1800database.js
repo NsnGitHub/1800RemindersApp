@@ -6,18 +6,18 @@
 var firebaseConfig = {
     
     // Your API stuff goes here;  get it from firebase console
-    apiKey: "AIzaSyDUoS1G7AE_a3ghgc-ctnAQkY2BOgqrUAw",
-    authDomain: "mango-fe4f0.firebaseapp.com",
-    databaseURL: "https://mango-fe4f0.firebaseio.com",
-    projectId: "mango-fe4f0",
-    storageBucket: "mango-fe4f0.appspot.com",
-    messagingSenderId: "78070740838",
-    appId: "1:78070740838:web:d8f39bfe431eaa0ae8faa7"
-    
+    apiKey: "AIzaSyAR8HgIqxHXeLJPff14h2ArTbILdVLEVrI",
+    authDomain: "database-1800.firebaseapp.com",
+    databaseURL: "https://database-1800.firebaseio.com",
+    projectId: "database-1800",
+    storageBucket: "database-1800.appspot.com",
+    messagingSenderId: "741786407495",
+    appId: "1:741786407495:web:fd836f335d2471e80a5762"
   };
   
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
+  
   // Create the Firestore database object
   // Henceforce, any reference to the database can be made with "db"
   const db = firebase.firestore();

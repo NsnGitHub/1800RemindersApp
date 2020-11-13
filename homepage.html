@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OurApp: Login</title>
+    <title>OurApp</title>
 
         <!-- Bootstrap for Mobile-first, and JQuery -->
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -20,14 +20,22 @@
         <link
           href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
           rel="stylesheet">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 
         <style>
           
+          body {
+            background: linear-gradient(193deg, #060016 20%, #410077 51%, #260057 85%);  
+            width: 100%; 
+            height: 1000px;
+          }
+
           * {
             font-family: "Raleway";
           }
             #image {
                 background-image: url("images/login.jpg");
+                background-size: cover;
                 position: absolute;
                 left: 0;
                 top: 0;
@@ -37,7 +45,7 @@
                 -moz-filter: blur(5px);
                 -o-filter: blur(5px);
                 -ms-filter: blur(5px);
-                filter: brightness(25%);
+                filter: brightness(100%);
                 z-index: -1;
                 }
             
@@ -59,17 +67,22 @@
               
                 #footer {                
                 background-color: rgb(0,0,0); /* Fallback color */
-                background-color: rgba(0,0,0, 0.4); /* Black w/opacity/see-through */
+                background-color: rgba(0, 0, 0, 1); /* Black w/opacity/see-through */
                 color: white;
                 font-weight: bold;
                 position: absolute;
                 top: 100%;
                 left: 50%;
+                height: auto;
                 transform: translate(-50%, -50%);
                 z-index: 2; /* Position: absolute --> z-index brings it forward */
                 width: 100%;
                 padding: 20px;
                 text-align: center;
+                /* Source: https://stackoverflow.com/questions/643879/css-to-make-html-page-footer-stay-at-bottom-of-the-page-with-a-minimum-height-b */
+                clear: both;
+                position: relative;
+                margin-top: -500px;
                 }
 
                 #downNote {
@@ -102,12 +115,127 @@
                 #space2 {
                     margin: 10px;
                 }
+
+                /* Source for codes below: https://www.w3schools.com/howto/howto_css_parallax.asp */
+                .bgimg-1, .bgimg-2, .bgimg-3 {
+                  position: relative;
+                  opacity: 0.65;
+                  background-attachment: fixed;
+                  background-position: center;
+                  background-repeat: no-repeat;
+                  background-size: cover;
+
+                }
+                .bgimg-1 {
+                  background-image: url("img_parallax.jpg");
+                  min-height: 10%;
+                }
+
+                .bgimg-2 {
+                  background-image: url("images/homebackground.jpg");
+                  min-height: 400px;
+                }
+
+                .bgimg-3 {
+                  background-image: url("img_parallax3.jpg");
+                  min-height: 400px;
+                }
+
+                .caption {
+                  display: block;
+                  position: absolute;
+                  margin-left: auto;
+                  margin-right: auto;
+                  top: 50%;
+                  width: 100%;
+                  text-align: center;
+                  color: #000;
+                }
+
+                .mainCaption {
+                  display: block;
+                  position: absolute;
+                  margin-left: auto;
+                  margin-right: auto;
+                  top: 5%;
+                  width: 100%;
+                  text-align: center;
+                  color: white;
+                  padding: 50px;
+                  font-size: 50px;
+                  letter-spacing: 6px;
+                }
+
+                .caption span.border {
+                  background-color: #111;
+                  color: #fff;
+                  padding: 50px;
+                  font-size: 25px;
+                  letter-spacing: 10px;
+                }
+
+                h3 {
+                  letter-spacing: 5px;
+                  text-transform: uppercase;
+                  font: 20px "Lato", sans-serif;
+                  color: #111;
+                }
+
+                #firstDividing {
+                  position: relative;
+                  margin-top: 400px;
+                  color: #777;
+                  background-color:white;
+                  text-align:center;
+                  padding:50px 80px;
+                  text-align: justify;
+                }
+
+                .grey-text {
+                  color: white;
+                }
+
+                #best-features {
+                  margin-top: 950px;
+                }
+
+                #tutorial {
+                  color: white;
+                }
+
+                #signIn {
+                  position: relative;
+                  display: block;
+                  margin-left: auto;
+                  margin-right: auto;
+                  background-color: blue;
+                  text-align: center;
+                  color: white;
+                  width: 10%;
+                  height: 80px;
+                  border-radius: 10px;
+                  top: 800px;
+                }
+
+                #signIn:hover {
+                  box-shadow: 2px 2px 2px #6351ce;
+                }
+
+                #signIn > h2 {
+                  padding-top: 20px;
+                }
+
+                /* Turn off parallax scrolling for tablets and phones */
+                @media only screen and (max-device-width: 1024px) {
+                  .bgimg-1, .bgimg-2, .bgimg-3 {
+                    background-attachment: scroll;
+                  }}
         </style>
 </head>
 
 <body>
 
-      <!-------------------------------------->
+  <!-------------------------------------->
   <!-- The following is HTML for layout -->
   <!-------------------------------------->
   <!-- Header Navigation Bar -->
@@ -136,7 +264,7 @@
           <a class="nav-link" href="#">Profile</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Help</a>
+          <a class="nav-link" href="tutorial.html">Help</a>
         </li>
 
       </ul>
@@ -147,25 +275,215 @@
     </div>
   </nav>
 
-
+  <!-- Main Content -->
     <div id="mainContainer">
         <div id="image"></div>
     </div>
 
-    <div class="loginWindow">
-        <!-- This is where the Login Widget will go -->
-        <h1 id="firebaseui-auth-container"></h1>
-        <div id="space1"></div>
-        <div id="downNote">
-            <input type="checkbox" value="lsRememberMe" id="rememberMe"> 
-            <label id="remember" for="rememberMe">Remember me</label>
-        </div>
-        <div id="space2"></div>
-        <div id="forget">
-            <p>Forgot Your Password?</p>
-        </div>
-
+    <!-- BOOTSTRAP: Parallax Scrolling -->
+    <div class="bgimg-1">
+      <div class="mainCaption">
+      <span>Welcome to OurApp</span>
+      </div>
     </div>
+
+    <a href="login.html">
+      <div id="signIn">
+      <h2>Sign In</h2>
+    </div></a>
+
+    <!--Section: Best Features-->
+    <div id="best-features">
+          <section class="text-center">
+
+            <!-- Heading -->
+            <h2 class="bestFeatures" style="color: white;">Best Features</h2>
+
+            <!--Grid row-->
+            <div class="row d-flex justify-content-center mb-4">
+
+                <!--Grid column-->
+                <div class="col-md-8">
+
+                    <!-- Description -->
+                    <p class="grey-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi voluptate
+                        hic
+                        provident nulla repellat
+                        facere esse molestiae ipsa labore porro minima quam quaerat rem, natus repudiandae debitis
+                        est
+                        sit pariatur.</p>
+
+                </div>
+                <!--Grid column-->
+
+            </div>
+            <!--Grid row-->
+
+            <!--Grid row-->
+            <div class="row">
+
+                <!--Grid column-->
+                <div class="col-md-4 mb-5">
+                    <i class="fa fa-camera-retro fa-4x orange-text" style="color:skyblue"></i>
+                    <h4 class="my-4 font-weight-bold" style="color: white;">Experience</h4>
+                    <p class="grey-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit
+                        maiores nam,
+                        aperiam minima
+                        assumenda deleniti hic.</p>
+                </div>
+                <!--Grid column-->
+
+                <!--Grid column-->
+                <div class="col-md-4 mb-1">
+                    <i class="fa fa-heart fa-4x orange-text" style="color:red"></i>
+                    <h4 class="my-4 font-weight-bold" style="color: white;">Happiness</h4>
+                    <p class="grey-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit
+                        maiores nam,
+                        aperiam minima
+                        assumenda deleniti hic.</p>
+                </div>
+                <!--Grid column-->
+
+                <!--Grid column-->
+                <div class="col-md-4 mb-1">
+                    <i class="fa fa-bicycle fa-4x orange-text" style="color:orange"></i>
+                    <h4 class="my-4 font-weight-bold" style="color: white;">Adventure</h4>
+                    <p class="grey-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit
+                        maiores nam,
+                        aperiam minima
+                        assumenda deleniti hic.</p>
+                </div>
+                <!--Grid column-->
+
+            </div>
+            <!--Grid row-->
+
+        </section>
+    </div>
+  <!--Section: Best Features-->
+
+              <!--Section: Examples-->
+              <div id="tutorial">
+              <section id="examples" class="text-center">
+
+                <!-- Heading -->
+                <h2 class="mb-5 font-weight-bold">Stunning Examples</h2>
+
+                <!--Grid row-->
+                <div class="row">
+
+                    <!--Grid column-->
+                    <div class="col-lg-4 col-md-12 mb-4">
+
+                        <div class="view overlay z-depth-1-half">
+                            <img src="https://mdbootstrap.com/img/Photos/Others/images/48.jpg" class="img-fluid" alt="">
+                            <div class="mask rgba-white-slight"></div>
+                        </div>
+
+                        <h4 class="my-4 font-weight-bold">Heading</h4>
+                        <p class="grey-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit
+                            maiores nam,
+                            aperiam minima
+                            assumenda deleniti hic.</p>
+
+                    </div>
+                    <!--Grid column-->
+
+                    <!--Grid column-->
+                    <div class="col-lg-4 col-md-6 mb-4">
+
+                        <div class="view overlay z-depth-1-half">
+                            <img src="https://mdbootstrap.com/img/Photos/Others/images/49.jpg" class="img-fluid" alt="">
+                            <div class="mask rgba-white-slight"></div>
+                        </div>
+
+                        <h4 class="my-4 font-weight-bold">Heading</h4>
+                        <p class="grey-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit
+                            maiores nam,
+                            aperiam minima
+                            assumenda deleniti hic.</p>
+
+                    </div>
+                    <!--Grid column-->
+
+                    <!--Grid column-->
+                    <div class="col-lg-4 col-md-6 mb-4">
+
+                        <div class="view overlay z-depth-1-half">
+                            <img src="https://mdbootstrap.com/img/Photos/Others/images/29.jpg" class="img-fluid" alt="">
+                            <div class="mask rgba-white-slight"></div>
+                        </div>
+
+                        <h4 class="my-4 font-weight-bold">Heading</h4>
+                        <p class="grey-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit
+                            maiores nam,
+                            aperiam minima
+                            assumenda deleniti hic.</p>
+
+                    </div>
+                    <!--Grid column-->
+
+                </div>
+                <!--Grid row-->
+
+                <!--Grid row-->
+                <div class="row">
+
+                    <!--Grid column-->
+                    <div class="col-lg-4 col-md-12 mb-4">
+
+                        <div class="view overlay z-depth-1-half">
+                            <img src="https://mdbootstrap.com/img/Photos/Others/images/10.jpg" class="img-fluid" alt="">
+                            <div class="mask rgba-white-slight"></div>
+                        </div>
+
+                        <h4 class="my-4 font-weight-bold">Heading</h4>
+                        <p class="grey-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit
+                            maiores nam,
+                            aperiam minima
+                            assumenda deleniti hic.</p>
+
+                    </div>
+                    <!--Grid column-->
+
+                    <!--Grid column-->
+                    <div class="col-lg-4 col-md-6 mb-4">
+
+                        <div class="view overlay z-depth-1-half">
+                            <img src="https://mdbootstrap.com/img/Photos/Others/images/11.jpg" class="img-fluid" alt="">
+                            <div class="mask rgba-white-slight"></div>
+                        </div>
+
+                        <h4 class="my-4 font-weight-bold">Heading</h4>
+                        <p class="grey-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit
+                            maiores nam,
+                            aperiam minima
+                            assumenda deleniti hic.</p>
+
+                    </div>
+                    <!--Grid column-->
+
+                    <!--Grid column-->
+                    <div class="col-lg-4 col-md-6 mb-4">
+
+                        <div class="view overlay z-depth-1-half">
+                            <img src="https://mdbootstrap.com/img/Photos/Others/images/13.jpg" class="img-fluid" alt="">
+                            <div class="mask rgba-white-slight"></div>
+                        </div>
+
+                        <h4 class="my-4 font-weight-bold">Heading</h4>
+                        <p class="grey-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit
+                            maiores nam,
+                            aperiam minima
+                            assumenda deleniti hic.</p>
+
+                    </div>
+                    <!--Grid column-->
+
+                </div>
+                <!--Grid row-->
+            </section>
+          </div>
 
     <div id="footer">
         <!-- Footer -->
@@ -352,11 +670,6 @@
     <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-firestore.js"></script>
 
-    <!-- Your own Firebase API key information -->
-    <script src="scripts/firebase_api_1800database.js"> </script>
-
-    <!-- Your own JavaScript functions included here    -->
-    <script src="scripts/login.js"></script>
 
 
 
