@@ -11,20 +11,20 @@ $(document).ready(function () {
         for(var i = 0; i < arr.length; i++){
             var word = arr[i];
             console.log(word);
-            
             var thread = await db.collection('discussions').doc(word).get();
+            
 
-            if(thread.exists){
-                thread.then(function(q){
-                q.data()['num']
-            
-                });
-            }
-            
-            const incrementNum = firebase.firestore.FieldValue.increment(1);
-            await db.collection('discussions').doc(word).update({
+            if( thread.exists){
+                
+                console.log(thread.data().num);
+
+                const incrementNum = firebase.firestore.FieldValue.increment(1);
+                await db.collection('discussions').doc(word).update({
                 num: incrementNum
             })
+            }
+            
+            
         }
         
     })
@@ -32,18 +32,15 @@ $(document).ready(function () {
     $('#createButton').on("click", async function(){ 
 
         var threads = await db.collection('discussions');
-        var name = document.getElementById("exampleInputName").value;
+        var name = document.getElementById("Habit").value;
 
         threads.doc(name).set({
             
             views : 0,
-            textInside : document.getElementById("TextArea").value
+            textInside : document.getElementById("TextArea").value,
+            topic: document.getElementById("exampleInputName").value
         })
 
     })
 
-    
-    
-
-    
     });
