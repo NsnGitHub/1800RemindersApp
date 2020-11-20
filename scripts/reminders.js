@@ -1,5 +1,5 @@
 function deleted() {
-    db.collection("reminders").doc(remind).delete().then(function () {
+    db.collection("reminders").doc(name).delete().then(function () {
         console.log("Deleted");
     }).catch (function(error) {
         console.error("Error deleting: ", error);
