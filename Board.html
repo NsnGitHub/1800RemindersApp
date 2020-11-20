@@ -34,15 +34,26 @@
             font-size: 12pt;
         }
 
+        .search-bar {
+            width: 56%;
+        }
 
         #TextArea {
             width: 60%;
             display: block;
             margin: 0 auto;
             margin-bottom: 1rem;
-            font-size: 1.2rem;
         }
 
+        #threads {
+            display: flex;
+            margin: 3rem;
+            color: black;
+        }
+
+        .jumbotron {
+            width: 40%;
+        }
 
         body {
             background-image: url('images/corkboard.jpg');
@@ -67,53 +78,60 @@
             display: block;
             margin: 0 auto;
             margin-bottom: 1rem;
-            font-size: 1.2rem;
 
         }
 
         body {
             text-align: center;
-            
         }
 
         #create {
             font-size: 1.2rem;
         }
 
-        .drop-down {
-      position: relative;
-      margin-left: 950px;
-    }
+        .img{
+            top:0;
+            left: 0;
+            position: absolute;
+        }
 
-    .drop-down:hover .button-content {
-      display: grid;
-      position: absolute;
-      grid-template-rows: auto auto auto;
-      height: 60px;
-      right: 0px;
-      top: 40px;
-      text-align: center;
-    }
+        .overlay{
+            display: grid;
+            position: relative;
+            width: 100%;
+            transform: translateY(20%);
+            color: black;
+            font-size: 1.3rem;
+            grid-template-rows: 20% 80%;
+        }
+        .sticky_note{
+            display: flex;
+            justify-content: center;
+            
+            position: relative;
+            float: left;
+            width: 500px;
+            height: 500px;
+        }
+        .title{
+            font-size: 1.6rem;
+            grid-row: 1/ span 1;
+            transform: rotate(15deg);
+            width: 70%;
 
-    .button {
-      border: none;
-      background-color: white;
-    }
-
-    .button-content {
-      display: none;
-      position: absolute;
-      background-color: #f1f1f1;
-      min-width: 160px;
-      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-      z-index: 1;
-    }
+        }
+        .text{
+            grid-row: 2/span 1;
+            transform: rotate(15deg);
+            width:70%;
+            margin-left: 5%;
+        }
     </style>
 </head>
 
 <body>
 
-   
+
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand" href="main.html">NameOfTheAPP</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
@@ -133,7 +151,7 @@
                     <a class="nav-link" href="calendar.html">Calendar</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="discussions.html">Forums</a>
+                    <a class="nav-link" href="discussions.html">Online Forums</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Profile</a>
@@ -141,51 +159,23 @@
                 <li class="nav-item">
                     <a class="nav-link" href="#">Help</a>
                 </li>
+
             </ul>
-            <div class="drop-down">
-                <button class = "button">
-                <svg class=""xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
-                width="40" height="40"
-                viewBox="0 0 172 172"
-                style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill="none"></path><g id="original-icon" fill="#000000"><path d="M37.84,13.76c-13.25891,0 -24.08,10.82109 -24.08,24.08v96.32c0,13.25891 10.82109,24.08 24.08,24.08h96.32c13.25891,0 24.08,-10.82109 24.08,-24.08v-96.32c0,-13.25891 -10.82109,-24.08 -24.08,-24.08zM37.84,20.64h96.32c9.54141,0 17.2,7.65859 17.2,17.2v96.32c0,9.54141 -7.65859,17.2 -17.2,17.2h-96.32c-9.54141,0 -17.2,-7.65859 -17.2,-17.2v-96.32c0,-9.54141 7.65859,-17.2 17.2,-17.2zM37.66531,61.8864c-1.40254,0.05379 -2.63178,0.9542 -3.1061,2.2752c-0.47432,1.321 -0.0986,2.79769 0.94938,3.73136l50.4914,46.52063l50.4914,-46.52063c0.90531,-0.83284 1.29744,-2.08545 1.02862,-3.28585c-0.26881,-1.2004 -1.15771,-2.16614 -2.33175,-2.53334c-1.17404,-0.3672 -2.4548,-0.08005 -3.35969,0.75326l-45.8286,42.23406l-45.8286,-42.23406c-0.67413,-0.63899 -1.578,-0.97825 -2.50609,-0.94063z"></path></g></g></svg>
-                </button>
-                <div class = "button-content">
-                <a href="profile.html">Profile</a>
-                <a href="homepage.html">Logout</a>
-                </div>
-              </div>
-            </ul>
-          </div>
-            
+            <form class="form-inline my-2 my-lg-0">
+                <a href="discussions.html" class="btn btn-primary"> <b>+</b> Create post</a>
+            </form>
         </div>
     </nav>
 
-    <br/>
-    <br/>
+    <div id="board">
 
-    <br />
-    <div id="bottom">
-
-    <br />
-
-    <div class="form-group">
-        <label for="exampleInputName">Post topic</label>
-        <input type="email" class="form-control" id="exampleInputName" aria-describedby="emailHelp" placeholder="">
-        <small id="emailHelp" class="form-text text-muted"></small>
-      </div>
-      <br/>
-      <div class="form-group">
-        <label for="exampleInputName">Habit Reffered</label>
-        <input type="email" class="form-control" id="Habit" aria-describedby="emailHelp" placeholder="">
-        <small id="emailHelp" class="form-text text-muted"></small>
-      </div>
-      <br />
-    <div class="form" id="create">
-        <label for="exampleFormControlTextarea1">Create a new post</label>
-        <textarea class="form-control" id="TextArea" rows="5"></textarea>
     </div>
 
-    <button type="button" class="btn btn-primary" id="createButton"><a href="Board.html"><b>+</b> Create post</a></button>
+    
+    
+  
+
+    
 
     <!-- JQuery Scripts -->
 
@@ -202,18 +192,9 @@
 
 
     <script src="scripts/1800_database.js"></script>
-    <script src="scripts/discussions.js"></script>
-    <script>
-        $(document).ready(function () {
-            $(".btn-primary").css({
-                "background": "#6351ce",
-                "border-color": "#6351ce"
-            });
-            $("#searchButton").css("margin-left", "1rem");
-            $(".searchContainer").css("justify-content", "center");
-        });
-    </script>
-
+    <script src="scripts/board.js"></script>
+    
+    
 
 
 </body>
