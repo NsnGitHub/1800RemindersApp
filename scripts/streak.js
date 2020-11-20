@@ -6,7 +6,7 @@ function updateStreak(){
         document.getElementById("streakBar").innerText = snap.data().daystreak + "%";
 
         //Super hacky solution to make the progress bar update
-        $("#streakBar").css("width", snap.data().daystreak * 12.75);
+        $("#streakBar").css("width", snap.data().daystreak * 17.6);
 
         if (snap.data().daystreak == 100){
             document.getElementById("streakMessage").innerText = "Congratulations! You've made it to 100 days! We hope your bad habit has been defeated.";
