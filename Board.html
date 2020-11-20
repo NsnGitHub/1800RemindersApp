@@ -34,15 +34,26 @@
             font-size: 12pt;
         }
 
+        .search-bar {
+            width: 56%;
+        }
 
         #TextArea {
             width: 60%;
             display: block;
             margin: 0 auto;
             margin-bottom: 1rem;
-            font-size: 1.2rem;
         }
 
+        #threads {
+            display: flex;
+            margin: 3rem;
+            color: black;
+        }
+
+        .jumbotron {
+            width: 40%;
+        }
 
         body {
             background-image: url('images/corkboard.jpg');
@@ -67,24 +78,60 @@
             display: block;
             margin: 0 auto;
             margin-bottom: 1rem;
-            font-size: 1.2rem;
 
         }
 
         body {
             text-align: center;
-            
         }
 
         #create {
             font-size: 1.2rem;
+        }
+
+        .img{
+            top:0;
+            left: 0;
+            position: absolute;
+        }
+
+        .overlay{
+            display: grid;
+            position: relative;
+            width: 100%;
+            transform: translateY(20%);
+            color: black;
+            font-size: 1.3rem;
+            grid-template-rows: 20% 80%;
+        }
+        .sticky_note{
+            display: flex;
+            justify-content: center;
+            
+            position: relative;
+            float: left;
+            width: 500px;
+            height: 500px;
+        }
+        .title{
+            font-size: 1.6rem;
+            grid-row: 1/ span 1;
+            transform: rotate(15deg);
+            width: 70%;
+
+        }
+        .text{
+            grid-row: 2/span 1;
+            transform: rotate(15deg);
+            width:70%;
+            margin-left: 5%;
         }
     </style>
 </head>
 
 <body>
 
-   
+
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand" href="main.html">NameOfTheAPP</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
@@ -114,36 +161,21 @@
                 </li>
 
             </ul>
-            
+            <form class="form-inline my-2 my-lg-0">
+                <a href="discussions.html" class="btn btn-primary"> <b>+</b> Create post</a>
+            </form>
         </div>
     </nav>
 
-    <br/>
-    <br/>
+    <div id="board">
 
-    <br />
-    <div id="bottom">
-
-    <br />
-
-    <div class="form-group">
-        <label for="exampleInputName">Post topic</label>
-        <input type="email" class="form-control" id="exampleInputName" aria-describedby="emailHelp" placeholder="">
-        <small id="emailHelp" class="form-text text-muted"></small>
-      </div>
-      <br/>
-      <div class="form-group">
-        <label for="exampleInputName">Habit Reffered</label>
-        <input type="email" class="form-control" id="Habit" aria-describedby="emailHelp" placeholder="">
-        <small id="emailHelp" class="form-text text-muted"></small>
-      </div>
-      <br />
-    <div class="form" id="create">
-        <label for="exampleFormControlTextarea1">Create a new post</label>
-        <textarea class="form-control" id="TextArea" rows="5"></textarea>
     </div>
 
-    <button type="button" class="btn btn-primary" id="createButton"><a href="Board.html"><b>+</b> Create post</a></button>
+    
+    
+  
+
+    
 
     <!-- JQuery Scripts -->
 
@@ -160,18 +192,9 @@
 
 
     <script src="scripts/1800_database.js"></script>
-    <script src="scripts/discussions.js"></script>
-    <script>
-        $(document).ready(function () {
-            $(".btn-primary").css({
-                "background": "#6351ce",
-                "border-color": "#6351ce"
-            });
-            $("#searchButton").css("margin-left", "1rem");
-            $(".searchContainer").css("justify-content", "center");
-        });
-    </script>
-
+    <script src="scripts/board.js"></script>
+    
+    
 
 
 </body>
