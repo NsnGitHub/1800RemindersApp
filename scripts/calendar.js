@@ -1,5 +1,7 @@
 const date = new Date();
 
+date.setMonth(8);
+
 date.setDate(1);
 
 const months = [

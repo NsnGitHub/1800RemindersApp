@@ -3,7 +3,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: "Raleway";
-    color: black;
+    color: white;
 }
 
 html {
@@ -21,7 +21,7 @@ html {
 }
 
 .calendar {
-    background-color: lightgrey;
+    background-color: #1E1E1E;
     width: 75rem;
     height: 57rem;
     box-shadow: 0 0.5rem 3rem rgba(0, 0, 0, 0.4);
@@ -35,7 +35,7 @@ html {
     justify-content: center;
     text-align: center;
     height: 12rem;
-    background-color: darkgrey;
+    background-color: #515555;
     text-shadow: 0 0.3rem 0.5rem rgba(0, 0, 0, 0.5);
 }
 
