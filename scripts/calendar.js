@@ -1,6 +1,6 @@
 const date = new Date();
 
-date.setMonth(8);
+date.setMonth(10);
 
 date.setDate(1);
 
@@ -42,7 +42,7 @@ document.querySelector(".date p").innerHTML = new Date().toDateString();
 let day = "";
 
 for(let a = firstDayIndex; a > 0; a--) {
-    day += `<div class="prevday">${prevLast - a + 1}</div>`
+    day += `<div class="prevday">${prevLast - a + 1}</div>`;
     monthDays.innerHTML = day;
 }
 
@@ -67,10 +67,12 @@ function success() {
     streak.update({
         daystreak: firebase.firestore.FieldValue.increment(1)
     })
+    $(".today").css("background-color", "green");
 }
 
 function fail() {
     streak.update({
         daystreak: 0
     })
+    $(".today").css("background-color", "red");
 }

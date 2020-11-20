@@ -135,13 +135,13 @@
   </nav>
 
   <div class="jumbotron">
-    <h1 class="display-4">Welcome to Comp1800HabitTrackerAppNameThatWeDidn'tCreateYet</h1>
+    <h1 class="display-4">1800Habits</h1>
     <p class="lead">We hope to help you conquer your bad habits</p>
     <hr class="my-4">
-    <p id="streakMessage">You are on a <span id="streak">90</span> day streak</p>
+    <p id="streakMessage">You are on a <span id="streak"></span> day streak</p>
     <div class="progress">
-      <div class="progress-bar bg-success" role="progressbar" style="width: 100%" aria-valuenow="25" aria-valuemin="0"
-        aria-valuemax="100">100%</div>
+      <div class="progress-bar bg-success" role="progressbar" style="width: 0%" aria-valuenow="25" aria-valuemin="0" id="streakBar"
+        aria-valuemax="100">0%</div>
     </div>
   </div>
 
@@ -180,6 +180,15 @@
     </div>
   </div>
 
+  <!-- Firebase libraries from CDN -->
+  <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-auth.js"></script>
+  <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-firestore.js"></script>
+
+  <!-- Your own Firebase API key information -->
+  <script src="scripts/1800_database.js"> </script>
+
   <!-- JQuery to edit some Bootstrap CSS -->
   <script>
     $(document).ready(function () {
@@ -188,7 +197,7 @@
         "float": "left",
         "margin": "1.5rem"
       });
-      $(".progress").css("margin-top", "3rem");
+      $(".progress").css("margin-top", "2rem");
       $(".card").css("background-color", "lightgrey");
       $(".card-header").css({
         "font-size": "15pt",
@@ -207,7 +216,10 @@
         "background-color": "lightgrey"
       });
     });
+
   </script>
+
+  <script src="scripts/streak.js"></script>
 </body>
 
 </html>

@@ -11,7 +11,6 @@ $(document).ready(function () {
         var name = document.getElementById("Habit").value;
 
         threads.doc(name).set({
-            
             views : 0,
             textInside : document.getElementById("TextArea").value,
             topic: document.getElementById("exampleInputName").value

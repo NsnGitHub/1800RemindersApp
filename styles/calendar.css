@@ -10,6 +10,9 @@ html {
     font-size: 12pt;
 }
 
+.streak {
+    background-color: green;
+}
 
 .container {
     background-color: #12121f;
