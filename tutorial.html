@@ -1,229 +1,135 @@
-<!DOCTYPE html>
+<!Doctype html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OurApp: Tutorial</title>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>OurApp: Tutorial</title>
 
-        <!-- Bootstrap for Mobile-first, and JQuery -->
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+  <!-- JQuery-->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+  <!-- Temp. place to put css styling, will import to a stylesheet in the future -->
+
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Raleway";
+      color: black;
+    }
+
+    html {
+      font-size: 12pt;
+      height: 100%;
+      margin: auto;
+    }
+
+    body {
+      background-color: #12121f;
+      min-width: 1400px;
+    }
+
+    .cardContainer {
+      display: flex;
+      justify-content: center;
+    }
+
+    #streak {
+      font-size: 25pt;
+      font-weight: bold;
+    }
+
+    #streakMessage {
+      font-size: 20pt;
+    }
+
+    .progress {
+      height: 25px;
+    }
+
+    .drop-down {
+      position: relative;
+      margin-left: 950px;
+    }
+
+    .drop-down:hover .button-content {
+      display: grid;
+      position: absolute;
+      grid-template-rows: auto auto auto;
+      height: 60px;
+      right: 0px;
+      top: 40px;
+      text-align: center;
+    }
+
+    .button {
+      border: none;
+      background-color: white;
+    }
+
+    .button-content {
+      display: none;
+      position: absolute;
+      background-color: #f1f1f1;
+      min-width: 160px;
+      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+      z-index: 1;
+    }
+
+    .btn {
+      background-color: #6351ce;
+    }
+
+    #reminderShot {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      padding-bottom: 10px;
+    }
+
+    #calendarShot {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      padding-bottom: 10px;
+    }
+
+    #forumShot {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      padding-bottom: 10px;
+    }
+
+    #exampleModalLong {
+      overflow-y:auto;
+    }
     
-        <!-- Firebase CSS for Authentication UI -->
-        <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.6.1/firebase-ui-auth.css" />
     
-        <!-- Optional CSS of your own -->
-        <link type="text/css" rel="stylesheet" href="styles/app.css" />
-
-        <!-- Font -->
-        <link rel="preconnect" href="https://fonts.gstatic.com">
-        <link
-          href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-          rel="stylesheet">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-        <style>
-          body {
-            height: 1000px;
-            background: linear-gradient(193deg, #060016 20%, #410077 51%, #260057 85%);  
-            width: 100%; 
-          }
-
-          * {
-            font-family: "Raleway";
-          }
-            #image {
-                background-image: url("images/login.jpg");
-                background-size: cover;
-                position: absolute;
-                left: 0;
-                top: 0;
-                width: 100%;
-                height: 125%;
-                -webkit-filter: blur(5px);
-                -moz-filter: blur(5px);
-                -o-filter: blur(5px);
-                -ms-filter: blur(5px);
-                filter: brightness(25%);
-                z-index: -1;
-                }
-            
-                /* Source: https://www.w3schools.com/howto/howto_css_blurred_background.asp */
-                .loginWindow {
-                background-color: rgb(0,0,0); /* Fallback color */
-                background-color: rgba(0,0,0, 0.2); /* Black w/opacity/see-through */
-                color: white;
-                font-weight: bold;
-                position: absolute;
-                top: 40%;
-                left: 50%;
-                transform: translate(-50%, -50%);
-                z-index: 2; /* Position: absolute --> z-index brings it forward */
-                width: 25%;
-                padding: 20px;
-                text-align: center;
-                }
-              
-                #footer {                
-                background-color: rgb(0,0,0); /* Fallback color */
-                background-color: rgba(0,0,0, 1); /* Black w/opacity/see-through */
-                color: white;
-                font-weight: bold;
-                position: absolute;
-                top: 100%;
-                left: 50%;
-                height: auto;
-                transform: translate(-50%, -50%);
-                z-index: 2; /* Position: absolute --> z-index brings it forward */
-                width: 100%;
-                padding: 20px;
-                text-align: center;
-                /* Source: https://stackoverflow.com/questions/643879/css-to-make-html-page-footer-stay-at-bottom-of-the-page-with-a-minimum-height-b */
-                clear: both;
-                position: relative;
-                }
-
-                #downNote {
-                    background-color: #6351ce;
-                    display: inline-block;
-                    width: 95%;
-                    height: 25px;
-                }
-
-                input[type="checkbox"] {
-                -webkit-appearance: checkbox;
-                -moz-appearance: checkbox;
-                appearance: checkbox;
-                width: auto;
-                }
-
-                #forget {
-                    display: block;
-                    margin-right: auto;
-                    margin-left: auto;
-                    background-color: #6351ce;
-                    width: 95%;
-                    height: 25px;
-                }
-
-                #space1 {
-                    margin-top: 40px;
-                }
-
-                #space2 {
-                    margin: 10px;
-                }
-
-                /* Source for codes below: https://www.w3schools.com/howto/howto_css_parallax.asp */
-                .bgimg-1, .bgimg-2, .bgimg-3 {
-                  position: relative;
-                  opacity: 0.65;
-                  background-attachment: fixed;
-                  background-position: center;
-                  background-repeat: no-repeat;
-                  background-size: cover;
-
-                }
-
-                /* Images for scroll */
-                .bgimg-1 {
-                  background-image: url("img_parallax.jpg");
-                  min-height: 11%;
-                }
-
-                .bgimg-2 {
-                  background-image: url("images/hoop.jpg");
-                  min-height: 400px;
-                }
-
-                .bgimg-3 {
-                  background-image: url("images/ball.jpg");
-                  min-height: 400px;
-                }
-
-                .caption {
-                  display: block;
-                  position: absolute;
-                  margin-left: auto;
-                  margin-right: auto;
-                  top: 50%;
-                  width: 100%;
-                  text-align: center;
-                  color: #000;
-                }
-
-                .mainCaption {
-                  display: block;
-                  position: absolute;
-                  margin-left: auto;
-                  margin-right: auto;
-                  top: 5%;
-                  width: 100%;
-                  text-align: center;
-                  color: white;
-                  padding: 50px;
-                  font-size: 50px;
-                  letter-spacing: 6px;
-                }
-
-                .caption span.border {
-                  background-color: #111;
-                  color: #fff;
-                  padding: 50px;
-                  font-size: 25px;
-                  letter-spacing: 10px;
-                }
-
-                h3 {
-                  letter-spacing: 5px;
-                  text-transform: uppercase;
-                  font: 20px "Lato", sans-serif;
-                  color: #111;
-                }
-
-                #firstDividing {
-                  position: relative;
-                  
-                  color: #777;
-                  background-color:white;
-                  text-align:center;
-                  padding:50px 80px;
-                  text-align: justify;
-                }
-
-                .grey-text {
-                  color: white;
-                }
-
-                #best-features {
-                  margin-top: 500px;
-                }
-
-                #tutorial {
-                  margin-top: 700px;
-                  color: white;
-
-                }
-
-                /* Turn off parallax scrolling for tablets and phones */
-                @media only screen and (max-device-width: 1024px) {
-                  .bgimg-1, .bgimg-2, .bgimg-3 {
-                    background-attachment: scroll;
-                  }}
-        </style>
+  </style>
 </head>
 
 <body>
 
-  <!-------------------------------------->
-  <!-- The following is HTML for layout -->
-  <!-------------------------------------->
-  <!-- Header Navigation Bar -->
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <a class="navbar-brand" href="main.html">NameOfTheAPP</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
       aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
+    
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
@@ -237,377 +143,174 @@
           <a class="nav-link" href="calendar.html">Calendar</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="discussions.html">Online Forums</a>
+          <a class="nav-link" href="discussions.html">Forums</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Profile</a>
+          <a class="nav-link" href="profile.html">Profile</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="tutorial.html">Help</a>
+          <a class="nav-link" href="#">Help</a>
         </li>
-
       </ul>
+      <div class="drop-down">
+        <button class = "button">
+        <svg class=""xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+        width="40" height="40"
+        viewBox="0 0 172 172"
+        style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill="none"></path><g id="original-icon" fill="#000000"><path d="M37.84,13.76c-13.25891,0 -24.08,10.82109 -24.08,24.08v96.32c0,13.25891 10.82109,24.08 24.08,24.08h96.32c13.25891,0 24.08,-10.82109 24.08,-24.08v-96.32c0,-13.25891 -10.82109,-24.08 -24.08,-24.08zM37.84,20.64h96.32c9.54141,0 17.2,7.65859 17.2,17.2v96.32c0,9.54141 -7.65859,17.2 -17.2,17.2h-96.32c-9.54141,0 -17.2,-7.65859 -17.2,-17.2v-96.32c0,-9.54141 7.65859,-17.2 17.2,-17.2zM37.66531,61.8864c-1.40254,0.05379 -2.63178,0.9542 -3.1061,2.2752c-0.47432,1.321 -0.0986,2.79769 0.94938,3.73136l50.4914,46.52063l50.4914,-46.52063c0.90531,-0.83284 1.29744,-2.08545 1.02862,-3.28585c-0.26881,-1.2004 -1.15771,-2.16614 -2.33175,-2.53334c-1.17404,-0.3672 -2.4548,-0.08005 -3.35969,0.75326l-45.8286,42.23406l-45.8286,-42.23406c-0.67413,-0.63899 -1.578,-0.97825 -2.50609,-0.94063z"></path></g></g></svg>
+        </button>
+        <div class = "button-content">
+        <a href="profile.html">Profile</a>
+        <a href="homepage.html">Logout</a>
+        </div>
+      </div>
+    </div>
   </nav>
 
-  <!-- Main Content -->
-    <div id="mainContainer">
-        <div id="image"></div>
-    </div>
-
-    <div class="bgimg-1">
-      <div class="mainCaption">
-      <span>Welcome to Tutorial</span>
-      </div>
-    </div>
-
-              <!--Section: Examples-->
-              <div id="tutorial">
-              <section id="examples" class="text-center">
-
-                <!-- Heading -->
-                <h2 class="mb-5 font-weight-bold" style="color:white">Lets Get Started</h2>
-
-                <!--Grid row-->
-                <div class="row">
-
-                    <!--Grid column-->
-                    <div class="col-lg-4 col-md-12 mb-4">
-
-                        <div class="view overlay z-depth-1-half">
-                            <img src="https://mdbootstrap.com/img/Photos/Others/images/48.jpg" class="img-fluid" alt="">
-                            <div class="mask rgba-white-slight"></div>
-                        </div>
-
-                        <h4 class="my-4 font-weight-bold">Heading</h4>
-                        <p class="grey-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit
-                            maiores nam,
-                            aperiam minima
-                            assumenda deleniti hic.</p>
-
-                    </div>
-                    <!--Grid column-->
-
-                    <!--Grid column-->
-                    <div class="col-lg-4 col-md-6 mb-4">
-
-                        <div class="view overlay z-depth-1-half">
-                            <img src="https://mdbootstrap.com/img/Photos/Others/images/49.jpg" class="img-fluid" alt="">
-                            <div class="mask rgba-white-slight"></div>
-                        </div>
-
-                        <h4 class="my-4 font-weight-bold">Heading</h4>
-                        <p class="grey-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit
-                            maiores nam,
-                            aperiam minima
-                            assumenda deleniti hic.</p>
-
-                    </div>
-                    <!--Grid column-->
-
-                    <!--Grid column-->
-                    <div class="col-lg-4 col-md-6 mb-4">
-
-                        <div class="view overlay z-depth-1-half">
-                            <img src="https://mdbootstrap.com/img/Photos/Others/images/29.jpg" class="img-fluid" alt="">
-                            <div class="mask rgba-white-slight"></div>
-                        </div>
-
-                        <h4 class="my-4 font-weight-bold">Heading</h4>
-                        <p class="grey-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit
-                            maiores nam,
-                            aperiam minima
-                            assumenda deleniti hic.</p>
-
-                    </div>
-                    <!--Grid column-->
-
-                </div>
-                <!--Grid row-->
-
-                <!--Grid row-->
-                <div class="row">
-
-                    <!--Grid column-->
-                    <div class="col-lg-4 col-md-12 mb-4">
-
-                        <div class="view overlay z-depth-1-half">
-                            <img src="https://mdbootstrap.com/img/Photos/Others/images/10.jpg" class="img-fluid" alt="">
-                            <div class="mask rgba-white-slight"></div>
-                        </div>
-
-                        <h4 class="my-4 font-weight-bold">Heading</h4>
-                        <p class="grey-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit
-                            maiores nam,
-                            aperiam minima
-                            assumenda deleniti hic.</p>
-
-                    </div>
-                    <!--Grid column-->
-
-                    <!--Grid column-->
-                    <div class="col-lg-4 col-md-6 mb-4">
-
-                        <div class="view overlay z-depth-1-half">
-                            <img src="https://mdbootstrap.com/img/Photos/Others/images/11.jpg" class="img-fluid" alt="">
-                            <div class="mask rgba-white-slight"></div>
-                        </div>
-
-                        <h4 class="my-4 font-weight-bold">Heading</h4>
-                        <p class="grey-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit
-                            maiores nam,
-                            aperiam minima
-                            assumenda deleniti hic.</p>
-
-                    </div>
-                    <!--Grid column-->
-
-                    <!--Grid column-->
-                    <div class="col-lg-4 col-md-6 mb-4">
-
-                        <div class="view overlay z-depth-1-half">
-                            <img src="https://mdbootstrap.com/img/Photos/Others/images/13.jpg" class="img-fluid" alt="">
-                            <div class="mask rgba-white-slight"></div>
-                        </div>
-
-                        <h4 class="my-4 font-weight-bold">Heading</h4>
-                        <p class="grey-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit
-                            maiores nam,
-                            aperiam minima
-                            assumenda deleniti hic.</p>
-
-                    </div>
-                    <!--Grid column-->
-
-                </div>
-                <!--Grid row-->
-            </section>
-          </div>
-    
-    <!-- Parallax Scrolling -->
-    <div id="firstDividing">
-      <h3 style="text-align:center;">Parallax Demo</h3>
-      <p>Parallax scrolling is a web site trend where the background content is moved at a different speed than the foreground content while scrolling. Nascetur per nec posuere turpis, lectus nec libero turpis nunc at, sed posuere mollis ullamcorper libero ante lectus, blandit pellentesque a, magna turpis est sapien duis blandit dignissim. Viverra interdum mi magna mi, morbi sociis. Condimentum dui ipsum consequat morbi, curabitur aliquam pede, nullam vitae eu placerat eget et vehicula. Varius quisque non molestie dolor, nunc nisl dapibus vestibulum at, sodales tincidunt mauris ullamcorper, dapibus pulvinar, in in neque risus odio. Accumsan fringilla vulputate at quibusdam sociis eleifend, aenean maecenas vulputate, non id vehicula lorem mattis, ratione interdum sociis ornare. Suscipit proin magna cras vel, non sit platea sit, maecenas ante augue etiam maecenas, porta porttitor placerat leo.</p>
-    </div>
-    
-    <!-- Second Dividing -->
-    <div class="bgimg-2">
-      <div class="caption">
-      <span class="border" style="background-color:transparent;font-size:25px;color: #f7f7f7;">LESS HEIGHT</span>
-      </div>
-    </div>
-    
-    <div style="position:relative;">
-      <div style="color:#ddd;background-color:#282E34;text-align:center;padding:50px 80px;text-align: justify;">
-      <p>Scroll up and down to really get the feeling of how Parallax Scrolling works.</p>
-      </div>
-    </div>
-    
-    <div class="bgimg-3">
-      <div class="caption">
-      <span class="border" style="background-color:transparent;font-size:25px;color: #f7f7f7;">SCROLL UP</span>
-      </div>
-    </div>
-    
-    <div style="position:relative;">
-      <div style="color:#ddd;background-color:#282E34;text-align:center;padding:50px 80px;text-align: justify;">
-      <p>Scroll up and down to really get the feeling of how Parallax Scrolling works.</p>
-      </div>
-    </div>
-    
-    <div class="bgimg-1">
-      <div class="caption">
-      <span class="border">COOL!</span>
-      </div>
-    </div>
-
-    
-        <!-- Footer -->
-        <div id="footer">
-        <footer class="page-footer font-small unique-color-dark">
-
-    <div style="background-color: #6351ce;">
-      <div class="container">
-  
-        <!-- Grid row-->
-        <div class="row py-4 d-flex align-items-center">
-  
-          <!-- Grid column -->
-          <div class="col-md-6 col-lg-5 text-center text-md-left mb-4 mb-md-0">
-            <h6 class="mb-0">Get connected with us on social networks!</h6>
-          </div>
-          <!-- Grid column -->
-  
-          <!-- Grid column -->
-          <div class="col-md-6 col-lg-7 text-center text-md-right">
-            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
-            width="25px" height="25px"
-            viewBox="0 0 172 172"
-            style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill="none"></path><g fill="#ffffff"><path d="M57.32214,17.2c-22.12493,0 -40.12214,18.01386 -40.12214,40.14453v57.33333c0,22.12493 18.01386,40.12214 40.14453,40.12214h57.33333c22.12493,0 40.12214,-18.01386 40.12214,-40.14453v-57.33333c0,-22.12493 -18.01386,-40.12214 -40.14453,-40.12214zM126.13333,40.13333c3.1648,0 5.73333,2.56853 5.73333,5.73333c0,3.1648 -2.56853,5.73333 -5.73333,5.73333c-3.1648,0 -5.73333,-2.56853 -5.73333,-5.73333c0,-3.1648 2.56853,-5.73333 5.73333,-5.73333zM86,51.6c18.9716,0 34.4,15.4284 34.4,34.4c0,18.9716 -15.4284,34.4 -34.4,34.4c-18.9716,0 -34.4,-15.4284 -34.4,-34.4c0,-18.9716 15.4284,-34.4 34.4,-34.4zM86,63.06667c-12.66573,0 -22.93333,10.2676 -22.93333,22.93333c0,12.66573 10.2676,22.93333 22.93333,22.93333c12.66573,0 22.93333,-10.2676 22.93333,-22.93333c0,-12.66573 -10.2676,-22.93333 -22.93333,-22.93333z"></path></g></g></svg>
-  
-            <!-- Facebook -->
-            <a class="fb-ic">
-              <i class="fab fa-facebook-f white-text mr-4"> </i>
-              <img src="https://img.icons8.com/fluent/240/000000/facebook-new.png" width="25px" height="25px">
-              
-            </a>
-            <!-- Twitter -->
-            <a class="tw-ic">
-              <i class="fab fa-twitter white-text mr-4"> </i>
-              <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
-                width="25px" height="25px"
-                viewBox="0 0 172 172"
-                style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill="none"></path><g fill="#ffffff"><path d="M172.215,35.905c-6.35594,2.82188 -13.16875,4.71656 -20.33094,5.57656c7.31,-4.38063 12.92687,-11.31438 15.56062,-19.565c-6.82625,4.04469 -14.41844,6.9875 -22.4675,8.57312c-6.45,-6.88 -15.64125,-11.16656 -25.81344,-11.16656c-19.53812,0 -35.38094,15.82937 -35.38094,35.3675c0,2.76812 0.3225,5.46906 0.92719,8.0625c-29.40125,-1.47813 -55.45656,-15.56063 -72.91187,-36.96656c-3.05031,5.24062 -4.78375,11.31437 -4.78375,17.79125c0,12.26844 6.235,23.09906 15.73531,29.455c-5.805,-0.18813 -11.26062,-1.78719 -16.03094,-4.43438c0,0.14781 0,0.29563 0,0.44344c0,17.14625 12.20125,31.43031 28.36656,34.69562c-2.95625,0.80625 -6.08719,1.23625 -9.31219,1.23625c-2.28438,0 -4.50156,-0.215 -6.665,-0.645c4.515,14.04219 17.57625,24.295 33.04281,24.57719c-12.09375,9.48688 -27.34531,15.13063 -43.92719,15.13063c-2.86219,0 -5.67062,-0.16125 -8.42531,-0.49719c15.64125,10.05125 34.23875,15.89656 54.22031,15.89656c65.06438,0 100.64688,-53.89781 100.64688,-100.63344c0,-1.53187 -0.04031,-3.07719 -0.09406,-4.58219c6.90687,-4.98531 12.9,-11.22031 17.64344,-18.31531z"></path></g></g></svg>
-            </a>
-
-            <!-- Google +-->
-            <a class="gplus-ic">
-              <i class="fab fa-google-plus-g white-text mr-4"> </i>
-              <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
-                width="25px" height="25px"
-                viewBox="0 0 172 172"
-                style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill="none"></path><g fill="#ffffff"><path d="M59.125,37.625c-26.71375,0 -48.375,21.66125 -48.375,48.375c0,26.71375 21.66125,48.375 48.375,48.375c26.71375,0 48.375,-21.66125 48.375,-48.375c0,-3.31906 -0.36281,-6.5575 -0.99437,-9.675l-0.26875,-1.075h-47.11188v16.125h32.25c-2.56656,15.25156 -16.27281,26.875 -32.25,26.875c-17.81812,0 -32.25,-14.43187 -32.25,-32.25c0,-17.81812 14.43188,-32.25 32.25,-32.25c8.0625,0 15.41281,2.98313 21.07,7.87438l11.55625,-11.31438c-8.6,-7.87437 -20.04875,-12.685 -32.62625,-12.685zM134.375,59.125v16.125h-16.125v10.75h16.125v16.125h10.75v-16.125h16.125v-10.75h-16.125v-16.125z"></path></g></g></svg>
-            </a>
-
-            <!--Linkedin -->
-            <a class="li-ic">
-              <i class="fab fa-linkedin-in white-text mr-4"> </i>
-              <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
-                width="20px" height="20px"
-                viewBox="0 0 172 172"
-                style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill="none"></path><g fill="#ffffff"><path d="M30.17525,50.16667h0.18633v0c9.9975,0 16.22175,-7.16667 16.22175,-16.125c-0.18633,-9.15542 -6.22425,-16.125 -16.03183,-16.125c-9.80758,0 -16.21817,6.96958 -16.21817,16.125c0,8.95833 6.22067,16.125 15.84192,16.125zM14.33333,60.91667h32.25v93.16667h-32.25zM157.66667,94.95833c0,-18.80175 -15.23992,-34.04167 -34.04167,-34.04167c-10.93992,0 -20.64717,5.1815 -26.875,13.201v-13.201h-32.25v93.16667h32.25v-53.75v0c0,-7.91558 6.41775,-14.33333 14.33333,-14.33333c7.91558,0 14.33333,6.41775 14.33333,14.33333v53.75h32.25c0,0 0,-53.91125 0,-59.125z"></path></g></g></svg>
-            </a>
-
-            <!--Instagram-->
-            <a class="ins-ic">
-              <i class="fab fa-instagram white-text"> </i>
-            </a>
-  
-          </div>
-          <!-- Grid column -->
-  
+<!-- Modal (Tutorial Stuff) -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Thank You for Registering With Us!<br></h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
         </div>
-        <!-- Grid row-->
-  
+        <div class="modal-body">
+          <p>COVID-19 has psychologically and mentally brought everyone's lives on hold. By embarking on this quest with our community, we can conquer these personal challenges by sharing our progress in eliminating the bad habits together!</p>
+          <p>Through encouragement and community support, we hope we can help you become a better person and perhaps inspire those affected as well.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button"  class="btn btn-secondary" data-dismiss="modal"onClick="$('#exampleModalLong').trigger('click');" >Your Journey Begins Now!</button>
+        </div>
       </div>
     </div>
-  
-    <!-- Footer Links -->
-    <div class="container text-center text-md-left mt-5">
-  
-      <!-- Grid row -->
-      <div class="row mt-3">
-  
-        <!-- Grid column -->
-        <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
-  
-          <!-- Content -->
-          <h6 class="text-uppercase font-weight-bold">HabitApp</h6>
-          <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
-          <p>Here you can use rows and columns to organize your footer content. Lorem ipsum dolor sit amet,
-            consectetur
-            adipisicing elit.</p>
-  
-        </div>
-        <!-- Grid column -->
-  
-        <!-- Grid column -->
-        <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
-  
-          <!-- Links -->
-          <h6 class="text-uppercase font-weight-bold">Products</h6>
-          <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
-          <p>
-            <a href="#!">MDBootstrap</a>
-          </p>
-          <p>
-            <a href="#!">MDWordPress</a>
-          </p>
-          <p>
-            <a href="#!">BrandFlow</a>
-          </p>
-          <p>
-            <a href="#!">Bootstrap Angular</a>
-          </p>
-  
-        </div>
-        <!-- Grid column -->
-  
-        <!-- Grid column -->
-        <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
-  
-          <!-- Links -->
-          <h6 class="text-uppercase font-weight-bold">Useful links</h6>
-          <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
-          <p>
-            <a href="#!">Your Account</a>
-          </p>
-          <p>
-            <a href="#!">Become an Affiliate</a>
-          </p>
-          <p>
-            <a href="#!">Shipping Rates</a>
-          </p>
-          <p>
-            <a href="#!">Help</a>
-          </p>
-  
-        </div>
-        <!-- Grid column -->
-  
-        <!-- Grid column -->
-        <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
-  
-          <!-- Links -->
-          <h6 class="text-uppercase font-weight-bold">Contact</h6>
-          <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
-          <p>
-            <i class="fas fa-home mr-3"></i> New York, NY 10012, US</p>
-          <p>
-            <i class="fas fa-envelope mr-3"></i> info@example.com</p>
-          <p>
-            <i class="fas fa-phone mr-3"></i> + 01 234 567 88</p>
-          <p>
-            <i class="fas fa-print mr-3"></i> + 01 234 567 89</p>
-  
-        </div>
-        <!-- Grid column -->
-  
+  </div>
+</div>
+
+<div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title" id="exampleModalLongTitle">Features</h2>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
       </div>
-      <!-- Grid row -->
+      <div class="modal-body">
+        <h5><b>1) Reminders</b></h5>
+        <img id="reminderShot" src="images/ReminderScreenShot.png" alt="Reminders" width="350px" height = "400px"></img>
+        <h6>You can set your habits straight from the reminders to begin your routine. At any time, date, interval, you can have unlimited access and flexibility in how you manage your habits. <br><br> You can share your progress, completed tasks with your friends all on real-time, and even view others on the "active feed." Your well on your way to becoming a better person!</h6>
+        <h5><b>2) Calendar</b></h5>
+        <img id="calendarShot" src="images/calendarScreenShot.png" alt="Calendar" width="450px" height = "400px"></img>
+        <h6>Track your habits every month right through the calendar feature. Besides tracking your habit schedule, you can also use the calendar to make plans and events so that you can stay consistent!</h6>
+        <h5><b>3) Online Forums</b></h5>
+        <img id="forumShot" src="images/ForumScreenShot.png" alt="Forum" width="450px" height = "400px"></img>
+        <h6>Stay in touch with the community! Share what's on your mind and inspire. View success stories from others. View challenges that others have. Almost anything that you post here can be shared and viewed by others. Have fun and be social!</h6>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <div class="jumbotron">
+    <h1 class="display-4">Welcome to Comp1800HabitTrackerAppNameThatWeDidn'tCreateYet</h1>
+    <p class="lead">We hope to help you conquer your bad habits</p>
+    <hr class="my-4">
+    <p id="streakMessage">You are on a <span id="streak">90</span> day streak</p>
+    <div class="progress">
+      <div class="progress-bar bg-success" role="progressbar" style="width: 100%" aria-valuenow="25" aria-valuemin="0"
+        aria-valuemax="100">100%</div>
+    </div>
+  </div>
+
+  <div class="cardContainer">
+    <div class="card">
+      <div class="card-header">
+        <b>Track your habits</b>
+      </div>
+      <div class="card-body">
+        <p class="card-text">Log your completion daily</p>
+        <p><br /></p>
+        <a href="calendar.html" class="btn btn-primary">Calendar</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <b>Set your reminders</b>
+      </div>
+      <div class="card-body">
+        <p class="card-text">Add or edit your customized reminders</p>
+        <p><br /></p>
+        <a href="reminders.html" class="btn btn-primary">Reminders</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <b>Share your success</b>
+      </div>
+      <div class="card-body">
+        <p class="card-text">Interact with people on the same journey</p>
+        <p><br /></p>
+        <a href="discussions.html" class="btn btn-primary">Online Forums</a>
+      </div>
+    </div>
+    
+  </div>
+
+  <!-- JQuery to edit some Bootstrap CSS -->
+  <script>
+    $(document).ready(function () {
+      $(".card").css({
+        "width": "30%",
+        "float": "left",
+        "margin": "1.5rem"
+      });
+      $(".progress").css("margin-top", "3rem");
+      $(".card").css("background-color", "lightgrey");
+      $(".card-header").css({
+        "font-size": "15pt",
+        "background-color": "darkgrey"
+      });
+      $(".card-text").css("font-size", "18pt");
+      $(".btn-primary").css({
+        "background": "#6351ce",
+        "border-color": "#6351ce"
+      });
+      $(".jumbotron").css({
+        "width": "95%",
+        "margin": "0px auto",
+        "margin-top": "2rem",
+        "margin-bottom": "2rem",
+        "background-color": "lightgrey"
+      });
+    });
+  </script>
+
+  <script>
+    $(document).ready(function() {
+      setTimeout(function () {
+          $("#exampleModal").modal('show');
+      }, 2000);
+
+      function afterFirstPopUp() {
+          $("#exampleModalLong").modal('show');
+      }
+
+      $("#exampleModalLong").click(function (){
+          $("#exampleModalLong").modal('show');
+    });
+});
+  </script>
   
-    </div>
-    <!-- Footer Links -->
-  
-    <!-- Copyright -->
-    <div class="footer-copyright text-center py-3">© 2020 Copyright:
-      <a href="https://mdbootstrap.com/"> MDBootstrap.com</a>
-    </div>
-    <!-- Copyright -->
-        </footer>
-    </div>
-
-    <!-------------------------------------------->
-    <!-- The following is JS for functionality  -->
-    <!-------------------------------------------->
-    <!-- Bootstrap libraries from CDN -->
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
-    </script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
-    </script>
-
-    <!-- Firebase libraries from CDN -->
-    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-auth.js"></script>
-    <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-firestore.js"></script>
-
-
-
-
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 </body>
+
 </html>
