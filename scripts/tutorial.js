@@ -1,26 +1,28 @@
-// Editing some css using JQuery, more of a practice for COMP 1537
-
 $(document).ready(function () {
-    setTimeout(function () {
-        $("#exampleModal").modal('show');
-    }, 2000);
-
-    $("#exampleModalLong").click(function () {
-        $("#exampleModalLong").modal('show');
+    $(".card").css({
+      "width": "30%",
+      "float": "left",
+      "margin": "1.5rem"
     });
-
-    $("#exampleModalLong2").click(function () {
-        $("#exampleModalLong2").modal('show');
+    $(".progress").css("margin-top", "3rem");
+    $(".card").css("background-color", "lightgrey");
+    $(".card-header").css({
+      "font-size": "15pt",
+      "background-color": "darkgrey"
     });
-
-    $("#exampleModalLong3").click(function () {
-        $("#exampleModalLong3").modal('show');
+    $(".card-text").css("font-size", "18pt");
+    $(".btn-primary").css({
+      "background": "#6351ce",
+      "border-color": "#6351ce"
     });
-});
-
-$(function () {
-    $('[data-toggle="popover"]').popover()
-})
+    $(".jumbotron").css({
+      "width": "95%",
+      "margin": "0px auto",
+      "margin-top": "2rem",
+      "margin-bottom": "2rem",
+      "background-color": "lightgrey"
+    });
+  });
 
 // object-fit polyfill run
 objectFitImages();
