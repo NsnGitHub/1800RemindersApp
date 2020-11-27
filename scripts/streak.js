@@ -7,22 +7,22 @@ $(document).ready(function () {
       "margin": "1.5rem"
     });
     $(".progress").css("margin-top", "2rem");
-    $(".card").css("background-color", "lightgrey");
+    $(".card").css("background-color", "#d4d9dd");
     $(".card-header").css({
       "font-size": "15pt",
-      "background-color": "darkgrey"
+      "background-color": " #bbb6b6"
     });
     $(".card-text").css("font-size", "18pt");
     $(".btn-primary").css({
-      "background": "#6351ce",
-      "border-color": "#6351ce"
+      "background": " #d4d9dd",
+      "border-color": " #d4d9dd"
     });
     $(".jumbotron").css({
       "width": "95%",
       "margin": "0px auto",
       "margin-top": "2rem",
       "margin-bottom": "2rem",
-      "background-color": "lightgrey"
+      "background-color": " #bbb6b6"
     });
   });
 

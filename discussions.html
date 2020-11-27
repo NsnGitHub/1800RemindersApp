@@ -1,101 +1,98 @@
 <!DOCTYPE html>
 <html>
 
-    <head>
-        <meta charset="utf-8">
-        <title>Create A Post-It</title>
-        <meta name="comp1800 boilerplate code" content="my bcit project">
-        <meta name="author" content="BCIT">
+<head>
+    <meta charset="utf-8">
+    <title>Create A Post-It</title>
+    <meta name="comp1800 boilerplate code" content="my bcit project">
+    <meta name="author" content="BCIT">
 
-        <!-- Bootstrap for Mobile-first, and JQuery -->
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <!-- Bootstrap for Mobile-first, and JQuery -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 
-        <link rel="preconnect" href="https://fonts.gstatic.com">
-        <link
-            href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;
-                1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-            rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;
+                1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 
-        <!-- Firebase CSS for Authentication UI     -->
-        <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.6.1/firebase-ui-auth.css" />
+    <!-- Firebase CSS for Authentication UI     -->
+    <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.6.1/firebase-ui-auth.css" />
 
-        <!-- JQuery-->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- JQuery-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
-        <link href="styles/discussions.css" rel="stylesheet">
+    <link href="styles/discussions.css" rel="stylesheet">
 
-    </head>
+</head>
 
-    <body>
+<body>
 
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand" href="main.html">1800Habits</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="index.html">1800Habits</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="reminders.html">Reminders</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="calendar.html">Calendar</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="Board.html">Forums</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Profile</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Help</a>
-                    </li>
-                </ul>
-                <div class="drop-down">
-                    <button class="button">
-                        <svg class="" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="40" height="40"
-                            viewBox="0 0 172 172" style=" fill:#000000;">
-                            <g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt"
-                                stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0"
-                                font-family="none" font-weight="none" font-size="none" text-anchor="none"
-                                style="mix-blend-mode: normal">
-                                <path d="M0,172v-172h172v172z" fill="none"></path>
-                                <g id="original-icon" fill="#000000">
-                                    <path
-                                        d="M37.84,13.76c-13.25891,0 -24.08,10.82109 -24.08,24.08v96.32c0,13.25891 10.82109,24.08 24.08,24.08h96.32c13.25891,0 24.08,
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="reminders.html">Reminders</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="calendar.html">Calendar</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Board.html">Forums</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Profile</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Help</a>
+                </li>
+            </ul>
+            <div class="drop-down">
+                <button class="button">
+                    <svg class="" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="40" height="40"
+                        viewBox="0 0 172 172" style=" fill:#000000;">
+                        <g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt"
+                            stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0"
+                            font-family="none" font-weight="none" font-size="none" text-anchor="none"
+                            style="mix-blend-mode: normal">
+                            <path d="M0,172v-172h172v172z" fill="none"></path>
+                            <g id="original-icon" fill="#000000">
+                                <path d="M37.84,13.76c-13.25891,0 -24.08,10.82109 -24.08,24.08v96.32c0,13.25891 10.82109,24.08 24.08,24.08h96.32c13.25891,0 24.08,
                                         -10.82109 24.08,-24.08v-96.32c0,-13.25891 -10.82109,-24.08 -24.08,-24.08zM37.84,20.64h96.32c9.54141,0 17.2,
                                         7.65859 17.2,17.2v96.32c0,9.54141 -7.65859,17.2 -17.2,17.2h-96.32c-9.54141,0 -17.2,-7.65859 -17.2,-17.2v-96.32c0,
                                         -9.54141 7.65859,-17.2 17.2,-17.2zM37.66531,61.8864c-1.40254,0.05379 -2.63178,0.9542 -3.1061,2.2752c-0.47432,1.321 -0.0986,
                                         2.79769 0.94938,3.73136l50.4914,46.52063l50.4914,-46.52063c0.90531,-0.83284 1.29744,-2.08545 1.02862,-3.28585c-0.26881,
                                         -1.2004 -1.15771,-2.16614 -2.33175,-2.53334c-1.17404,-0.3672 -2.4548,-0.08005 -3.35969,0.75326l-45.8286,42.23406l-45.8286,
                                         -42.23406c-0.67413,-0.63899 -1.578,-0.97825 -2.50609,-0.94063z">
-                                    </path>
-                                </g>
+                                </path>
                             </g>
-                        </svg>
-                    </button>
-                    <div class="button-content">
-                        <a href="profile.html">Profile</a>
-                        <a href="homepage.html">Logout</a>
-                    </div>
+                        </g>
+                    </svg>
+                </button>
+                <div class="button-content">
+                    <a href="profile.html">Profile</a>
+                    <a href="homepage.html">Logout</a>
                 </div>
-                </ul>
             </div>
+            </ul>
+        </div>
 
-            </div>
-        </nav>
+        </div>
+    </nav>
 
-        <br />
-        <br />
+    <br />
+    <br />
 
-        <br />
-        <div id="bottom">
+    <br />
+    <div id="bottom">
 
         <br />
 
@@ -129,10 +126,19 @@
         <script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-auth.js"></script>
         <script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-firestore.js"></script>
 
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+            integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
+        </script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+            integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+        </script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+            integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
+        </script>
 
         <script src="scripts/1800_database.js"></script>
         <script src="scripts/discussions.js"></script>
 
-    </body>
+</body>
 
 </html>
