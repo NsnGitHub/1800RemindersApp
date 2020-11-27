@@ -3,7 +3,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: "Raleway";
-    color: white;
+    color: black;
 }
 
 html {
@@ -24,7 +24,7 @@ html {
 }
 
 .calendar {
-    background-color:  #424246;;
+    background-color:#bbb6b6;
     width: 75rem;
     height: 57rem;
     box-shadow: 0 0.5rem 3rem rgba(0, 0, 0, 0.4);
@@ -38,7 +38,7 @@ html {
     justify-content: center;
     text-align: center;
     height: 12rem;
-    background-color: #bbb6b6;
+    background-color:#424246;
     text-shadow: 0 0.3rem 0.5rem rgba(0, 0, 0, 0.5);
 }
 
@@ -48,11 +48,13 @@ html {
     text-transform: uppercase;
     letter-spacing: 1rem;
     margin-bottom: 1rem;
+    color: white;
 }
 
 .date p {
     font-size: 1.2rem;
     font-weight: 400;
+    color: white;
 }
 
 .weekdays {
