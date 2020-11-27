@@ -115,8 +115,20 @@
 
     #exampleModalLong {
       overflow-y:auto;
+    }    
+
+    #exampleModalLong2 {
+      overflow-y:auto;
+    }    
+
+    #exampleModalLong3 {
+      overflow-y:auto;
+    }    
+
+    .popover {
+    color: blue;
+    font-size: 15px;
     }
-    
     
   </style>
 </head>
@@ -124,7 +136,7 @@
 <body>
 
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="main.html">NameOfTheAPP</a>
+    <a class="navbar-brand" href="main.html">1800Habits</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
       aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -133,23 +145,23 @@
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
-        <li class="nav-item" data-toggle="popover" data-content="Takes you back home." data-trigger="hover" title="Home" data-placement="bottom">
+        <li class="nav-item" data-toggle="popover" title="Home" data-content="Takes you back home." data-trigger="hover"  data-placement="bottom">
           <a class="nav-link" href="main.html">Home</a>
         </li>
-        <li class="nav-item" data-toggle="popover" data-content="Disabled popover" data-trigger="hover" title="A place where you can set your reminders to stay on track." data-placement="bottom">
+        <li class="nav-item" data-toggle="popover" data-content="A place where you can set your reminders to stay on track." data-trigger="hover" title="Reminders" data-placement="bottom">
           <a class="nav-link" href="reminders.html">Reminders</a>
         </li>
-        <li class="nav-item" data-toggle="popover" data-content="" data-trigger="hover" title="A place where you can view specific dates" data-placement="bottom">
+        <li class="nav-item" data-toggle="popover" data-content="A place where you can view specific dates" data-trigger="hover" title="Calendar" data-placement="bottom">
           <a class="nav-link" href="calendar.html">Calendar</a>
         </li>
-        <li class="nav-item" data-toggle="popover" data-content="Disabled popover" data-trigger="hover" title="Forums" data-placement="bottom">
+        <li class="nav-item" data-toggle="popover" data-content="A place where you can post/like/share and see what's going on within the community!" data-trigger="hover" title="Forums" data-placement="bottom">
           <a class="nav-link" href="Board.html">Forums</a>
         </li>
-        <li class="nav-item" data-toggle="popover" data-content="Disabled popover" data-trigger="hover" title="Home" data-placement="bottom">
+        <li class="nav-item" data-toggle="popover" data-content="A place where you can view/edit your profile." data-trigger="hover" title="Profile" data-placement="bottom">
           <a class="nav-link" href="profile.html">Profile</a>
         </li>
-        <li class="nav-item" data-toggle="popover" data-content="Disabled popover" data-trigger="hover" title="Home" data-placement="bottom">
-          <a class="nav-link" href="#">Help</a>
+        <li class="nav-item" data-toggle="popover" data-content="Click here for help." data-trigger="hover" title="Help" data-placement="bottom">
+          <a class="nav-link" href="#" onClick="$('#exampleModalLong').trigger('click');">Help</a>
         </li>
       </ul>
       <div class="drop-down">
@@ -182,7 +194,7 @@
           <p>Through encouragement and community support, we hope we can help you become a better person and perhaps inspire those affected as well.</p>
         </div>
         <div class="modal-footer">
-          <button type="button"  class="btn btn-secondary" data-dismiss="modal"onClick="$('#exampleModalLong').trigger('click');" >Your Journey Begins Now!</button>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal" onClick="$('#exampleModalLong').trigger('click');" >Your Journey Begins Now!</button>
         </div>
       </div>
     </div>
@@ -202,9 +214,45 @@
         <h5><b>1) Reminders</b></h5>
         <img id="reminderShot" src="images/ReminderScreenShot.png" alt="Reminders" width="350px" height = "400px"></img>
         <h6>You can set your habits straight from the reminders to begin your routine. At any time, date, interval, you can have unlimited access and flexibility in how you manage your habits. <br><br> You can share your progress, completed tasks with your friends all on real-time, and even view others on the "active feed." Your well on your way to becoming a better person!</h6>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal" onClick="$('#exampleModalLong2').trigger('click');">Next</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="exampleModalLong2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title" id="exampleModalLongTitle">Features</h2>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
         <h5><b>2) Calendar</b></h5>
         <img id="calendarShot" src="images/calendarScreenShot.png" alt="Calendar" width="450px" height = "400px"></img>
         <h6>Track your habits every month right through the calendar feature. Besides tracking your habit schedule, you can also use the calendar to make plans and events so that you can stay consistent!</h6>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal" onClick="$('#exampleModalLong3').trigger('click');">Next</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="exampleModalLong3" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title" id="exampleModalLongTitle">Features</h2>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
         <h5><b>3) Online Forums</b></h5>
         <img id="forumShot" src="images/ForumScreenShot.png" alt="Forum" width="450px" height = "400px"></img>
         <h6>Stay in touch with the community! Share what's on your mind and inspire. View success stories from others. View challenges that others have. Almost anything that you post here can be shared and viewed by others. Have fun and be social!</h6>
@@ -216,16 +264,20 @@
   </div>
 </div>
 
-  <div class="jumbotron">
-    <h1 class="display-4">Welcome to Comp1800HabitTrackerAppNameThatWeDidn'tCreateYet</h1>
-    <p class="lead">We hope to help you conquer your bad habits</p>
-    <hr class="my-4">
-    <p id="streakMessage">You are on a <span id="streak">90</span> day streak</p>
-    <div class="progress">
-      <div class="progress-bar bg-success" role="progressbar" style="width: 100%" aria-valuenow="25" aria-valuemin="0"
-        aria-valuemax="100">100%</div>
-    </div>
+<!-- END OF MODAL CONTENT -->
+
+<div class="jumbotron">
+  <h1 class="display-4">1800Habits</h1>
+  <p class="lead">We hope to help you conquer your bad habits</p>
+  <hr class="my-4">
+  <p id="streakMessage">You are on a <span id="streak"></span> day streak</p>
+  <div class="progress" data-toggle="popover" data-content="An indicator displaying your progression within a 90 day cycle." data-trigger="hover" title="Progress Meter" data-placement="top">
+    <div class="progress-bar bg-success" role="progressbar" style="width: 0%" aria-valuenow="25" aria-valuemin="0" id="streakBar" data-toggle="popover" data-content="We hope you can reach 100%!" data-trigger="hover" title="Real-Time Progression" data-placement="bottom"
+      aria-valuemax="100">0%</div>
   </div>
+</div>
+
+  
 
   <div class="cardContainer">
     <div class="card">
@@ -235,7 +287,7 @@
       <div class="card-body">
         <p class="card-text">Log your completion daily</p>
         <p><br /></p>
-        <a href="calendar.html" class="btn btn-primary">Calendar</a>
+        <a href="calendar.html" class="btn btn-primary" data-toggle="popover" data-content="A place where you can view specific dates" data-trigger="hover" title="Calendar" data-placement="bottom">Calendar</a>
       </div>
     </div>
 
@@ -246,7 +298,7 @@
       <div class="card-body">
         <p class="card-text">Add or edit your customized reminders</p>
         <p><br /></p>
-        <a href="reminders.html" class="btn btn-primary">Reminders</a>
+        <a href="reminders.html" class="btn btn-primary" data-toggle="popover" data-content="A place where you can set your reminders to stay on track." data-trigger="hover" title="Reminders" data-placement="bottom">Reminders</a>
       </div>
     </div>
 
@@ -257,7 +309,7 @@
       <div class="card-body">
         <p class="card-text">Interact with people on the same journey</p>
         <p><br /></p>
-        <a href="discussions.html" class="btn btn-primary">Online Forums</a>
+        <a href="discussions.html" class="btn btn-primary" data-toggle="popover" data-content="Disabled popover" data-trigger="hover" title="Forums" data-placement="bottom">Online Forums</a>
       </div>
     </div>
     
@@ -292,18 +344,32 @@
     });
   </script>
 
+  <!-- Firebase libraries from CDN -->
+  <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-auth.js"></script>
+  <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-firestore.js"></script>
+
+  <!-- Your own Firebase API key information -->
+  <script src="scripts/1800_database.js"> </script>
+  <script src="scripts/streak.js"></script>
+
   <script>
     $(document).ready(function() {
       setTimeout(function () {
           $("#exampleModal").modal('show');
       }, 2000);
 
-      function afterFirstPopUp() {
-          $("#exampleModalLong").modal('show');
-      }
-
       $("#exampleModalLong").click(function (){
           $("#exampleModalLong").modal('show');
+      });
+
+      $("#exampleModalLong2").click(function (){
+          $("#exampleModalLong2").modal('show');
+      });
+
+      $("#exampleModalLong3").click(function (){
+          $("#exampleModalLong3").modal('show');
       });
     });
 
