@@ -32,7 +32,7 @@
   <!-------------------------------------->
   <!-- Header Navigation Bar -->
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="homepage.html">1800Habits</a>
+    <a class="navbar-brand" href="index.html">1800Habits</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
       aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -41,23 +41,54 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
-          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+          <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Reminders</a>
+        <li class="nav-item" data-toggle="popover"
+          data-content="A place where you can set your reminders to stay on track." data-trigger="hover"
+          title="Reminders" data-placement="bottom">
+          <a class="nav-link" href="reminders.html">Reminders</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Calendar</a>
+        <li class="nav-item" data-toggle="popover" data-content="A place where you can view specific dates"
+          data-trigger="hover" title="Calendar" data-placement="bottom">
+          <a class="nav-link" href="calendar.html">Calendar</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Forums</a>
+        <li class="nav-item" data-toggle="popover"
+          data-content="A place where you can post/like/share and see what's going on within the community!"
+          data-trigger="hover" title="Forums" data-placement="bottom">
+          <a class="nav-link" href="Board.html">Forums</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Profile</a>
+        <li class="nav-item" data-toggle="popover" data-content="A place where you can view/edit your profile."
+          data-trigger="hover" title="Profile" data-placement="bottom">
+          <a class="nav-link" href="profile.html">Profile</a>
+        </li>
+        <li class="nav-item" data-toggle="popover" data-content="Click here for help." data-trigger="hover" title="Help"
+          data-placement="bottom">
+          <a class="nav-link" href="#" onClick="$('#exampleModalLong').trigger('click');">Help</a>
         </li>
       </ul>
+      <div class="drop-down">
+        <button class="button">
+          <svg class="" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="40" height="40" viewBox="0 0 172 172"
+            style=" fill:#000000;">
+            <g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt"
+              stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0"
+              font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal">
+              <path d="M0,172v-172h172v172z" fill="none"></path>
+              <g id="original-icon" fill="#000000">
+                <path
+                  d="M37.84,13.76c-13.25891,0 -24.08,10.82109 -24.08,24.08v96.32c0,13.25891 10.82109,24.08 24.08,24.08h96.32c13.25891,0 24.08,-10.82109 24.08,-24.08v-96.32c0,-13.25891 -10.82109,-24.08 -24.08,-24.08zM37.84,20.64h96.32c9.54141,0 17.2,7.65859 17.2,17.2v96.32c0,9.54141 -7.65859,17.2 -17.2,17.2h-96.32c-9.54141,0 -17.2,-7.65859 -17.2,-17.2v-96.32c0,-9.54141 7.65859,-17.2 17.2,-17.2zM37.66531,61.8864c-1.40254,0.05379 -2.63178,0.9542 -3.1061,2.2752c-0.47432,1.321 -0.0986,2.79769 0.94938,3.73136l50.4914,46.52063l50.4914,-46.52063c0.90531,-0.83284 1.29744,-2.08545 1.02862,-3.28585c-0.26881,-1.2004 -1.15771,-2.16614 -2.33175,-2.53334c-1.17404,-0.3672 -2.4548,-0.08005 -3.35969,0.75326l-45.8286,42.23406l-45.8286,-42.23406c-0.67413,-0.63899 -1.578,-0.97825 -2.50609,-0.94063z">
+                </path>
+              </g>
+            </g>
+          </svg>
+        </button>
+        <div class="button-content">
+          <a href="profile.html">Profile</a>
+          <a href="homepage.html">Logout</a>
+        </div>
+      </div>
+    </div>
   </nav>
-
   <!-- Main Content -->
   <div id="mainContainer">
     <div id="image"></div>
@@ -493,6 +524,8 @@
   <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-auth.js"></script>
   <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
   <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-firestore.js"></script>
+
+  <script src="scripts/examples.js"></script>
 
 </body>
 
