@@ -36,6 +36,15 @@ function addReminder() {
         Description: document.getElementById("reminderDscrpt").value
     })
 
+    var modal = $("#addCard").append(
+        '<div class="alert alert-success alert-dismissible fade show" role="alert" style="width: 50%; margin-left: 1rem">'
+        + '<strong>Reminder added!</strong> Refresh the page to see your new reminder.'
+        + '<button type="button" class="close" data-dismiss="alert" aria-label="Close">'
+        +   '<span aria-hidden="true">&times;</span>'
+        + '</button>'
+        +'</div>');
+
 }
 
 getReminders();
+

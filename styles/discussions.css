@@ -1,0 +1,85 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Raleway";
+}
+
+html {
+    font-size: 12pt;
+}
+
+
+#TextArea {
+    width: 60%;
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+
+
+body {
+    background-image: url('images/corkboard.jpg');
+    color: aliceblue;
+}
+
+.searchContainer {
+    display: flex;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+}
+
+#exampleInputName{
+    width: 60%;
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 1rem;
+
+}
+#Habit{
+    width: 60%;
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+
+}
+
+body {
+    text-align: center;
+    
+}
+
+#create {
+    font-size: 1.2rem;
+}
+
+.drop-down {
+position: relative;
+margin-left: 950px;
+}
+
+.drop-down:hover .button-content {
+display: grid;
+position: absolute;
+grid-template-rows: auto auto auto;
+height: 60px;
+right: 0px;
+top: 40px;
+text-align: center;
+}
+
+.button {
+border: none;
+background-color: white;
+}
+
+.button-content {
+display: none;
+position: absolute;
+background-color: #f1f1f1;
+min-width: 160px;
+box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+z-index: 1;
+}

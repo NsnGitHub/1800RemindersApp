@@ -1,0 +1,96 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Raleway";
+    color: black;
+  }
+
+  html {
+    font-size: 12pt;
+    height: 100%;
+    margin: auto;
+  }
+
+  body {
+    background-color: #12121f;
+    min-width: 1400px;
+  }
+
+  .cardContainer {
+    display: flex;
+    justify-content: center;
+  }
+
+  #streak {
+    font-size: 25pt;
+    font-weight: bold;
+  }
+
+  #streakMessage {
+    font-size: 20pt;
+  }
+
+  .progress {
+    height: 25px;
+  }
+
+  .drop-down {
+    position: relative;
+    margin-left: 950px;
+  }
+
+  .drop-down:hover .button-content {
+    display: grid;
+    position: absolute;
+    grid-template-rows: auto auto auto;
+    height: 60px;
+    right: 0px;
+    top: 40px;
+    text-align: center;
+  }
+
+  .button {
+    border: none;
+    background-color: white;
+  }
+
+  .button-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+
+  .btn {
+    background-color: #6351ce;
+  }
+
+  #reminderShot {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 10px;
+  }
+
+  #calendarShot {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 10px;
+  }
+
+  #forumShot {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 10px;
+  }
+
+  #exampleModalLong {
+    overflow-y:auto;
+  }
+  
+  

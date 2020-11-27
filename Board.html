@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>1800 Project</title>
+    <title>Encouragement Board</title>
     <meta name="comp1800 boilerplate code" content="my bcit project">
     <meta name="author" content="BCIT">
 
@@ -13,8 +13,8 @@
 
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link
-      href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-      rel="stylesheet">
+        href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
 
     <!-- Firebase CSS for Authentication UI     -->
     <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.6.1/firebase-ui-auth.css" />
@@ -22,118 +22,14 @@
     <!-- JQuery-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: "Raleway";
-        }
+    <link href="styles/postboard.css" rel="stylesheet">
 
-        html {
-            font-size: 12pt;
-        }
-
-        .search-bar {
-            width: 56%;
-        }
-
-        #TextArea {
-            width: 60%;
-            display: block;
-            margin: 0 auto;
-            margin-bottom: 1rem;
-        }
-
-        #threads {
-            display: flex;
-            margin: 3rem;
-            color: black;
-        }
-
-        .jumbotron {
-            width: 40%;
-        }
-
-        body {
-            background-image: url('images/corkboard.jpg');
-            color: aliceblue;
-        }
-
-        .searchContainer {
-            display: flex;
-            margin-top: 3rem;
-            margin-bottom: 3rem;
-        }
-
-        #exampleInputName{
-            width: 60%;
-            display: block;
-            margin: 0 auto;
-            margin-bottom: 1rem;
-
-        }
-        #Habit{
-            width: 60%;
-            display: block;
-            margin: 0 auto;
-            margin-bottom: 1rem;
-
-        }
-
-        body {
-            text-align: center;
-        }
-
-        #create {
-            font-size: 1.2rem;
-        }
-
-        .img{
-            top:0;
-            left: 0;
-            position: absolute;
-        }
-
-        .overlay{
-            display: grid;
-            position: relative;
-            width: 100%;
-            transform: translateY(20%);
-            color: black;
-            font-size: 1.3rem;
-            grid-template-rows: 20% 80%;
-        }
-        .sticky_note{
-            display: flex;
-            justify-content: center;
-            
-            position: relative;
-            float: left;
-            width: 500px;
-            height: 500px;
-        }
-        .title{
-            font-size: 1.6rem;
-            grid-row: 1/ span 1;
-            transform: rotate(15deg);
-            width: 70%;
-
-        }
-        .text{
-            grid-row: 2/span 1;
-            transform: rotate(15deg);
-            width:70%;
-            margin-left: 5%;
-        }
-    </style>
 </head>
 
 <body>
 
-
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="main.html">NameOfTheAPP</a>
+        <a class="navbar-brand" href="main.html">1800Habits</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -142,7 +38,7 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" href="main.html">Home <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="reminders.html">Reminders</a>
@@ -151,7 +47,7 @@
                     <a class="nav-link" href="calendar.html">Calendar</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="Board.html">Online Forums</a>
+                    <a class="nav-link" href="Board.html">Forums</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Profile</a>
@@ -171,31 +67,18 @@
 
     </div>
 
-    
-    
-  
-
-    
-
-    <!-- JQuery Scripts -->
-
-
     <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
-  <script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-app.js"></script>
 
-  <!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
-  <script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-analytics.js"></script>
+    <!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
+    <script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-analytics.js"></script>
 
-  <!-- Add Firebase products that you want to use -->
-  <script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-auth.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-firestore.js"></script>
-
+    <!-- Add Firebase products that you want to use -->
+    <script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-firestore.js"></script>
 
     <script src="scripts/1800_database.js"></script>
     <script src="scripts/board.js"></script>
-    
-    
-
 
 </body>
 

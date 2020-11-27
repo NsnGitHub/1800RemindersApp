@@ -68,11 +68,28 @@ function success() {
         daystreak: firebase.firestore.FieldValue.increment(1)
     })
     $(".today").css("background-color", "green");
+
+    var modal = $(".container").append(
+        '<div class="alert alert-success alert-dismissible fade show" role="alert" style="width: 30%; margin-left: 1rem">'
+        + '<strong style="color: black">Success!</strong> You marked today as successfully completed.'
+        + '<button type="button" class="close" data-dismiss="alert" aria-label="Close" style="background-color: black">'
+        +   '<span aria-hidden="true">&times;</span>'
+        + '</button>'
+        +'</div>');
 }
 
 function fail() {
+
     streak.update({
         daystreak: 0
     })
     $(".today").css("background-color", "red");
+
+    var modal = $(".container").append(
+        '<div class="alert alert-success alert-dismissible fade show" role="alert" style="width: 30%; margin-left: 1rem">'
+        + '<strong style="color: black">Success!</strong> You marked today as failed.'
+        + '<button type="button" class="close" data-dismiss="alert" aria-label="Close" style="background-color: black">'
+        +   '<span aria-hidden="true">&times;</span>'
+        + '</button>'
+        +'</div>');
 }
