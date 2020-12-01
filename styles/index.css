@@ -12,11 +12,12 @@ html {
 
 body {
   background-color: #212121;
-  min-width: 1400px;
+  width: 100%;
 }
 
 .cardContainer {
   display: flex;
+  flex-direction: column;
   justify-content: center;
 }
 
@@ -27,6 +28,7 @@ body {
 
 #streakMessage {
   font-size: 20pt;
+  text-align: center;
 }
 
 .progress {
