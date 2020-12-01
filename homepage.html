@@ -2,27 +2,1877 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>OurApp</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OurApp</title>
 
-  <!-- Bootstrap for Mobile-first, and JQuery -->
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+        <!-- Bootstrap for Mobile-first, and JQuery -->
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    
+        <!-- Firebase CSS for Authentication UI -->
+        <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.6.1/firebase-ui-auth.css" />
+    
+        <!-- Optional CSS of your own -->
+        <link type="text/css" rel="stylesheet" href="styles/app.css" />
 
-  <!-- Firebase CSS for Authentication UI -->
-  <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.6.1/firebase-ui-auth.css" />
+        <!-- Font -->
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link
+          href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+          rel="stylesheet">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+        <style>
+          
+          body {
+            background: linear-gradient(193deg, #060016 20%, #410077 51%, #260057 85%);  
+            width: 100%; 
+            height: 1000px;
+          }
 
-  <!-- Optional CSS of your own -->
-  <link href="styles/homepage.css" rel="stylesheet">
+          * {
+            font-family: "Raleway";
+          }
+            #image {
+                background-image: url("images/login.jpg");
+                background-size: cover;
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 125%;
+                -webkit-filter: blur(5px);
+                -moz-filter: blur(5px);
+                -o-filter: blur(5px);
+                -ms-filter: blur(5px);
+                filter: brightness(100%);
+                z-index: -1;
+                }
+            
+                /* Source: https://www.w3schools.com/howto/howto_css_blurred_background.asp */
+                .loginWindow {
+                background-color: rgb(0,0,0); /* Fallback color */
+                background-color: rgba(0,0,0, 0.2); /* Black w/opacity/see-through */
+                color: white;
+                font-weight: bold;
+                position: absolute;
+                top: 40%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                z-index: 2; /* Position: absolute --> z-index brings it forward */
+                width: 25%;
+                padding: 20px;
+                text-align: center;
+                }
+              
+                #footer {                
+                background-color: rgb(0,0,0); /* Fallback color */
+                background-color: rgba(0, 0, 0, 1); /* Black w/opacity/see-through */
+                color: white;
+                font-weight: bold;
+                position: absolute;
+                top: 100%;
+                left: 50%;
+                height: auto;
+                transform: translate(-50%, -50%);
+                z-index: 2; /* Position: absolute --> z-index brings it forward */
+                width: 100%;
+                padding: 20px;
+                text-align: center;
+                /* Source: https://stackoverflow.com/questions/643879/css-to-make-html-page-footer-stay-at-bottom-of-the-page-with-a-minimum-height-b */
+                clear: both;
+                position: relative;
+                margin-top: -500px;
+                }
 
-  <!-- Font -->
-  <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link
-    href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-    rel="stylesheet">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-  
+                #downNote {
+                    background-color: #6351ce;
+                    display: inline-block;
+                    width: 95%;
+                    height: 25px;
+                }
+
+                input[type="checkbox"] {
+                -webkit-appearance: checkbox;
+                -moz-appearance: checkbox;
+                appearance: checkbox;
+                width: auto;
+                }
+
+                #forget {
+                    display: block;
+                    margin-right: auto;
+                    margin-left: auto;
+                    background-color: #6351ce;
+                    width: 95%;
+                    height: 25px;
+                }
+
+                #space1 {
+                    margin-top: 40px;
+                }
+
+                #space2 {
+                    margin: 10px;
+                }
+
+                /* Source for codes below: https://www.w3schools.com/howto/howto_css_parallax.asp */
+                .bgimg-1, .bgimg-2, .bgimg-3 {
+                  position: relative;
+                  opacity: 0.65;
+                  background-attachment: fixed;
+                  background-position: center;
+                  background-repeat: no-repeat;
+                  background-size: cover;
+
+                }
+                .bgimg-1 {
+                  background-image: url("img_parallax.jpg");
+                  min-height: 10%;
+                }
+
+                .bgimg-2 {
+                  background-image: url("images/homebackground.jpg");
+                  min-height: 400px;
+                }
+
+                .bgimg-3 {
+                  background-image: url("img_parallax3.jpg");
+                  min-height: 400px;
+                }
+
+                .caption {
+                  display: block;
+                  position: absolute;
+                  margin-left: auto;
+                  margin-right: auto;
+                  top: 50%;
+                  width: 100%;
+                  text-align: center;
+                  color: #000;
+                }
+
+                .mainCaption {
+                  display: block;
+                  position: absolute;
+                  margin-left: auto;
+                  margin-right: auto;
+                  top: 5%;
+                  width: 100%;
+                  text-align: center;
+                  color: white;
+                  padding: 50px;
+                  font-size: 50px;
+                  letter-spacing: 6px;
+                }
+
+                .caption span.border {
+                  background-color: #111;
+                  color: #fff;
+                  padding: 50px;
+                  font-size: 25px;
+                  letter-spacing: 10px;
+                }
+
+                h3 {
+                  letter-spacing: 5px;
+                  text-transform: uppercase;
+                  font: 20px "Lato", sans-serif;
+                  color: #111;
+                }
+
+                #firstDividing {
+                  position: relative;
+                  margin-top: 400px;
+                  color: #777;
+                  background-color:white;
+                  text-align:center;
+                  padding:50px 80px;
+                  text-align: justify;
+                }
+
+                .grey-text {
+                  color: white;
+                }
+
+                #best-features {
+                  margin-top: 950px;
+                }
+
+                #tutorial {
+                  color: white;
+                }
+
+                #signIn {
+                  position: relative;
+                  display: block;
+                  margin-left: auto;
+                  margin-right: auto;
+                  background-color: blue;
+                  text-align: center;
+                  color: white;
+                  width: 10%;
+                  height: 80px;
+                  border-radius: 10px;
+                  top: 800px;
+                }
+
+                #signIn:hover {
+                  box-shadow: 2px 2px 2px #6351ce;
+                }
+
+                #signIn > h2 {
+                  padding-top: 20px;
+                }
+
+        /* iPhoneX resolution */
+          @media screen and (max-width: 375px) {
+            body {
+            background: linear-gradient(193deg, #060016 20%, #410077 51%, #260057 85%);  
+            width: 100%; 
+            height: 1250px;
+            
+          }
+
+          * {
+            font-family: "Raleway";
+          }
+            #image {
+                background-image: url("images/login.jpg");
+                background-size: cover;
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 175%;
+                -webkit-filter: blur(5px);
+                -moz-filter: blur(5px);
+                -o-filter: blur(5px);
+                -ms-filter: blur(5px);
+                filter: brightness(100%);
+                z-index: -1;
+                }
+            
+                /* Source: https://www.w3schools.com/howto/howto_css_blurred_background.asp */
+                .loginWindow {
+                background-color: rgb(0,0,0); /* Fallback color */
+                background-color: rgba(0,0,0, 0.2); /* Black w/opacity/see-through */
+                color: white;
+                font-weight: bold;
+                position: absolute;
+                top: 40%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                z-index: 2; /* Position: absolute --> z-index brings it forward */
+                width: 25%;
+                padding: 20px;
+                text-align: center;
+                }
+              
+                #footer {                
+                background-color: rgb(0,0,0); /* Fallback color */
+                background-color: rgba(0, 0, 0, 1); /* Black w/opacity/see-through */
+                color: white;
+                font-weight: bold;
+                position: absolute;
+                top: 100%;
+                left: 50%;
+                height: auto;
+                transform: translate(-50%, -50%);
+                z-index: 2; /* Position: absolute --> z-index brings it forward */
+                width: 100%;
+                padding: 20px;
+                text-align: center;
+                /* Source: https://stackoverflow.com/questions/643879/css-to-make-html-page-footer-stay-at-bottom-of-the-page-with-a-minimum-height-b */
+                clear: both;
+                position: relative;
+                margin-top: -1000px;
+                }
+
+                #downNote {
+                    background-color: #6351ce;
+                    display: inline-block;
+                    width: 95%;
+                    height: 25px;
+                }
+
+                input[type="checkbox"] {
+                -webkit-appearance: checkbox;
+                -moz-appearance: checkbox;
+                appearance: checkbox;
+                width: auto;
+                }
+
+                #forget {
+                    display: block;
+                    margin-right: auto;
+                    margin-left: auto;
+                    background-color: #6351ce;
+                    width: 95%;
+                    height: 25px;
+                }
+
+                #space1 {
+                    margin-top: 40px;
+                }
+
+                #space2 {
+                    margin: 10px;
+                    overflow-x: hidden;
+                }
+
+                /* Source for codes below: https://www.w3schools.com/howto/howto_css_parallax.asp */
+                .bgimg-1, .bgimg-2, .bgimg-3 {
+                  position: relative;
+                  opacity: 0.65;
+                  background-attachment: fixed;
+                  background-position: center;
+                  background-repeat: no-repeat;
+                  background-size: cover;
+                  
+
+                }
+                .bgimg-1 {
+                  background-image: url("img_parallax.jpg");
+                  min-height: 10%;
+                }
+
+                .bgimg-2 {
+                  background-image: url("images/homebackground.jpg");
+                  min-height: 400px;
+                }
+
+                .bgimg-3 {
+                  background-image: url("img_parallax3.jpg");
+                  min-height: 400px;
+                }
+
+                .caption {
+                  display: block;
+                  position: absolute;
+                  margin-left: auto;
+                  margin-right: auto;
+                  top: 50%;
+                  width: 100%;
+                  text-align: center;
+                  color: #000;
+                }
+
+                .mainCaption {
+                  display: block;
+                  position: absolute;
+                  margin-left: auto;
+                  margin-right: auto;
+                  top: 5%;
+                  width: 100%;
+                  text-align: center;
+                  color: white;
+                  padding: 50px;
+                  font-size: 50px;
+                  letter-spacing: 3px;
+                }
+
+                .caption span.border {
+                  background-color: #111;
+                  color: #fff;
+                  padding: 50px;
+                  font-size: 25px;
+                  letter-spacing: 10px;
+                }
+
+                h3 {
+                  letter-spacing: 5px;
+                  text-transform: uppercase;
+                  font: 20px "Lato", sans-serif;
+                  color: #111;
+                }
+
+                #firstDividing {
+                  position: relative;
+                  margin-top: 400px;
+                  color: #777;
+                  background-color:white;
+                  text-align:center;
+                  padding:50px 80px;
+                  text-align: justify;
+                }
+
+                .grey-text {
+                  color: white;
+                }
+
+                #best-features {
+                  margin-top: 950px;
+                }
+
+                #tutorial {
+                  color: white;
+                }
+
+                #signIn {
+                  position: relative;
+                  display: block;
+                  margin-left: auto;
+                  margin-right: auto;
+                  background-color: blue;
+                  text-align: center;
+                  color: white;
+                  width: 50%;
+                  height: 80px;
+                  border-radius: 10px;
+                  top: 500px;
+                }
+
+                #signIn:hover {
+                  box-shadow: 2px 2px 2px #6351ce;
+                }
+
+                #signIn > h2 {
+                  padding-top: 20px;
+                }
+                }
+
+            @media screen and (max-width: 320px) {
+            body {
+            background: linear-gradient(193deg, #060016 20%, #410077 51%, #260057 85%);  
+            width: 115%; 
+            height: 1250px;
+          }
+
+          * {
+            font-family: "Raleway";
+          }
+            #image {
+                background-image: url("images/login.jpg");
+                background-size: cover;
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 120%;
+                height: 175%;
+                -webkit-filter: blur(5px);
+                -moz-filter: blur(5px);
+                -o-filter: blur(5px);
+                -ms-filter: blur(5px);
+                filter: brightness(100%);
+                z-index: -1;
+                }
+            
+                /* Source: https://www.w3schools.com/howto/howto_css_blurred_background.asp */
+                .loginWindow {
+                background-color: rgb(0,0,0); /* Fallback color */
+                background-color: rgba(0,0,0, 0.2); /* Black w/opacity/see-through */
+                color: white;
+                font-weight: bold;
+                position: absolute;
+                top: 40%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                z-index: 2; /* Position: absolute --> z-index brings it forward */
+                width: 25%;
+                padding: 20px;
+                text-align: center;
+                }
+              
+                #footer {                
+                background-color: rgb(0,0,0); /* Fallback color */
+                background-color: rgba(0, 0, 0, 1); /* Black w/opacity/see-through */
+                color: white;
+                font-weight: bold;
+                position: absolute;
+                top: 100%;
+                left: 50%;
+                height: auto;
+                transform: translate(-50%, -50%);
+                z-index: 2; /* Position: absolute --> z-index brings it forward */
+                width: 100%;
+                padding: 20px;
+                text-align: center;
+                /* Source: https://stackoverflow.com/questions/643879/css-to-make-html-page-footer-stay-at-bottom-of-the-page-with-a-minimum-height-b */
+                clear: both;
+                position: relative;
+                margin-top: -600px;
+                }
+
+                #downNote {
+                    background-color: #6351ce;
+                    display: inline-block;
+                    width: 95%;
+                    height: 25px;
+                }
+
+                input[type="checkbox"] {
+                -webkit-appearance: checkbox;
+                -moz-appearance: checkbox;
+                appearance: checkbox;
+                width: auto;
+                }
+
+                #forget {
+                    display: block;
+                    margin-right: auto;
+                    margin-left: auto;
+                    background-color: #6351ce;
+                    width: 95%;
+                    height: 25px;
+                }
+
+                #space1 {
+                    margin-top: 40px;
+                }
+
+                #space2 {
+                    margin: 10px;
+                }
+
+                /* Source for codes below: https://www.w3schools.com/howto/howto_css_parallax.asp */
+                .bgimg-1, .bgimg-2, .bgimg-3 {
+                  position: relative;
+                  opacity: 0.65;
+                  background-attachment: fixed;
+                  background-position: center;
+                  background-repeat: no-repeat;
+                  background-size: cover;
+
+                }
+                .bgimg-1 {
+                  background-image: url("img_parallax.jpg");
+                  min-height: 10%;
+                }
+
+                .bgimg-2 {
+                  background-image: url("images/homebackground.jpg");
+                  min-height: 400px;
+                }
+
+                .bgimg-3 {
+                  background-image: url("img_parallax3.jpg");
+                  min-height: 400px;
+                }
+
+                .caption {
+                  display: block;
+                  position: absolute;
+                  margin-left: auto;
+                  margin-right: auto;
+                  top: 50%;
+                  width: 100%;
+                  text-align: center;
+                  color: #000;
+                }
+
+                .mainCaption {
+                  display: block;
+                  position: absolute;
+                  margin-left: auto;
+                  margin-right: auto;
+                  top: 5%;
+                  width: 100%;
+                  text-align: center;
+                  color: white;
+                  padding: 50px;
+                  font-size: 50px;
+                  letter-spacing: 2px;
+                }
+
+                .caption span.border {
+                  background-color: #111;
+                  color: #fff;
+                  padding: 50px;
+                  font-size: 25px;
+                  letter-spacing: 10px;
+                }
+
+                h3 {
+                  letter-spacing: 5px;
+                  text-transform: uppercase;
+                  font: 20px "Lato", sans-serif;
+                  color: #111;
+                }
+
+                #firstDividing {
+                  position: relative;
+                  margin-top: 400px;
+                  color: #777;
+                  background-color:white;
+                  text-align:center;
+                  padding:50px 80px;
+                  text-align: justify;
+                }
+
+                .grey-text {
+                  color: white;
+                }
+
+                #best-features {
+                  margin-top: 950px;
+                }
+
+                #tutorial {
+                  color: white;
+                }
+
+                #signIn {
+                  position: relative;
+                  display: block;
+                  margin-left: auto;
+                  margin-right: auto;
+                  background-color: blue;
+                  text-align: center;
+                  color: white;
+                  width: 50%;
+                  height: 80px;
+                  border-radius: 10px;
+                  top: 500px;
+                }
+
+                #signIn:hover {
+                  box-shadow: 2px 2px 2px #6351ce;
+                }
+
+                #signIn > h2 {
+                  padding-top: 20px;
+                }
+                }
+
+          /* iPhone 6/7/8 Resolution */
+           @media screen and (max-width: 414px) {
+            body {
+            background: linear-gradient(193deg, #060016 20%, #410077 51%, #260057 85%);  
+            width: 100%; 
+            height: 1300px;
+            
+          }
+
+          * {
+            font-family: "Raleway";
+          }
+            #image {
+                background-image: url("images/login.jpg");
+                background-size: cover;
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 175%;
+                -webkit-filter: blur(5px);
+                -moz-filter: blur(5px);
+                -o-filter: blur(5px);
+                -ms-filter: blur(5px);
+                filter: brightness(100%);
+                z-index: -1;
+                }
+            
+                /* Source: https://www.w3schools.com/howto/howto_css_blurred_background.asp */
+                .loginWindow {
+                background-color: rgb(0,0,0); /* Fallback color */
+                background-color: rgba(0,0,0, 0.2); /* Black w/opacity/see-through */
+                color: white;
+                font-weight: bold;
+                position: absolute;
+                top: 40%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                z-index: 2; /* Position: absolute --> z-index brings it forward */
+                width: 25%;
+                padding: 20px;
+                text-align: center;
+                }
+              
+                #footer {                
+                background-color: rgb(0,0,0); /* Fallback color */
+                background-color: rgba(0, 0, 0, 1); /* Black w/opacity/see-through */
+                color: white;
+                font-weight: bold;
+                position: absolute;
+                top: 100%;
+                left: 50%;
+                height: auto;
+                transform: translate(-50%, -50%);
+                z-index: 2; /* Position: absolute --> z-index brings it forward */
+                width: 100%;
+                padding: 20px;
+                text-align: center;
+                /* Source: https://stackoverflow.com/questions/643879/css-to-make-html-page-footer-stay-at-bottom-of-the-page-with-a-minimum-height-b */
+                clear: both;
+                position: relative;
+                margin-top: -600px;
+                }
+
+                #downNote {
+                    background-color: #6351ce;
+                    display: inline-block;
+                    width: 95%;
+                    height: 25px;
+                }
+
+                input[type="checkbox"] {
+                -webkit-appearance: checkbox;
+                -moz-appearance: checkbox;
+                appearance: checkbox;
+                width: auto;
+                }
+
+                #forget {
+                    display: block;
+                    margin-right: auto;
+                    margin-left: auto;
+                    background-color: #6351ce;
+                    width: 95%;
+                    height: 25px;
+                }
+
+                #space1 {
+                    margin-top: 40px;
+                }
+
+                #space2 {
+                    margin: 10px;
+                    overflow-x: hidden;
+                }
+
+                /* Source for codes below: https://www.w3schools.com/howto/howto_css_parallax.asp */
+                .bgimg-1, .bgimg-2, .bgimg-3 {
+                  position: relative;
+                  opacity: 0.65;
+                  background-attachment: fixed;
+                  background-position: center;
+                  background-repeat: no-repeat;
+                  background-size: cover;
+                  
+
+                }
+                .bgimg-1 {
+                  background-image: url("img_parallax.jpg");
+                  min-height: 10%;
+                }
+
+                .bgimg-2 {
+                  background-image: url("images/homebackground.jpg");
+                  min-height: 400px;
+                }
+
+                .bgimg-3 {
+                  background-image: url("img_parallax3.jpg");
+                  min-height: 400px;
+                }
+
+                .caption {
+                  display: block;
+                  position: absolute;
+                  margin-left: auto;
+                  margin-right: auto;
+                  top: 50%;
+                  width: 100%;
+                  text-align: center;
+                  color: #000;
+                }
+
+                .mainCaption {
+                  display: block;
+                  position: absolute;
+                  margin-left: auto;
+                  margin-right: auto;
+                  top: 5%;
+                  width: 100%;
+                  text-align: center;
+                  color: white;
+                  padding: 50px;
+                  font-size: 50px;
+                  letter-spacing: 3px;
+                }
+
+                .caption span.border {
+                  background-color: #111;
+                  color: #fff;
+                  padding: 50px;
+                  font-size: 25px;
+                  letter-spacing: 10px;
+                }
+
+                h3 {
+                  letter-spacing: 5px;
+                  text-transform: uppercase;
+                  font: 20px "Lato", sans-serif;
+                  color: #111;
+                }
+
+                #firstDividing {
+                  position: relative;
+                  margin-top: 400px;
+                  color: #777;
+                  background-color:white;
+                  text-align:center;
+                  padding:50px 80px;
+                  text-align: justify;
+                }
+
+                .grey-text {
+                  color: white;
+                }
+
+                #best-features {
+                  margin-top: 950px;
+                }
+
+                #tutorial {
+                  color: white;
+                }
+
+                #signIn {
+                  position: relative;
+                  display: block;
+                  margin-left: auto;
+                  margin-right: auto;
+                  background-color: blue;
+                  text-align: center;
+                  color: white;
+                  width: 50%;
+                  height: 80px;
+                  border-radius: 10px;
+                  top: 450px;
+                }
+
+                #signIn:hover {
+                  box-shadow: 2px 2px 2px #6351ce;
+                }
+
+                #signIn > h2 {
+                  padding-top: 20px;
+                }
+                }
+
+
+            @media screen and (max-width: 768px) {
+            body {
+            background: linear-gradient(193deg, #060016 20%, #410077 51%, #260057 85%);  
+            width: 100%; 
+            height: 1050px;
+            
+          }
+
+          * {
+            font-family: "Raleway";
+          }
+            #image {
+                background-image: url("images/login.jpg");
+                background-size: hide;
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 175%;
+                -webkit-filter: blur(5px);
+                -moz-filter: blur(5px);
+                -o-filter: blur(5px);
+                -ms-filter: blur(5px);
+                filter: brightness(100%);
+                z-index: -1;
+                }
+            
+                /* Source: https://www.w3schools.com/howto/howto_css_blurred_background.asp */
+                .loginWindow {
+                background-color: rgb(0,0,0); /* Fallback color */
+                background-color: rgba(0,0,0, 0.2); /* Black w/opacity/see-through */
+                color: white;
+                font-weight: bold;
+                position: absolute;
+                top: 40%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                z-index: 2; /* Position: absolute --> z-index brings it forward */
+                width: 25%;
+                padding: 20px;
+                text-align: center;
+                }
+              
+                #footer {                
+                background-color: rgb(0,0,0); /* Fallback color */
+                background-color: rgba(0, 0, 0, 1); /* Black w/opacity/see-through */
+                color: white;
+                font-weight: bold;
+                position: absolute;
+                top: 100%;
+                left: 50%;
+                height: auto;
+                transform: translate(-50%, -50%);
+                z-index: 2; /* Position: absolute --> z-index brings it forward */
+                width: 100%;
+                padding: 20px;
+                text-align: center;
+                /* Source: https://stackoverflow.com/questions/643879/css-to-make-html-page-footer-stay-at-bottom-of-the-page-with-a-minimum-height-b */
+                clear: both;
+                position: relative;
+                margin-top: -750px;
+                }
+
+                #downNote {
+                    background-color: #6351ce;
+                    display: inline-block;
+                    width: 95%;
+                    height: 25px;
+                }
+
+                input[type="checkbox"] {
+                -webkit-appearance: checkbox;
+                -moz-appearance: checkbox;
+                appearance: checkbox;
+                width: auto;
+                }
+
+                #forget {
+                    display: block;
+                    margin-right: auto;
+                    margin-left: auto;
+                    background-color: #6351ce;
+                    width: 95%;
+                    height: 25px;
+                }
+
+                #space1 {
+                    margin-top: 40px;
+                }
+
+                #space2 {
+                    margin: 10px;
+                    overflow-x: hidden;
+                }
+
+                /* Source for codes below: https://www.w3schools.com/howto/howto_css_parallax.asp */
+                .bgimg-1, .bgimg-2, .bgimg-3 {
+                  position: relative;
+                  opacity: 0.65;
+                  background-attachment: fixed;
+                  background-position: center;
+                  background-repeat: no-repeat;
+                  background-size: cover;
+                  
+
+                }
+                .bgimg-1 {
+                  background-image: url("img_parallax.jpg");
+                  min-height: 10%;
+                }
+
+                .bgimg-2 {
+                  background-image: url("images/homebackground.jpg");
+                  min-height: 400px;
+                }
+
+                .bgimg-3 {
+                  background-image: url("img_parallax3.jpg");
+                  min-height: 400px;
+                }
+
+                .caption {
+                  display: block;
+                  position: absolute;
+                  margin-left: auto;
+                  margin-right: auto;
+                  top: 50%;
+                  width: 100%;
+                  text-align: center;
+                  color: #000;
+                }
+
+                .mainCaption {
+                  display: block;
+                  position: absolute;
+                  margin-left: auto;
+                  margin-right: auto;
+                  top: 5%;
+                  width: 100%;
+                  text-align: center;
+                  color: white;
+                  padding: 50px;
+                  font-size: 50px;
+                  letter-spacing: 3px;
+                }
+
+                .caption span.border {
+                  background-color: #111;
+                  color: #fff;
+                  padding: 50px;
+                  font-size: 25px;
+                  letter-spacing: 10px;
+                }
+
+                h3 {
+                  letter-spacing: 5px;
+                  text-transform: uppercase;
+                  font: 20px "Lato", sans-serif;
+                  color: #111;
+                }
+
+                #firstDividing {
+                  position: relative;
+                  margin-top: 400px;
+                  color: #777;
+                  background-color:white;
+                  text-align:center;
+                  padding:50px 80px;
+                  text-align: justify;
+                }
+
+                .grey-text {
+                  color: white;
+                }
+
+                #best-features {
+                  margin-top: 750px;
+                }
+
+                #tutorial {
+                  color: white;
+                }
+
+                #signIn {
+                  position: relative;
+                  display: block;
+                  margin-left: auto;
+                  margin-right: auto;
+                  background-color: blue;
+                  text-align: center;
+                  color: white;
+                  width: 50%;
+                  height: 80px;
+                  border-radius: 10px;
+                  top: 600px;
+                }
+
+                #signIn:hover {
+                  box-shadow: 2px 2px 2px #6351ce;
+                }
+
+                #signIn > h2 {
+                  padding-top: 20px;
+                }
+                }
+
+                @media screen and (max-width: 670px) {
+            body {
+            background: linear-gradient(193deg, #060016 20%, #410077 51%, #260057 85%);  
+            width: 100%; 
+            height: 1050px;
+            
+          }
+
+          * {
+            font-family: "Raleway";
+          }
+            #image {
+                background-image: url("images/login.jpg");
+                background-size: hide;
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 200%;
+                -webkit-filter: blur(5px);
+                -moz-filter: blur(5px);
+                -o-filter: blur(5px);
+                -ms-filter: blur(5px);
+                filter: brightness(100%);
+                z-index: -1;
+                }
+            
+                /* Source: https://www.w3schools.com/howto/howto_css_blurred_background.asp */
+                .loginWindow {
+                background-color: rgb(0,0,0); /* Fallback color */
+                background-color: rgba(0,0,0, 0.2); /* Black w/opacity/see-through */
+                color: white;
+                font-weight: bold;
+                position: absolute;
+                top: 40%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                z-index: 2; /* Position: absolute --> z-index brings it forward */
+                width: 25%;
+                padding: 20px;
+                text-align: center;
+                }
+              
+                #footer {                
+                background-color: rgb(0,0,0); /* Fallback color */
+                background-color: rgba(0, 0, 0, 1); /* Black w/opacity/see-through */
+                color: white;
+                font-weight: bold;
+                position: absolute;
+                top: 100%;
+                left: 50%;
+                height: auto;
+                transform: translate(-50%, -50%);
+                z-index: 2; /* Position: absolute --> z-index brings it forward */
+                width: 100%;
+                padding: 20px;
+                text-align: center;
+                /* Source: https://stackoverflow.com/questions/643879/css-to-make-html-page-footer-stay-at-bottom-of-the-page-with-a-minimum-height-b */
+                clear: both;
+                position: relative;
+                margin-top: -750px;
+                }
+
+                #downNote {
+                    background-color: #6351ce;
+                    display: inline-block;
+                    width: 95%;
+                    height: 25px;
+                }
+
+                input[type="checkbox"] {
+                -webkit-appearance: checkbox;
+                -moz-appearance: checkbox;
+                appearance: checkbox;
+                width: auto;
+                }
+
+                #forget {
+                    display: block;
+                    margin-right: auto;
+                    margin-left: auto;
+                    background-color: #6351ce;
+                    width: 95%;
+                    height: 25px;
+                }
+
+                #space1 {
+                    margin-top: 40px;
+                }
+
+                #space2 {
+                    margin: 10px;
+                    overflow-x: hidden;
+                }
+
+                /* Source for codes below: https://www.w3schools.com/howto/howto_css_parallax.asp */
+                .bgimg-1, .bgimg-2, .bgimg-3 {
+                  position: relative;
+                  opacity: 0.65;
+                  background-attachment: fixed;
+                  background-position: center;
+                  background-repeat: no-repeat;
+                  background-size: cover;
+                  
+
+                }
+                .bgimg-1 {
+                  background-image: url("img_parallax.jpg");
+                  min-height: 10%;
+                }
+
+                .bgimg-2 {
+                  background-image: url("images/homebackground.jpg");
+                  min-height: 400px;
+                }
+
+                .bgimg-3 {
+                  background-image: url("img_parallax3.jpg");
+                  min-height: 400px;
+                }
+
+                .caption {
+                  display: block;
+                  position: absolute;
+                  margin-left: auto;
+                  margin-right: auto;
+                  top: 50%;
+                  width: 100%;
+                  text-align: center;
+                  color: #000;
+                }
+
+                .mainCaption {
+                  display: block;
+                  position: absolute;
+                  margin-left: auto;
+                  margin-right: auto;
+                  top: 5%;
+                  width: 100%;
+                  text-align: center;
+                  color: white;
+                  padding: 50px;
+                  font-size: 50px;
+                  letter-spacing: 3px;
+                }
+
+                .caption span.border {
+                  background-color: #111;
+                  color: #fff;
+                  padding: 50px;
+                  font-size: 25px;
+                  letter-spacing: 10px;
+                }
+
+                h3 {
+                  letter-spacing: 5px;
+                  text-transform: uppercase;
+                  font: 20px "Lato", sans-serif;
+                  color: #111;
+                }
+
+                #firstDividing {
+                  position: relative;
+                  margin-top: 400px;
+                  color: #777;
+                  background-color:white;
+                  text-align:center;
+                  padding:50px 80px;
+                  text-align: justify;
+                }
+
+                .grey-text {
+                  color: white;
+                }
+
+                #best-features {
+                  margin-top: 750px;
+                }
+
+                #tutorial {
+                  color: white;
+                }
+
+                #signIn {
+                  position: relative;
+                  display: block;
+                  margin-left: auto;
+                  margin-right: auto;
+                  background-color: blue;
+                  text-align: center;
+                  color: white;
+                  width: 20%;
+                  height: 80px;
+                  border-radius: 10px;
+                  top: 600px;
+                }
+
+                #signIn:hover {
+                  box-shadow: 2px 2px 2px #6351ce;
+                }
+
+                #signIn > h2 {
+                  padding-top: 20px;
+                }
+                }
+
+                @media screen and (max-width: 1024px) {
+            body {
+            background: linear-gradient(193deg, #060016 20%, #410077 51%, #260057 85%);  
+            width: 100%; 
+            height: 1050px;
+            
+          }
+
+          * {
+            font-family: "Raleway";
+          }
+            #image {
+                background-image: url("images/login.jpg");
+                background-size: hide;
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 200%;
+                -webkit-filter: blur(5px);
+                -moz-filter: blur(5px);
+                -o-filter: blur(5px);
+                -ms-filter: blur(5px);
+                filter: brightness(100%);
+                z-index: -1;
+                }
+            
+                /* Source: https://www.w3schools.com/howto/howto_css_blurred_background.asp */
+                .loginWindow {
+                background-color: rgb(0,0,0); /* Fallback color */
+                background-color: rgba(0,0,0, 0.2); /* Black w/opacity/see-through */
+                color: white;
+                font-weight: bold;
+                position: absolute;
+                top: 40%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                z-index: 2; /* Position: absolute --> z-index brings it forward */
+                width: 25%;
+                padding: 20px;
+                text-align: center;
+                }
+              
+                #footer {                
+                background-color: rgb(0,0,0); /* Fallback color */
+                background-color: rgba(0, 0, 0, 1); /* Black w/opacity/see-through */
+                color: white;
+                font-weight: bold;
+                position: absolute;
+                top: 100%;
+                left: 50%;
+                height: auto;
+                transform: translate(-50%, -50%);
+                z-index: 2; /* Position: absolute --> z-index brings it forward */
+                width: 100%;
+                padding: 20px;
+                text-align: center;
+                /* Source: https://stackoverflow.com/questions/643879/css-to-make-html-page-footer-stay-at-bottom-of-the-page-with-a-minimum-height-b */
+                clear: both;
+                position: relative;
+                margin-top: -750px;
+                }
+
+                #downNote {
+                    background-color: #6351ce;
+                    display: inline-block;
+                    width: 95%;
+                    height: 25px;
+                }
+
+                input[type="checkbox"] {
+                -webkit-appearance: checkbox;
+                -moz-appearance: checkbox;
+                appearance: checkbox;
+                width: auto;
+                }
+
+                #forget {
+                    display: block;
+                    margin-right: auto;
+                    margin-left: auto;
+                    background-color: #6351ce;
+                    width: 95%;
+                    height: 25px;
+                }
+
+                #space1 {
+                    margin-top: 40px;
+                }
+
+                #space2 {
+                    margin: 10px;
+                    overflow-x: hidden;
+                }
+
+                /* Source for codes below: https://www.w3schools.com/howto/howto_css_parallax.asp */
+                .bgimg-1, .bgimg-2, .bgimg-3 {
+                  position: relative;
+                  opacity: 0.65;
+                  background-attachment: fixed;
+                  background-position: center;
+                  background-repeat: no-repeat;
+                  background-size: cover;
+                  
+
+                }
+                .bgimg-1 {
+                  background-image: url("img_parallax.jpg");
+                  min-height: 10%;
+                }
+
+                .bgimg-2 {
+                  background-image: url("images/homebackground.jpg");
+                  min-height: 400px;
+                }
+
+                .bgimg-3 {
+                  background-image: url("img_parallax3.jpg");
+                  min-height: 400px;
+                }
+
+                .caption {
+                  display: block;
+                  position: absolute;
+                  margin-left: auto;
+                  margin-right: auto;
+                  top: 50%;
+                  width: 100%;
+                  text-align: center;
+                  color: #000;
+                }
+
+                .mainCaption {
+                  display: block;
+                  position: absolute;
+                  margin-left: auto;
+                  margin-right: auto;
+                  top: 5%;
+                  width: 100%;
+                  text-align: center;
+                  color: white;
+                  padding: 50px;
+                  font-size: 50px;
+                  letter-spacing: 3px;
+                }
+
+                .caption span.border {
+                  background-color: #111;
+                  color: #fff;
+                  padding: 50px;
+                  font-size: 25px;
+                  letter-spacing: 10px;
+                }
+
+                h3 {
+                  letter-spacing: 5px;
+                  text-transform: uppercase;
+                  font: 20px "Lato", sans-serif;
+                  color: #111;
+                }
+
+                #firstDividing {
+                  position: relative;
+                  margin-top: 400px;
+                  color: #777;
+                  background-color:white;
+                  text-align:center;
+                  padding:50px 80px;
+                  text-align: justify;
+                }
+
+                .grey-text {
+                  color: white;
+                }
+
+                #best-features {
+                  margin-top: 750px;
+                }
+
+                #tutorial {
+                  color: white;
+                }
+
+                #signIn {
+                  position: relative;
+                  display: block;
+                  margin-left: auto;
+                  margin-right: auto;
+                  background-color: blue;
+                  text-align: center;
+                  color: white;
+                  width: 20%;
+                  height: 80px;
+                  border-radius: 10px;
+                  top: 600px;
+                }
+
+                #signIn:hover {
+                  box-shadow: 2px 2px 2px #6351ce;
+                }
+
+                #signIn > h2 {
+                  padding-top: 20px;
+                }
+                }
+
+            @media screen and (max-width: 555px) {
+            body {
+            background: linear-gradient(193deg, #060016 20%, #410077 51%, #260057 85%);  
+            width: 100%; 
+            height: 1050px;
+            
+          }
+
+          * {
+            font-family: "Raleway";
+          }
+            #image {
+                background-image: url("images/login.jpg");
+                background-size: hide;
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 250%;
+                -webkit-filter: blur(5px);
+                -moz-filter: blur(5px);
+                -o-filter: blur(5px);
+                -ms-filter: blur(5px);
+                filter: brightness(100%);
+                z-index: -1;
+                }
+            
+                /* Source: https://www.w3schools.com/howto/howto_css_blurred_background.asp */
+                .loginWindow {
+                background-color: rgb(0,0,0); /* Fallback color */
+                background-color: rgba(0,0,0, 0.2); /* Black w/opacity/see-through */
+                color: white;
+                font-weight: bold;
+                position: absolute;
+                top: 40%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                z-index: 2; /* Position: absolute --> z-index brings it forward */
+                width: 25%;
+                padding: 20px;
+                text-align: center;
+                }
+              
+                #footer {                
+                background-color: rgb(0,0,0); /* Fallback color */
+                background-color: rgba(0, 0, 0, 1); /* Black w/opacity/see-through */
+                color: white;
+                font-weight: bold;
+                position: absolute;
+                top: 100%;
+                left: 50%;
+                height: auto;
+                transform: translate(-50%, -50%);
+                z-index: 2; /* Position: absolute --> z-index brings it forward */
+                width: 100%;
+                padding: 20px;
+                text-align: center;
+                /* Source: https://stackoverflow.com/questions/643879/css-to-make-html-page-footer-stay-at-bottom-of-the-page-with-a-minimum-height-b */
+                clear: both;
+                position: relative;
+                margin-top: -450px;
+                }
+
+                #downNote {
+                    background-color: #6351ce;
+                    display: inline-block;
+                    width: 95%;
+                    height: 25px;
+                }
+
+                input[type="checkbox"] {
+                -webkit-appearance: checkbox;
+                -moz-appearance: checkbox;
+                appearance: checkbox;
+                width: auto;
+                }
+
+                #forget {
+                    display: block;
+                    margin-right: auto;
+                    margin-left: auto;
+                    background-color: #6351ce;
+                    width: 95%;
+                    height: 25px;
+                }
+
+                #space1 {
+                    margin-top: 40px;
+                }
+
+                #space2 {
+                    margin: 10px;
+                    overflow-x: hidden;
+                }
+
+                /* Source for codes below: https://www.w3schools.com/howto/howto_css_parallax.asp */
+                .bgimg-1, .bgimg-2, .bgimg-3 {
+                  position: relative;
+                  opacity: 0.65;
+                  background-attachment: fixed;
+                  background-position: center;
+                  background-repeat: no-repeat;
+                  background-size: cover;
+                  
+
+                }
+                .bgimg-1 {
+                  background-image: url("img_parallax.jpg");
+                  min-height: 10%;
+                }
+
+                .bgimg-2 {
+                  background-image: url("images/homebackground.jpg");
+                  min-height: 400px;
+                }
+
+                .bgimg-3 {
+                  background-image: url("img_parallax3.jpg");
+                  min-height: 400px;
+                }
+
+                .caption {
+                  display: block;
+                  position: absolute;
+                  margin-left: auto;
+                  margin-right: auto;
+                  top: 50%;
+                  width: 100%;
+                  text-align: center;
+                  color: #000;
+                }
+
+                .mainCaption {
+                  display: block;
+                  position: absolute;
+                  margin-left: auto;
+                  margin-right: auto;
+                  top: 5%;
+                  width: 100%;
+                  text-align: center;
+                  color: white;
+                  padding: 50px;
+                  font-size: 50px;
+                  letter-spacing: 3px;
+                }
+
+                .caption span.border {
+                  background-color: #111;
+                  color: #fff;
+                  padding: 50px;
+                  font-size: 25px;
+                  letter-spacing: 10px;
+                }
+
+                h3 {
+                  letter-spacing: 5px;
+                  text-transform: uppercase;
+                  font: 20px "Lato", sans-serif;
+                  color: #111;
+                }
+
+                #firstDividing {
+                  position: relative;
+                  margin-top: 400px;
+                  color: #777;
+                  background-color:white;
+                  text-align:center;
+                  padding:50px 80px;
+                  text-align: justify;
+                }
+
+                .grey-text {
+                  color: white;
+                }
+
+                #best-features {
+                  margin-top: 750px;
+                }
+
+                #tutorial {
+                  color: white;
+                }
+
+                #signIn {
+                  position: relative;
+                  display: block;
+                  margin-left: auto;
+                  margin-right: auto;
+                  background-color: blue;
+                  text-align: center;
+                  color: white;
+                  width: 30%;
+                  height: 80px;
+                  border-radius: 10px;
+                  top: 600px;
+                }
+
+                #signIn:hover {
+                  box-shadow: 2px 2px 2px #6351ce;
+                }
+
+                #signIn > h2 {
+                  padding-top: 20px;
+                }
+                }
+
+                @media screen and (max-width: 351px) {
+            body {
+            background: linear-gradient(193deg, #060016 20%, #410077 51%, #260057 85%);  
+            width: 100%; 
+            height: 1050px;
+            
+          }
+
+          * {
+            font-family: "Raleway";
+          }
+            #image {
+                background-image: url("images/login.jpg");
+                background-size: hide;
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 250%;
+                -webkit-filter: blur(5px);
+                -moz-filter: blur(5px);
+                -o-filter: blur(5px);
+                -ms-filter: blur(5px);
+                filter: brightness(100%);
+                z-index: -1;
+                }
+            
+                /* Source: https://www.w3schools.com/howto/howto_css_blurred_background.asp */
+                .loginWindow {
+                background-color: rgb(0,0,0); /* Fallback color */
+                background-color: rgba(0,0,0, 0.2); /* Black w/opacity/see-through */
+                color: white;
+                font-weight: bold;
+                position: absolute;
+                top: 40%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                z-index: 2; /* Position: absolute --> z-index brings it forward */
+                width: 25%;
+                padding: 20px;
+                text-align: center;
+                }
+              
+                #footer {                
+                background-color: rgb(0,0,0); /* Fallback color */
+                background-color: rgba(0, 0, 0, 1); /* Black w/opacity/see-through */
+                color: white;
+                font-weight: bold;
+                position: absolute;
+                top: 100%;
+                left: 50%;
+                height: auto;
+                transform: translate(-50%, -50%);
+                z-index: 2; /* Position: absolute --> z-index brings it forward */
+                width: 100%;
+                padding: 20px;
+                text-align: center;
+                /* Source: https://stackoverflow.com/questions/643879/css-to-make-html-page-footer-stay-at-bottom-of-the-page-with-a-minimum-height-b */
+                clear: both;
+                position: relative;
+                margin-top: -450px;
+                }
+
+                #downNote {
+                    background-color: #6351ce;
+                    display: inline-block;
+                    width: 95%;
+                    height: 25px;
+                }
+
+                input[type="checkbox"] {
+                -webkit-appearance: checkbox;
+                -moz-appearance: checkbox;
+                appearance: checkbox;
+                width: auto;
+                }
+
+                #forget {
+                    display: block;
+                    margin-right: auto;
+                    margin-left: auto;
+                    background-color: #6351ce;
+                    width: 95%;
+                    height: 25px;
+                }
+
+                #space1 {
+                    margin-top: 40px;
+                }
+
+                #space2 {
+                    margin: 10px;
+                    overflow-x: hidden;
+                }
+
+                /* Source for codes below: https://www.w3schools.com/howto/howto_css_parallax.asp */
+                .bgimg-1, .bgimg-2, .bgimg-3 {
+                  position: relative;
+                  opacity: 0.65;
+                  background-attachment: fixed;
+                  background-position: center;
+                  background-repeat: no-repeat;
+                  background-size: cover;
+                  
+
+                }
+                .bgimg-1 {
+                  background-image: url("img_parallax.jpg");
+                  min-height: 10%;
+                }
+
+                .bgimg-2 {
+                  background-image: url("images/homebackground.jpg");
+                  min-height: 400px;
+                }
+
+                .bgimg-3 {
+                  background-image: url("img_parallax3.jpg");
+                  min-height: 400px;
+                }
+
+                .caption {
+                  display: block;
+                  position: absolute;
+                  margin-left: auto;
+                  margin-right: auto;
+                  top: 50%;
+                  width: 100%;
+                  text-align: center;
+                  color: #000;
+                }
+
+                .mainCaption {
+                  display: block;
+                  position: absolute;
+                  margin-left: auto;
+                  margin-right: auto;
+                  top: 5%;
+                  width: 100%;
+                  text-align: center;
+                  color: white;
+                  padding: 50px;
+                  font-size: 50px;
+                  letter-spacing: 3px;
+                }
+
+                .caption span.border {
+                  background-color: #111;
+                  color: #fff;
+                  padding: 50px;
+                  font-size: 25px;
+                  letter-spacing: 10px;
+                }
+
+                h3 {
+                  letter-spacing: 5px;
+                  text-transform: uppercase;
+                  font: 20px "Lato", sans-serif;
+                  color: #111;
+                }
+
+                #firstDividing {
+                  position: relative;
+                  margin-top: 400px;
+                  color: #777;
+                  background-color:white;
+                  text-align:center;
+                  padding:50px 80px;
+                  text-align: justify;
+                }
+
+                .grey-text {
+                  color: white;
+                }
+
+                #best-features {
+                  margin-top: 750px;
+                }
+
+                #tutorial {
+                  color: white;
+                }
+
+                #signIn {
+                  position: relative;
+                  display: block;
+                  margin-left: auto;
+                  margin-right: auto;
+                  background-color: blue;
+                  text-align: center;
+                  color: white;
+                  width: 40%;
+                  height: 80px;
+                  border-radius: 10px;
+                  top: 600px;
+                }
+
+                #signIn:hover {
+                  box-shadow: 2px 2px 2px #6351ce;
+                }
+
+                #signIn > h2 {
+                  padding-top: 20px;
+                }
+                }
+        </style>
 </head>
 
 <body>
@@ -32,7 +1882,7 @@
   <!-------------------------------------->
   <!-- Header Navigation Bar -->
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="index.html">1800Habits</a>
+    <a class="navbar-brand" href="homepage.html">1800HABITS</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
       aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -63,22 +1913,6 @@
           <a class="nav-link" href="#" onClick="$('#exampleModalLong').trigger('click');">Help</a>
         </li>
       </ul>
-      <div class="drop-down">
-        <button class="button">
-          <svg class="" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="40" height="40" viewBox="0 0 172 172"
-            style=" fill:#000000;">
-            <g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt"
-              stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0"
-              font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal">
-              <path d="M0,172v-172h172v172z" fill="none"></path>
-              <g id="original-icon" fill="#000000">
-                <path
-                  d="M37.84,13.76c-13.25891,0 -24.08,10.82109 -24.08,24.08v96.32c0,13.25891 10.82109,24.08 24.08,24.08h96.32c13.25891,0 24.08,-10.82109 24.08,-24.08v-96.32c0,-13.25891 -10.82109,-24.08 -24.08,-24.08zM37.84,20.64h96.32c9.54141,0 17.2,7.65859 17.2,17.2v96.32c0,9.54141 -7.65859,17.2 -17.2,17.2h-96.32c-9.54141,0 -17.2,-7.65859 -17.2,-17.2v-96.32c0,-9.54141 7.65859,-17.2 17.2,-17.2zM37.66531,61.8864c-1.40254,0.05379 -2.63178,0.9542 -3.1061,2.2752c-0.47432,1.321 -0.0986,2.79769 0.94938,3.73136l50.4914,46.52063l50.4914,-46.52063c0.90531,-0.83284 1.29744,-2.08545 1.02862,-3.28585c-0.26881,-1.2004 -1.15771,-2.16614 -2.33175,-2.53334c-1.17404,-0.3672 -2.4548,-0.08005 -3.35969,0.75326l-45.8286,42.23406l-45.8286,-42.23406c-0.67413,-0.63899 -1.578,-0.97825 -2.50609,-0.94063z">
-                </path>
-              </g>
-            </g>
-          </svg>
-        </button>
         <div class="button-content">
           <a href="profile.html">Profile</a>
           <a href="homepage.html">Logout</a>
@@ -86,9 +1920,18 @@
       </div>
     </div>
   </nav>
+
   <!-- Main Content -->
   <div id="mainContainer">
     <div id="image"></div>
+  </div>
+
+    <!-- BOOTSTRAP: Parallax Scrolling -->
+    <div class="bgimg-1">
+      <div class="mainCaption">
+      <span>Welcome to 1800Habits</span>
+      </div>
+    </div>
   </div>
 
   <a href="login.html">
