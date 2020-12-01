@@ -2,27 +2,29 @@
 
 $(document).ready(function () {
     $(".card").css({
-      "width": "30%",
-      "float": "left",
-      "margin": "1.5rem"
+      "margin": "1.5rem",
+      "width" : "92%",
+      "margin": "0px auto",
+      "margin-bottom" : "2rem"
     });
     $(".progress").css("margin-top", "2rem");
     $(".card").css("background-color", "#d4d9dd");
     $(".card-header").css({
-      "font-size": "15pt",
+      "font-size": "14pt",
       "background-color": " #bbb6b6"
     });
     $(".card-text").css("font-size", "18pt");
     $(".btn-primary").css({
-      "background": " #d4d9dd",
+      "background": "green",
       "border-color": " #d4d9dd"
     });
     $(".jumbotron").css({
-      "width": "95%",
+      "width": "92%",
       "margin": "0px auto",
       "margin-top": "2rem",
       "margin-bottom": "2rem",
-      "background-color": " #bbb6b6"
+      "background-color": " #bbb6b6",
+      "text-align" : "center"
     });
   });
 
