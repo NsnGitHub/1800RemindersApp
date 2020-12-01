@@ -17,11 +17,13 @@ $(document).ready(function () {
         var threads = await db.collection('discussions');
         var name = document.getElementById("Habit").value;
 
-        threads.doc(name).set({
+        await threads.doc(name).set({
             views : 0,
             textInside : document.getElementById("TextArea").value,
             topic: document.getElementById("exampleInputName").value
         })
+
+        location.href = "Board.html";
 
     })
 
