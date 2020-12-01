@@ -1,0 +1,107 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Raleway";
+}
+
+html {
+    font-size: 12pt;
+}
+
+.search-bar {
+    width: 56%;
+}
+
+#TextArea {
+    width: 60%;
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 1rem;
+}
+
+#threads {
+    display: flex;
+    margin: 3rem;
+    color: black;
+}
+
+.jumbotron {
+    width: 40%;
+}
+
+body {
+    background-image: url("../images/corkboard.jpg");
+    color: black;
+}
+
+.searchContainer {
+    display: flex;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+}
+
+#exampleInputName {
+    width: 60%;
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 1rem;
+
+}
+
+#Habit {
+    width: 60%;
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 1rem;
+
+}
+
+body {
+    text-align: center;
+}
+
+#create {
+    font-size: 1.2rem;
+}
+
+.img {
+    top: 0;
+    left: 0;
+    position: absolute;
+}
+
+.overlay {
+    display: grid;
+    position: relative;
+    width: 100%;
+    transform: translateY(20%);
+    color: black;
+    font-size: 1.3rem;
+    grid-template-rows: 20% 80%;
+}
+
+.sticky_note {
+    display: flex;
+    justify-content: center;
+
+    position: relative;
+    float: left;
+    width: 500px;
+    height: 500px;
+}
+
+.title {
+    font-size: 1.6rem;
+    grid-row: 1/ span 1;
+    transform: rotate(15deg);
+    width: 70%;
+
+}
+
+.text {
+    grid-row: 2/span 1;
+    transform: rotate(15deg);
+    width: 70%;
+    margin-left: 5%;
+}

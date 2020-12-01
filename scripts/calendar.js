@@ -1,6 +1,6 @@
 const date = new Date();
 
-date.setMonth(10);
+
 
 date.setDate(1);
 
@@ -68,11 +68,52 @@ function success() {
         daystreak: firebase.firestore.FieldValue.increment(1)
     })
     $(".today").css("background-color", "green");
+
+    var modal = $(".calendar").append(
+        '<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">'
+        +    '<div class="modal-dialog modal-dialog-centered" role="document">'
+        +        '<div class="modal-content">'
+        +           '<div class="modal-header">'
+        +               '<h5 class="modal-title" id="exampleModalLongTitle">Great job!</h5>'
+        +              '<button type="button" class="close" data-dismiss="modal" aria-label="Close">'
+        +                  '<span aria-hidden="true">&times;</span>'
+        +               '</button>'
+        +           '</div>'
+        +           '<div class="modal-body">'
+        +               'You have successfully marked today as completed'
+        +           '</div>'
+        +           '<div class="modal-footer">'
+        +               '<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>'
+        +            '</div>'
+        +        '</div>'
+        +    '</div>'
+        +'</div>');
 }
 
 function fail() {
+
     streak.update({
         daystreak: 0
     })
     $(".today").css("background-color", "red");
+
+    var modal = $(".calendar").append(
+        '<div class="modal fade" id="exampleModalCenter2" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">'
+        +    '<div class="modal-dialog modal-dialog-centered" role="document">'
+        +        '<div class="modal-content">'
+        +           '<div class="modal-header">'
+        +               '<h5 class="modal-title" id="exampleModalLongTitle">Do not give up!</h5>'
+        +              '<button type="button" class="close" data-dismiss="modal" aria-label="Close">'
+        +                  '<span aria-hidden="true">&times;</span>'
+        +               '</button>'
+        +           '</div>'
+        +           '<div class="modal-body">'
+        +               'You can build your streak back up!'
+        +           '</div>'
+        +           '<div class="modal-footer">'
+        +               '<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>'
+        +            '</div>'
+        +        '</div>'
+        +    '</div>'
+        +'</div>');
 }

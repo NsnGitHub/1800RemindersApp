@@ -3,8 +3,6 @@
 // Specifies which firebase project your application is connected with.
 //---------------------------------------------------------------------
 
-
-
 var firebaseConfig = {
   apiKey: "AIzaSyAR8HgIqxHXeLJPff14h2ArTbILdVLEVrI",
   authDomain: "database-1800.firebaseapp.com",

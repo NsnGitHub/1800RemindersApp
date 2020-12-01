@@ -2,288 +2,157 @@
 <html>
 
 <head>
-    <meta charset="utf-8">
-    <title>1800 Project</title>
-    <meta name="comp1800 boilerplate code" content="my bcit project">
-    <meta name="author" content="BCIT">
+  <meta charset="utf-8">
+  <title>Encouragement Board</title>
+  <meta name="comp1800 boilerplate code" content="my bcit project">
+  <meta name="author" content="BCIT">
 
-    <!-- Bootstrap for Mobile-first, and JQuery -->
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <!-- Bootstrap for Mobile-first, and JQuery -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link
-      href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-      rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">
 
-    <!-- Firebase CSS for Authentication UI     -->
-    <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.6.1/firebase-ui-auth.css" />
+  <!-- Firebase CSS for Authentication UI     -->
+  <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.6.1/firebase-ui-auth.css" />
 
-    <!-- JQuery-->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <!-- JQuery-->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: "Raleway";
-        }
+  <link href="styles/postboard.css" rel="stylesheet">
 
-        html {
-            font-size: 12pt;
-        }
-
-        .search-bar {
-            width: 56%;
-        }
-
-        #TextArea {
-            width: 60%;
-            display: block;
-            margin: 0 auto;
-            margin-bottom: 1rem;
-        }
-
-        #threads {
-            display: flex;
-            margin: 3rem;
-            color: black;
-        }
-
-        .jumbotron {
-            width: 40%;
-        }
-
-        body {
-            background-image: url('images/corkboard.jpg');
-            color: aliceblue;
-        }
-
-        .searchContainer {
-            display: flex;
-            margin-top: 3rem;
-            margin-bottom: 3rem;
-        }
-
-        #exampleInputName{
-            width: 60%;
-            display: block;
-            margin: 0 auto;
-            margin-bottom: 1rem;
-
-        }
-        #Habit{
-            width: 60%;
-            display: block;
-            margin: 0 auto;
-            margin-bottom: 1rem;
-
-        }
-
-        body {
-            text-align: center;
-        }
-
-        #create {
-            font-size: 1.2rem;
-        }
-
-        .img{
-            top:0;
-            left: 0;
-            position: absolute;
-        }
-
-        .overlay{
-            display: grid;
-            position: relative;
-            width: 100%;
-            transform: translateY(20%);
-            color: black;
-            font-size: 1.3rem;
-            grid-template-rows: 20% 80%;
-        }
-        .sticky_note{
-            display: flex;
-            justify-content: center;
-            
-            position: relative;
-            float: left;
-            width: 500px;
-            height: 500px;
-        }
-        .title{
-            font-size: 1.6rem;
-            grid-row: 1/ span 1;
-            transform: rotate(15deg);
-            width: 70%;
-
-        }
-        .text{
-            grid-row: 2/span 1;
-            transform: rotate(15deg);
-            width:70%;
-            margin-left: 5%;
-        }
-
-    .btn {
-      background-color: #6351ce;
-    }
-
-    #reminderShot {
-      display: block;
-      margin-left: auto;
-      margin-right: auto;
-      padding-bottom: 10px;
-    }
-
-    #calendarShot {
-      display: block;
-      margin-left: auto;
-      margin-right: auto;
-      padding-bottom: 10px;
-    }
-
-    #forumShot {
-      display: block;
-      margin-left: auto;
-      margin-right: auto;
-      padding-bottom: 10px;
-    }
-
-    #exampleModalLong {
-      overflow-y:auto;
-      color: black;
-    }    
-
-    #exampleModalLong2 {
-      overflow-y:auto;
-      color: black;
-    }    
-
-    #exampleModalLong3 {
-      overflow-y:auto;
-      color: black;
-    }    
-    </style>
 </head>
 
 <body>
 
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="index.html">1800Habits</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="main.html">NameOfTheAPP</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
-              <li class="nav-item" data-toggle="popover" title="Home" data-content="Takes you back home." data-trigger="hover"  data-placement="bottom">
-                <a class="nav-link" href="main.html">Home</a>
-              </li>
-              <li class="nav-item" data-toggle="popover" data-content="A place where you can set your reminders to stay on track." data-trigger="hover" title="Reminders" data-placement="bottom">
-                <a class="nav-link" href="reminders.html">Reminders</a>
-              </li>
-              <li class="nav-item" data-toggle="popover" data-content="A place where you can view specific dates" data-trigger="hover" title="Calendar" data-placement="bottom">
-                <a class="nav-link" href="calendar.html">Calendar</a>
-              </li>
-              <li class="nav-item" data-toggle="popover" data-content="A place where you can post/like/share and see what's going on within the community!" data-trigger="hover" title="Forums" data-placement="bottom">
-                <a class="nav-link" href="Board.html">Forums</a>
-              </li>
-              <li class="nav-item" data-toggle="popover" data-content="A place where you can view/edit your profile." data-trigger="hover" title="Profile" data-placement="bottom">
-                <a class="nav-link" href="profile.html">Profile</a>
-              </li>
-              <li class="nav-item" data-toggle="popover" data-content="Click here for help." data-trigger="hover" title="Help" data-placement="bottom">
-                <a class="nav-link" href="#" onClick="$('#exampleModalLong').trigger('click');">Help</a>
-              </li>
-            </ul>
-            <form class="form-inline my-2 my-lg-0">
-                <a href="discussions.html" class="btn btn-primary"> <b>+</b> Create post</a>
-            </form>
-          </div>
-        </nav>
-
-    <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h2 class="modal-title" id="exampleModalLongTitle">Features</h2>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <div class="modal-body">
-              <h5><b>1) Reminders</b></h5>
-              <img id="reminderShot" src="images/ReminderScreenShot.png" alt="Reminders" width="350px" height = "400px"></img>
-              <h6>You can set your habits straight from the reminders to begin your routine. At any time, date, interval, you can have unlimited access and flexibility in how you manage your habits. <br><br> You can share your progress, completed tasks with your friends all on real-time, and even view others on the "active feed." Your well on your way to becoming a better person!</h6>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-dismiss="modal" onClick="$('#exampleModalLong2').trigger('click');">Next</button>
-            </div>
-          </div>
-        </div>
-      </div>
-      
-      <div class="modal fade" id="exampleModalLong2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h2 class="modal-title" id="exampleModalLongTitle">Features</h2>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <div class="modal-body">
-              <h5><b>2) Calendar</b></h5>
-              <img id="calendarShot" src="images/calendarScreenShot.png" alt="Calendar" width="450px" height = "400px"></img>
-              <h6>Track your habits every month right through the calendar feature. Besides tracking your habit schedule, you can also use the calendar to make plans and events so that you can stay consistent!</h6>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-dismiss="modal" onClick="$('#exampleModalLong3').trigger('click');">Next</button>
-            </div>
-          </div>
-        </div>
-      </div>
-      
-      <div class="modal fade" id="exampleModalLong3" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h2 class="modal-title" id="exampleModalLongTitle">Features</h2>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <div class="modal-body">
-              <h5><b>3) Online Forums</b></h5>
-              <img id="forumShot" src="images/ForumScreenShot.png" alt="Forum" width="450px" height = "400px"></img>
-              <h6>Stay in touch with the community! Share what's on your mind and inspire. View success stories from others. View challenges that others have. Almost anything that you post here can be shared and viewed by others. Have fun and be social!</h6>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            </div>
-          </div>
-        </div>
-      </div>
-    
-
-    <div id="board">
-
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item" data-toggle="popover"
+          data-content="A place where you can set your reminders to stay on track." data-trigger="hover"
+          title="Reminders" data-placement="bottom">
+          <a class="nav-link" href="reminders.html">Reminders</a>
+        </li>
+        <li class="nav-item" data-toggle="popover" data-content="A place where you can view specific dates"
+          data-trigger="hover" title="Calendar" data-placement="bottom">
+          <a class="nav-link" href="calendar.html">Calendar</a>
+        </li>
+        <li class="nav-item" data-toggle="popover"
+          data-content="A place where you can post/like/share and see what's going on within the community!"
+          data-trigger="hover" title="Forums" data-placement="bottom">
+          <a class="nav-link" href="Board.html">Forums</a>
+        </li>
+        <li class="nav-item" data-toggle="popover" data-content="A place where you can view/edit your profile."
+          data-trigger="hover" title="Profile" data-placement="bottom">
+          <a class="nav-link" href="profile.html">Profile</a>
+        </li>
+        <li class="nav-item" data-toggle="popover" data-content="Click here for help." data-trigger="hover" title="Help"
+          data-placement="bottom">
+          <a class="nav-link" href="#" onClick="$('#exampleModalLong').trigger('click');">Help</a>
+        </li>
+      </ul>
+      <form class="form-inline my-2 my-lg-0">
+        <a href="discussions.html" class="btn btn-primary"> <b>+</b> Create post</a>
+      </form>
     </div>
+  </nav>
 
-    
-    
-  
+   <!-- Modal Popups -->
 
-    
+  <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 class="modal-title" id="exampleModalLongTitle">Features</h2>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <h5><b>1) Reminders</b></h5>
+          <img id="reminderShot" src="images/ReminderScreenShot.png" alt="Reminders" width="350px" height="400px"></img>
+          <h6>You can set your habits straight from the reminders to begin your routine. At any time, date, interval,
+            you can have unlimited access and flexibility in how you manage your habits. <br><br> You can share your
+            progress, completed tasks with your friends all on real-time, and even view others on the "active feed."
+            Your well on your way to becoming a better person!</h6>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal"
+            onClick="$('#exampleModalLong2').trigger('click');">Next</button>
+        </div>
+      </div>
+    </div>
+  </div>
 
-    <!-- JQuery Scripts -->
+  <div class="modal fade" id="exampleModalLong2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 class="modal-title" id="exampleModalLongTitle">Features</h2>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <h5><b>2) Calendar</b></h5>
+          <img id="calendarShot" src="images/calendarScreenShot.png" alt="Calendar" width="450px" height="400px"></img>
+          <h6>Track your habits every month right through the calendar feature. Besides tracking your habit schedule,
+            you can also use the calendar to make plans and events so that you can stay consistent!</h6>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal"
+            onClick="$('#exampleModalLong3').trigger('click');">Next</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="exampleModalLong3" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 class="modal-title" id="exampleModalLongTitle">Features</h2>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <h5><b>3) Online Forums</b></h5>
+          <img id="forumShot" src="images/ForumScreenShot.png" alt="Forum" width="450px" height="400px"></img>
+          <h6>Stay in touch with the community! Share what's on your mind and inspire. View success stories from others.
+            View challenges that others have. Almost anything that you post here can be shared and viewed by others.
+            Have fun and be social!</h6>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- End of Modal -->
 
 
-    <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+  <div id="board">
+
+  </div>
+
+  <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
   <script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-app.js"></script>
 
   <!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
@@ -293,10 +162,15 @@
   <script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-auth.js"></script>
   <script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-firestore.js"></script>
 
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
+  </script>
 
-    <script src="scripts/1800_database.js"></script>
-    <script src="scripts/board.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+  </script>
 
+<<<<<<< HEAD
     <!-- Pop-up Scripts -->
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
@@ -326,7 +200,15 @@
       </script>
       <!-- END OF POP-UP SCRIPTS -->
     
+=======
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
+  </script>
+>>>>>>> 1c926b8bc16b6315d0850ea4e5f3fd865346c5f0
 
+  <script src="scripts/1800_database.js"></script>
+  <script src="scripts/board.js"></script>
+  <script src="scripts/examples.js"></script>
 
 </body>
 

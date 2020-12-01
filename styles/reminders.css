@@ -1,0 +1,86 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Raleway";
+  color: black;
+}
+
+html {
+  font-size: 12pt;
+}
+
+.cardContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+body {
+  background-color: #212121;
+}
+
+#F28F0F .drop-down {
+  position: relative;
+  margin-left: 950px;
+}
+
+.drop-down:hover .button-content {
+  display: grid;
+  position: absolute;
+  grid-template-rows: auto auto auto;
+  height: 60px;
+  right: 0px;
+  top: 40px;
+  text-align: center;
+}
+
+.button {
+  border: none;
+  background-color: white;
+}
+
+.button-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.jumbotron {
+  width: 95%;
+  margin: 0px auto;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  background-color: #bbb6b6;
+  text-align: center;
+}
+
+.card {
+  width: 95%;
+  background-color: #d4d9dd;
+  display: block;
+  margin: 0 auto;
+}
+
+.card-header {
+  font-size: 15pt;
+  background-color: #bbb6b6;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+}
+
+input {
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+#addDescription {
+  height: 3rem;
+}
