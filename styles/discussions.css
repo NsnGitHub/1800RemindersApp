@@ -1,9 +1,14 @@
 * {
     margin: 0;
     padding: 0;
+    
+}
+
+#notnav{
     box-sizing: border-box;
     font-family: "Raleway";
 }
+
 
 html {
     font-size: 12pt;
