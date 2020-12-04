@@ -22,7 +22,7 @@ var uiConfig = {
                         streak: 0
                     }).then(function () {
                         console.log("New user added to firestore");
-                        window.location.assign("tutorial.html");
+                        window.location.assign("index.html");
                     })
                     .catch(function (error) {
                         console.log("Error adding new user: " + error);
