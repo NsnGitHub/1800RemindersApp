@@ -1,7 +1,7 @@
 
 async function deleted(doc) {
     
-
+    
     var modal = await $("#addCard").append(
         '<div class="modal fade" id="exampleModalCenter1" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">'
         +    '<div class="modal-dialog modal-dialog-centered" role="document">'
@@ -57,7 +57,7 @@ function getReminders() {
 
 async function addReminder() {
 
-    var reminders = db.collection("reminders");
+    
     var name = document.getElementById("reminderName").value;
 
     await db.collection("reminders").doc(name.split(' ').join('')).set({
@@ -65,27 +65,7 @@ async function addReminder() {
         Description: document.getElementById("reminderDscrpt").value
     })
 
-    var modal = await $("#addCard").append(
-        '<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">'
-        +    '<div class="modal-dialog modal-dialog-centered" role="document">'
-        +        '<div class="modal-content">'
-        +           '<div class="modal-header">'
-        +               '<h5 class="modal-title" id="exampleModalLongTitle">Success!</h5>'
-        +              '<button type="button" class="close" data-dismiss="modal" aria-label="Close">'
-        +                  '<span aria-hidden="true">&times;</span>'
-        +               '</button>'
-        +           '</div>'
-        +           '<div class="modal-body">'
-        +               'You have successfully added a reminder. Refresh the page to update.'
-        +           '</div>'
-        +           '<div class="modal-footer">'
-        +               '<button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="location.reload()">Close</button>'
-        +            '</div>'
-        +        '</div>'
-        +    '</div>'
-        +'</div>');
-
-        
+        location.reload()
 }
 
 
