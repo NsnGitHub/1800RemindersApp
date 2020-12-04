@@ -54,22 +54,23 @@
           data-trigger="hover" title="Forums" data-placement="bottom">
           <a class="nav-link" href="Board.html">Forums</a>
         </li>
-        
+
         <li class="nav-item" data-toggle="popover" data-content="Click here for help." data-trigger="hover" title="Help"
           data-placement="bottom">
           <a class="nav-link" href="#" onClick="$('#exampleModalLong').trigger('click');">Help</a>
         </li>
-        <li class="nav-item" data-toggle="popover" data-content="A place where you can view/edit your profile." data-trigger="hover" title="Profile" data-placement="bottom">
+        <li class="nav-item" data-toggle="popover" data-content="A place where you can view/edit your profile."
+          data-trigger="hover" title="Profile" data-placement="bottom">
           <a class="nav-link" href="homepage.html">Logout</a>
         </li>
       </ul>
       <form class="form-inline my-2 my-lg-0">
         <a href="discussions.html" class="btn btn-primary"> <b>+</b> Create post</a>
-    </form>
+      </form>
     </div>
   </nav>
 
-   <!-- Modal Popups -->
+  <!-- Modal Popups -->
 
   <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"
     aria-hidden="true">
@@ -178,32 +179,38 @@
   <script src="scripts/board.js"></script>
   <script src="scripts/examples.js"></script>
 
-  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-    <script>
-        $(document).ready(function() {
-          setTimeout(function () {
-              $("#exampleModal").modal('show');
-          }, 2000);
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+  </script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
+  </script>
+  <script>
+    $(document).ready(function () {
+      setTimeout(function () {
+        $("#exampleModal").modal('show');
+      }, 2000);
 
-          $("#exampleModalLong").click(function (){
-              $("#exampleModalLong").modal('show');
-          });
+      $("#exampleModalLong").click(function () {
+        $("#exampleModalLong").modal('show');
+      });
 
-          $("#exampleModalLong2").click(function (){
-              $("#exampleModalLong2").modal('show');
-          });
+      $("#exampleModalLong2").click(function () {
+        $("#exampleModalLong2").modal('show');
+      });
 
-          $("#exampleModalLong3").click(function (){
-              $("#exampleModalLong3").modal('show');
-          });
-        });
+      $("#exampleModalLong3").click(function () {
+        $("#exampleModalLong3").modal('show');
+      });
+    });
 
-        $(function () {
-          $('[data-toggle="popover"]').popover()
-        })
-      </script>
+    $(function () {
+      $('[data-toggle="popover"]').popover()
+    })
+  </script>
 </body>
 
 </html>

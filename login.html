@@ -2,1100 +2,1188 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OurApp: Login</title>
-
-        <!-- Bootstrap for Mobile-first, and JQuery -->
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-    
-        <!-- Firebase CSS for Authentication UI -->
-        <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.6.1/firebase-ui-auth.css" />
-    
-        <!-- Optional CSS of your own -->
-        <link type="text/css" rel="stylesheet" href="styles/login.css" />
-
-        <!-- Font -->
-        <link rel="preconnect" href="https://fonts.gstatic.com">
-        <link
-          href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-          rel="stylesheet">
-
-        <style>
-          
-          * {
-            font-family: "Raleway";
-          }
-            #image {
-                background-image: url("images/login.jpg");
-                position: absolute;
-                left: 0;
-                top: 0;
-                width: 100%;
-                height: 130%;
-                -webkit-filter: blur(5px);
-                -moz-filter: blur(5px);
-                -o-filter: blur(5px);
-                -ms-filter: blur(5px);
-                filter: brightness(25%);
-                z-index: -1;
-                }
-            
-                /* Source: https://www.w3schools.com/howto/howto_css_blurred_background.asp */
-                .loginWindow {
-                background-color: rgb(0,0,0); /* Fallback color */
-                background-color: rgba(0,0,0, 0.2); /* Black w/opacity/see-through */
-                color: white;
-                font-weight: bold;
-                position: absolute;
-                top: 40%;
-                left: 50%;
-                transform: translate(-50%, -50%);
-                z-index: 2; /* Position: absolute --> z-index brings it forward */
-                width: 25%;
-                padding: 20px;
-                text-align: center;
-                }
-              
-                #footer {                
-                background-color: rgb(0,0,0); /* Fallback color */
-                background-color: rgba(0,0,0, 0.4); /* Black w/opacity/see-through */
-                color: white;
-                font-weight: bold;
-                position: absolute;
-                top: 100%;
-                left: 50%;
-                transform: translate(-50%, -50%);
-                z-index: 2; /* Position: absolute --> z-index brings it forward */
-                width: 100%;
-                padding: 20px;
-                text-align: center;
-                }
-
-                #downNote {
-                    background-color: #6351ce;
-                    display: inline-block;
-                    width: 95%;
-                    height: 25px;
-                }
-
-                input[type="checkbox"] {
-                -webkit-appearance: checkbox;
-                -moz-appearance: checkbox;
-                appearance: checkbox;
-                width: auto;
-                }
-
-                #forget {
-                    display: block;
-                    margin-right: auto;
-                    margin-left: auto;
-                    background-color: #6351ce;
-                    width: 95%;
-                    height: 25px;
-                }
-
-                #space1 {
-                    margin-top: 40px;
-                }
-
-                #space2 {
-                    margin: 10px;
-                }
-
-                @media screen and (max-width: 1026px) {
-                  * {
-            font-family: "Raleway";
-          }
-            #image {
-                background-image: url("images/login.jpg");
-                position: absolute;
-                left: 0;
-                top: 0;
-                width: 100%;
-                height: 135%;
-                -webkit-filter: blur(5px);
-                -moz-filter: blur(5px);
-                -o-filter: blur(5px);
-                -ms-filter: blur(5px);
-                filter: brightness(25%);
-                z-index: -1;
-                }
-            
-                /* Source: https://www.w3schools.com/howto/howto_css_blurred_background.asp */
-                .loginWindow {
-                background-color: rgb(0,0,0); /* Fallback color */
-                background-color: rgba(0,0,0, 0.2); /* Black w/opacity/see-through */
-                color: white;
-                font-weight: bold;
-                position: absolute;
-                top: 40%;
-                left: 50%;
-                transform: translate(-50%, -50%);
-                z-index: 2; /* Position: absolute --> z-index brings it forward */
-                width: 35%;
-                padding: 20px;
-                text-align: center;
-                }
-              
-                #footer {                
-                background-color: rgb(0,0,0); /* Fallback color */
-                background-color: rgba(0,0,0, 0.4); /* Black w/opacity/see-through */
-                color: white;
-                font-weight: bold;
-                position: absolute;
-                top: 100%;
-                left: 50%;
-                transform: translate(-50%, -50%);
-                z-index: 2; /* Position: absolute --> z-index brings it forward */
-                width: 100%;
-                padding: 20px;
-                text-align: center;
-                }
-
-                #downNote {
-                    background-color: #6351ce;
-                    display: inline-block;
-                    width: 95%;
-                    height: 25px;
-                }
-
-                input[type="checkbox"] {
-                -webkit-appearance: checkbox;
-                -moz-appearance: checkbox;
-                appearance: checkbox;
-                width: auto;
-                }
-
-                #forget {
-                    display: block;
-                    margin-right: auto;
-                    margin-left: auto;
-                    background-color: #6351ce;
-                    width: 95%;
-                    height: 25px;
-                }
-
-                #space1 {
-                    margin-top: 40px;
-                }
-
-                #space2 {
-                    margin: 10px;
-                }
-                }
-
-                @media screen and (max-width: 1235px) {
-                  * {
-            font-family: "Raleway";
-          }
-            #image {
-                background-image: url("images/login.jpg");
-                position: absolute;
-                left: 0;
-                top: 0;
-                width: 100%;
-                height: 135%;
-                -webkit-filter: blur(5px);
-                -moz-filter: blur(5px);
-                -o-filter: blur(5px);
-                -ms-filter: blur(5px);
-                filter: brightness(25%);
-                z-index: -1;
-                }
-            
-                /* Source: https://www.w3schools.com/howto/howto_css_blurred_background.asp */
-                .loginWindow {
-                background-color: rgb(0,0,0); /* Fallback color */
-                background-color: rgba(0,0,0, 0.2); /* Black w/opacity/see-through */
-                color: white;
-                font-weight: bold;
-                position: absolute;
-                top: 40%;
-                left: 50%;
-                transform: translate(-50%, -50%);
-                z-index: 2; /* Position: absolute --> z-index brings it forward */
-                width: 35%;
-                padding: 20px;
-                text-align: center;
-                }
-              
-                #footer {                
-                background-color: rgb(0,0,0); /* Fallback color */
-                background-color: rgba(0,0,0, 0.4); /* Black w/opacity/see-through */
-                color: white;
-                font-weight: bold;
-                position: absolute;
-                top: 100%;
-                left: 50%;
-                transform: translate(-50%, -50%);
-                z-index: 2; /* Position: absolute --> z-index brings it forward */
-                width: 100%;
-                padding: 20px;
-                text-align: center;
-                }
-
-                #downNote {
-                    background-color: #6351ce;
-                    display: inline-block;
-                    width: 95%;
-                    height: 25px;
-                }
-
-                input[type="checkbox"] {
-                -webkit-appearance: checkbox;
-                -moz-appearance: checkbox;
-                appearance: checkbox;
-                width: auto;
-                }
-
-                #forget {
-                    display: block;
-                    margin-right: auto;
-                    margin-left: auto;
-                    background-color: #6351ce;
-                    width: 95%;
-                    height: 25px;
-                }
-
-                #space1 {
-                    margin-top: 40px;
-                }
-
-                #space2 {
-                    margin: 10px;
-                }
-                }
-
-                @media screen and (max-width: 935px) {
-                  * {
-            font-family: "Raleway";
-          }
-            #image {
-                background-image: url("images/login.jpg");
-                position: absolute;
-                left: 0;
-                top: 0;
-                width: 100%;
-                height: 135%;
-                -webkit-filter: blur(5px);
-                -moz-filter: blur(5px);
-                -o-filter: blur(5px);
-                -ms-filter: blur(5px);
-                filter: brightness(25%);
-                z-index: -1;
-                }
-            
-                /* Source: https://www.w3schools.com/howto/howto_css_blurred_background.asp */
-                .loginWindow {
-                background-color: rgb(0,0,0); /* Fallback color */
-                background-color: rgba(0,0,0, 0.2); /* Black w/opacity/see-through */
-                color: white;
-                font-weight: bold;
-                position: absolute;
-                top: 40%;
-                left: 50%;
-                transform: translate(-50%, -50%);
-                z-index: 2; /* Position: absolute --> z-index brings it forward */
-                width: 40%;
-                padding: 20px;
-                text-align: center;
-                }
-              
-                #footer {                
-                background-color: rgb(0,0,0); /* Fallback color */
-                background-color: rgba(0,0,0, 0.4); /* Black w/opacity/see-through */
-                color: white;
-                font-weight: bold;
-                position: absolute;
-                top: 100%;
-                left: 50%;
-                transform: translate(-50%, -50%);
-                z-index: 2; /* Position: absolute --> z-index brings it forward */
-                width: 100%;
-                padding: 20px;
-                text-align: center;
-                }
-
-                #downNote {
-                    background-color: #6351ce;
-                    display: inline-block;
-                    width: 95%;
-                    height: 25px;
-                }
-
-                input[type="checkbox"] {
-                -webkit-appearance: checkbox;
-                -moz-appearance: checkbox;
-                appearance: checkbox;
-                width: auto;
-                }
-
-                #forget {
-                    display: block;
-                    margin-right: auto;
-                    margin-left: auto;
-                    background-color: #6351ce;
-                    width: 95%;
-                    height: 25px;
-                }
-
-                #space1 {
-                    margin-top: 40px;
-                }
-
-                #space2 {
-                    margin: 10px;
-                }
-                }
-
-                @media screen and (max-width: 768px) {
-                
-
-                  * {
-            font-family: "Raleway";
-          }
-            #image {
-                background-image: url("images/login.jpg");
-                position: absolute;
-                left: 0;
-                top: 0;
-                width: 100%;
-                height: 175%;
-                -webkit-filter: blur(5px);
-                -moz-filter: blur(5px);
-                -o-filter: blur(5px);
-                -ms-filter: blur(5px);
-                filter: brightness(25%);
-                z-index: -1;
-                }
-            
-                /* Source: https://www.w3schools.com/howto/howto_css_blurred_background.asp */
-                .loginWindow {
-                background-color: rgb(0,0,0); /* Fallback color */
-                background-color: rgba(0,0,0, 0.2); /* Black w/opacity/see-through */
-                color: white;
-                font-weight: bold;
-                position: absolute;
-                top: 40%;
-                left: 50%;
-                transform: translate(-50%, -50%);
-                z-index: 2; /* Position: absolute --> z-index brings it forward */
-                width: 60%;
-                padding: 20px;
-                text-align: center;
-                }
-              
-                #footer {                
-                background-color: rgb(0,0,0); /* Fallback color */
-                background-color: rgba(0,0,0, 0.4); /* Black w/opacity/see-through */
-                color: white;
-                font-weight: bold;
-                position: absolute;
-                top: 100%;
-                left: 50%;
-                transform: translate(-50%, -50%);
-                z-index: 2; /* Position: absolute --> z-index brings it forward */
-                width: 100%;
-                padding: 20px;
-                text-align: center;
-                margin-top: 300px;
-                }
-
-                #downNote {
-                    background-color: #6351ce;
-                    display: inline-block;
-                    width: 95%;
-                    height: 25px;
-                }
-
-                input[type="checkbox"] {
-                -webkit-appearance: checkbox;
-                -moz-appearance: checkbox;
-                appearance: checkbox;
-                width: auto;
-                }
-
-                #forget {
-                    display: block;
-                    margin-right: auto;
-                    margin-left: auto;
-                    background-color: #6351ce;
-                    width: 95%;
-                    height: 25px;
-                }
-
-                #space1 {
-                    margin-top: 40px;
-                }
-
-                #space2 {
-                    margin: 10px;
-                }
-                }
-
-            @media screen and (max-width: 935px) {
-                  * {
-            font-family: "Raleway";
-          }
-            #image {
-                background-image: url("images/login.jpg");
-                position: absolute;
-                left: 0;
-                top: 0;
-                width: 100%;
-                height: 135%;
-                -webkit-filter: blur(5px);
-                -moz-filter: blur(5px);
-                -o-filter: blur(5px);
-                -ms-filter: blur(5px);
-                filter: brightness(25%);
-                z-index: -1;
-                }
-            
-                /* Source: https://www.w3schools.com/howto/howto_css_blurred_background.asp */
-                .loginWindow {
-                background-color: rgb(0,0,0); /* Fallback color */
-                background-color: rgba(0,0,0, 0.2); /* Black w/opacity/see-through */
-                color: white;
-                font-weight: bold;
-                position: absolute;
-                top: 40%;
-                left: 50%;
-                transform: translate(-50%, -50%);
-                z-index: 2; /* Position: absolute --> z-index brings it forward */
-                width: 40%;
-                padding: 20px;
-                text-align: center;
-                }
-              
-                #footer {                
-                background-color: rgb(0,0,0); /* Fallback color */
-                background-color: rgba(0,0,0, 0.4); /* Black w/opacity/see-through */
-                color: white;
-                font-weight: bold;
-                position: absolute;
-                top: 100%;
-                left: 50%;
-                transform: translate(-50%, -50%);
-                z-index: 2; /* Position: absolute --> z-index brings it forward */
-                width: 100%;
-                padding: 20px;
-                text-align: center;
-                }
-
-                #downNote {
-                    background-color: #6351ce;
-                    display: inline-block;
-                    width: 95%;
-                    height: 25px;
-                }
-
-                input[type="checkbox"] {
-                -webkit-appearance: checkbox;
-                -moz-appearance: checkbox;
-                appearance: checkbox;
-                width: auto;
-                }
-
-                #forget {
-                    display: block;
-                    margin-right: auto;
-                    margin-left: auto;
-                    background-color: #6351ce;
-                    width: 95%;
-                    height: 25px;
-                }
-
-                #space1 {
-                    margin-top: 40px;
-                }
-
-                #space2 {
-                    margin: 10px;
-                }
-                }
-
-
-                @media screen and (max-width: 768px) {
-                
-
-                * {
-          font-family: "Raleway";
-        }
-          #image {
-              background-image: url("images/login.jpg");
-              position: absolute;
-              left: 0;
-              top: 0;
-              width: 100%;
-              height: 205%;
-              -webkit-filter: blur(5px);
-              -moz-filter: blur(5px);
-              -o-filter: blur(5px);
-              -ms-filter: blur(5px);
-              filter: brightness(25%);
-              z-index: -1;
-              }
-          
-              /* Source: https://www.w3schools.com/howto/howto_css_blurred_background.asp */
-              .loginWindow {
-              background-color: rgb(0,0,0); /* Fallback color */
-              background-color: rgba(0,0,0, 0.2); /* Black w/opacity/see-through */
-              color: white;
-              font-weight: bold;
-              position: absolute;
-              top: 40%;
-              left: 50%;
-              transform: translate(-50%, -50%);
-              z-index: 2; /* Position: absolute --> z-index brings it forward */
-              width: 60%;
-              padding: 20px;
-              text-align: center;
-              }
-            
-              #footer {                
-              background-color: rgb(0,0,0); /* Fallback color */
-              background-color: rgba(0,0,0, 0.4); /* Black w/opacity/see-through */
-              color: white;
-              font-weight: bold;
-              position: absolute;
-              top: 100%;
-              left: 50%;
-              transform: translate(-50%, -50%);
-              z-index: 2; /* Position: absolute --> z-index brings it forward */
-              width: 100%;
-              padding: 20px;
-              text-align: center;
-              margin-top: 100px;
-              }
-
-              #downNote {
-                  background-color: #6351ce;
-                  display: inline-block;
-                  width: 95%;
-                  height: 25px;
-              }
-
-              input[type="checkbox"] {
-              -webkit-appearance: checkbox;
-              -moz-appearance: checkbox;
-              appearance: checkbox;
-              width: auto;
-              }
-
-              #forget {
-                  display: block;
-                  margin-right: auto;
-                  margin-left: auto;
-                  background-color: #6351ce;
-                  width: 95%;
-                  height: 25px;
-              }
-
-              #space1 {
-                  margin-top: 40px;
-              }
-
-              #space2 {
-                  margin: 10px;
-              }
-              }
-
-                @media screen and (max-width: 635px) {
-                  * {
-            font-family: "Raleway";
-          }
-            #image {
-                background-image: url("images/login.jpg");
-                position: absolute;
-                left: 0;
-                top: 0;
-                width: 100%;
-                height: 205%;
-                -webkit-filter: blur(5px);
-                -moz-filter: blur(5px);
-                -o-filter: blur(5px);
-                -ms-filter: blur(5px);
-                filter: brightness(25%);
-                z-index: -1;
-                }
-            
-                /* Source: https://www.w3schools.com/howto/howto_css_blurred_background.asp */
-                .loginWindow {
-                background-color: rgb(0,0,0); /* Fallback color */
-                background-color: rgba(0,0,0, 0.2); /* Black w/opacity/see-through */
-                color: white;
-                font-weight: bold;
-                position: absolute;
-                top: 40%;
-                left: 50%;
-                transform: translate(-50%, -50%);
-                z-index: 2; /* Position: absolute --> z-index brings it forward */
-                width: 60%;
-                padding: 20px;
-                text-align: center;
-                }
-              
-                #footer {                
-                background-color: rgb(0,0,0); /* Fallback color */
-                background-color: rgba(0,0,0, 0.4); /* Black w/opacity/see-through */
-                color: white;
-                font-weight: bold;
-                position: absolute;
-                top: 130%;
-                left: 50%;
-                transform: translate(-50%, -50%);
-                z-index: 2; /* Position: absolute --> z-index brings it forward */
-                width: 100%;
-                padding: 20px;
-                text-align: center;
-                }
-
-                #downNote {
-                    background-color: #6351ce;
-                    display: inline-block;
-                    width: 95%;
-                    height: 25px;
-                }
-
-                input[type="checkbox"] {
-                -webkit-appearance: checkbox;
-                -moz-appearance: checkbox;
-                appearance: checkbox;
-                width: auto;
-                }
-
-                #forget {
-                    display: block;
-                    margin-right: auto;
-                    margin-left: auto;
-                    background-color: #6351ce;
-                    width: 95%;
-                    height: 25px;
-                }
-
-                #space1 {
-                    margin-top: 40px;
-                }
-
-                #space2 {
-                    margin: 10px;
-                }
-                }
-
-                @media screen and (max-width: 551px) {
-                  * {
-            font-family: "Raleway";
-          }
-            #image {
-                background-image: url("images/login.jpg");
-                position: absolute;
-                left: 0;
-                top: 0;
-                width: 100%;
-                height: 205%;
-                -webkit-filter: blur(5px);
-                -moz-filter: blur(5px);
-                -o-filter: blur(5px);
-                -ms-filter: blur(5px);
-                filter: brightness(25%);
-                z-index: -1;
-                }
-            
-                /* Source: https://www.w3schools.com/howto/howto_css_blurred_background.asp */
-                .loginWindow {
-                background-color: rgb(0,0,0); /* Fallback color */
-                background-color: rgba(0,0,0, 0.2); /* Black w/opacity/see-through */
-                color: white;
-                font-weight: bold;
-                position: absolute;
-                top: 40%;
-                left: 50%;
-                transform: translate(-50%, -50%);
-                z-index: 2; /* Position: absolute --> z-index brings it forward */
-                width: 70%;
-                padding: 20px;
-                text-align: center;
-                }
-              
-                #footer {                
-                background-color: rgb(0,0,0); /* Fallback color */
-                background-color: rgba(0,0,0, 0.4); /* Black w/opacity/see-through */
-                color: white;
-                font-weight: bold;
-                position: absolute;
-                top: 130%;
-                left: 50%;
-                transform: translate(-50%, -50%);
-                z-index: 2; /* Position: absolute --> z-index brings it forward */
-                width: 100%;
-                padding: 20px;
-                text-align: center;
-                }
-
-                #downNote {
-                    background-color: #6351ce;
-                    display: inline-block;
-                    width: 95%;
-                    height: 25px;
-                }
-
-                input[type="checkbox"] {
-                -webkit-appearance: checkbox;
-                -moz-appearance: checkbox;
-                appearance: checkbox;
-                width: auto;
-                }
-
-                #forget {
-                    display: block;
-                    margin-right: auto;
-                    margin-left: auto;
-                    background-color: #6351ce;
-                    width: 95%;
-                    height: 25px;
-                }
-
-                #space1 {
-                    margin-top: 40px;
-                }
-
-                #space2 {
-                    margin: 10px;
-                }
-                }
-
-                @media screen and (max-width: 767px) {
-                  * {
-            font-family: "Raleway";
-          }
-            #image {
-                background-image: url("images/login.jpg");
-                position: absolute;
-                left: 0;
-                top: 0;
-                width: 100%;
-                height: 205%;
-                -webkit-filter: blur(5px);
-                -moz-filter: blur(5px);
-                -o-filter: blur(5px);
-                -ms-filter: blur(5px);
-                filter: brightness(25%);
-                z-index: -1;
-                }
-            
-                /* Source: https://www.w3schools.com/howto/howto_css_blurred_background.asp */
-                .loginWindow {
-                background-color: rgb(0,0,0); /* Fallback color */
-                background-color: rgba(0,0,0, 0.2); /* Black w/opacity/see-through */
-                color: white;
-                font-weight: bold;
-                position: absolute;
-                top: 40%;
-                left: 50%;
-                transform: translate(-50%, -50%);
-                z-index: 2; /* Position: absolute --> z-index brings it forward */
-                width: 70%;
-                padding: 20px;
-                text-align: center;
-                }
-              
-                #footer {                
-                background-color: rgb(0,0,0); /* Fallback color */
-                background-color: rgba(0,0,0, 0.4); /* Black w/opacity/see-through */
-                color: white;
-                font-weight: bold;
-                position: absolute;
-                top: 130%;
-                left: 50%;
-                transform: translate(-50%, -50%);
-                z-index: 2; /* Position: absolute --> z-index brings it forward */
-                width: 100%;
-                padding: 20px;
-                text-align: center;
-                }
-
-                #downNote {
-                    background-color: #6351ce;
-                    display: inline-block;
-                    width: 95%;
-                    height: 25px;
-                }
-
-                input[type="checkbox"] {
-                -webkit-appearance: checkbox;
-                -moz-appearance: checkbox;
-                appearance: checkbox;
-                width: auto;
-                }
-
-                #forget {
-                    display: block;
-                    margin-right: auto;
-                    margin-left: auto;
-                    background-color: #6351ce;
-                    width: 95%;
-                    height: 25px;
-                }
-
-                #space1 {
-                    margin-top: 40px;
-                }
-
-                #space2 {
-                    margin: 10px;
-                }
-                }
-
-                @media screen and (max-width: 401px) {
-                  * {
-            font-family: "Raleway";
-          }
-            #image {
-                background-image: url("images/login.jpg");
-                position: absolute;
-                left: 0;
-                top: 0;
-                width: 100%;
-                height: 205%;
-                -webkit-filter: blur(5px);
-                -moz-filter: blur(5px);
-                -o-filter: blur(5px);
-                -ms-filter: blur(5px);
-                filter: brightness(25%);
-                z-index: -1;
-                }
-            
-                /* Source: https://www.w3schools.com/howto/howto_css_blurred_background.asp */
-                .loginWindow {
-                background-color: rgb(0,0,0); /* Fallback color */
-                background-color: rgba(0,0,0, 0.2); /* Black w/opacity/see-through */
-                color: white;
-                font-weight: bold;
-                position: absolute;
-                top: 40%;
-                left: 50%;
-                transform: translate(-50%, -50%);
-                z-index: 2; /* Position: absolute --> z-index brings it forward */
-                width: 70%;
-                padding: 20px;
-                text-align: center;
-                }
-              
-                #footer {                
-                background-color: rgb(0,0,0); /* Fallback color */
-                background-color: rgba(0,0,0, 0.4); /* Black w/opacity/see-through */
-                color: white;
-                font-weight: bold;
-                position: absolute;
-                top: 150%;
-                left: 50%;
-                transform: translate(-50%, -50%);
-                z-index: 2; /* Position: absolute --> z-index brings it forward */
-                width: 100%;
-                padding: 20px;
-                text-align: center;
-                }
-
-                #downNote {
-                    background-color: #6351ce;
-                    display: inline-block;
-                    width: 95%;
-                    height: 25px;
-                }
-
-                input[type="checkbox"] {
-                -webkit-appearance: checkbox;
-                -moz-appearance: checkbox;
-                appearance: checkbox;
-                width: auto;
-                }
-
-                #forget {
-                    display: block;
-                    margin-right: auto;
-                    margin-left: auto;
-                    background-color: #6351ce;
-                    width: 95%;
-                    height: 25px;
-                }
-
-                #space1 {
-                    margin-top: 40px;
-                }
-
-                #space2 {
-                    margin: 10px;
-                }
-                }
-
-                @media screen and (max-width: 375px) {
-                  * {
-            font-family: "Raleway";
-          }
-            #image {
-                background-image: url("images/login.jpg");
-                position: absolute;
-                left: 0;
-                top: 0;
-                width: 100%;
-                height: 230%;
-                -webkit-filter: blur(5px);
-                -moz-filter: blur(5px);
-                -o-filter: blur(5px);
-                -ms-filter: blur(5px);
-                filter: brightness(25%);
-                z-index: -1;
-                }
-            
-                /* Source: https://www.w3schools.com/howto/howto_css_blurred_background.asp */
-                .loginWindow {
-                background-color: rgb(0,0,0); /* Fallback color */
-                background-color: rgba(0,0,0, 0.2); /* Black w/opacity/see-through */
-                color: white;
-                font-weight: bold;
-                position: absolute;
-                top: 40%;
-                left: 50%;
-                transform: translate(-50%, -50%);
-                z-index: 2; /* Position: absolute --> z-index brings it forward */
-                width: 90%;
-                padding: 20px;
-                text-align: center;
-                }
-              
-                #footer {                
-                background-color: rgb(0,0,0); /* Fallback color */
-                background-color: rgba(0,0,0, 0.4); /* Black w/opacity/see-through */
-                color: white;
-                font-weight: bold;
-                position: absolute;
-                top: 110%;
-                left: 50%;
-                transform: translate(-50%, -50%);
-                z-index: 2; /* Position: absolute --> z-index brings it forward */
-                width: 100%;
-                padding: 20px;
-                text-align: center;
-                margin-top: 250px;
-                }
-
-                #downNote {
-                    background-color: #6351ce;
-                    display: inline-block;
-                    width: 95%;
-                    height: 25px;
-                }
-
-                input[type="checkbox"] {
-                -webkit-appearance: checkbox;
-                -moz-appearance: checkbox;
-                appearance: checkbox;
-                width: auto;
-                }
-
-                #forget {
-                    display: block;
-                    margin-right: auto;
-                    margin-left: auto;
-                    background-color: #6351ce;
-                    width: 95%;
-                    height: 25px;
-                }
-
-                #space1 {
-                    margin-top: 40px;
-                }
-
-                #space2 {
-                    margin: 10px;
-                }
-                }
-
-                @media screen and (max-width: 414px) {
-                  * {
-            font-family: "Raleway";
-          }
-            #image {
-                background-image: url("images/login.jpg");
-                position: absolute;
-                left: 0;
-                top: 0;
-                width: 100%;
-                height: 250%;
-                -webkit-filter: blur(5px);
-                -moz-filter: blur(5px);
-                -o-filter: blur(5px);
-                -ms-filter: blur(5px);
-                filter: brightness(25%);
-                z-index: -1;
-                }
-            
-                /* Source: https://www.w3schools.com/howto/howto_css_blurred_background.asp */
-                .loginWindow {
-                background-color: rgb(0,0,0); /* Fallback color */
-                background-color: rgba(0,0,0, 0.2); /* Black w/opacity/see-through */
-                color: white;
-                font-weight: bold;
-                position: absolute;
-                top: 40%;
-                left: 50%;
-                transform: translate(-50%, -50%);
-                z-index: 2; /* Position: absolute --> z-index brings it forward */
-                width: 80%;
-                padding: 20px;
-                text-align: center;
-                }
-              
-                #footer {                
-                background-color: rgb(0,0,0); /* Fallback color */
-                background-color: rgba(0,0,0, 0.4); /* Black w/opacity/see-through */
-                color: white;
-                font-weight: bold;
-                position: absolute;
-                top: 120%;
-                left: 50%;
-                transform: translate(-50%, -50%);
-                z-index: 2; /* Position: absolute --> z-index brings it forward */
-                width: 100%;
-                padding: 20px;
-                text-align: center;
-                }
-
-                #downNote {
-                    background-color: #6351ce;
-                    display: inline-block;
-                    width: 95%;
-                    height: 25px;
-                }
-
-                input[type="checkbox"] {
-                -webkit-appearance: checkbox;
-                -moz-appearance: checkbox;
-                appearance: checkbox;
-                width: auto;
-                }
-
-                #forget {
-                    display: block;
-                    margin-right: auto;
-                    margin-left: auto;
-                    background-color: #6351ce;
-                    width: 95%;
-                    height: 25px;
-                }
-
-                #space1 {
-                    margin-top: 40px;
-                }
-
-                #space2 {
-                    margin: 10px;
-                }
-                }
-        </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OurApp: Login</title>
+
+  <!-- Bootstrap for Mobile-first, and JQuery -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+  <!-- Firebase CSS for Authentication UI -->
+  <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.6.1/firebase-ui-auth.css" />
+
+  <!-- Font -->
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">
+
+  <!-- Kept style here because moving it to a separate css broke the code-->
+  <style>
+    * {
+      font-family: "Raleway";
+    }
+
+    #image {
+      background-image: url("images/login.jpg");
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 130%;
+      -webkit-filter: blur(5px);
+      -moz-filter: blur(5px);
+      -o-filter: blur(5px);
+      -ms-filter: blur(5px);
+      filter: brightness(25%);
+      z-index: -1;
+    }
+
+    /* Source: https://www.w3schools.com/howto/howto_css_blurred_background.asp */
+    .loginWindow {
+      background-color: rgb(0, 0, 0);
+      /* Fallback color */
+      background-color: rgba(0, 0, 0, 0.2);
+      /* Black w/opacity/see-through */
+      color: white;
+      font-weight: bold;
+      position: absolute;
+      top: 40%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 2;
+      /* Position: absolute --> z-index brings it forward */
+      width: 25%;
+      padding: 20px;
+      text-align: center;
+    }
+
+    #footer {
+      background-color: rgb(0, 0, 0);
+      /* Fallback color */
+      background-color: rgba(0, 0, 0, 0.4);
+      /* Black w/opacity/see-through */
+      color: white;
+      font-weight: bold;
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 2;
+      /* Position: absolute --> z-index brings it forward */
+      width: 100%;
+      padding: 20px;
+      text-align: center;
+    }
+
+    #downNote {
+      background-color: #6351ce;
+      display: inline-block;
+      width: 95%;
+      height: 25px;
+    }
+
+    input[type="checkbox"] {
+      -webkit-appearance: checkbox;
+      -moz-appearance: checkbox;
+      appearance: checkbox;
+      width: auto;
+    }
+
+    #forget {
+      display: block;
+      margin-right: auto;
+      margin-left: auto;
+      background-color: #6351ce;
+      width: 95%;
+      height: 25px;
+    }
+
+    #space1 {
+      margin-top: 40px;
+    }
+
+    #space2 {
+      margin: 10px;
+    }
+
+    @media screen and (max-width: 1026px) {
+      * {
+        font-family: "Raleway";
+      }
+
+      #image {
+        background-image: url("images/login.jpg");
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 135%;
+        -webkit-filter: blur(5px);
+        -moz-filter: blur(5px);
+        -o-filter: blur(5px);
+        -ms-filter: blur(5px);
+        filter: brightness(25%);
+        z-index: -1;
+      }
+
+      /* Source: https://www.w3schools.com/howto/howto_css_blurred_background.asp */
+      .loginWindow {
+        background-color: rgb(0, 0, 0);
+        /* Fallback color */
+        background-color: rgba(0, 0, 0, 0.2);
+        /* Black w/opacity/see-through */
+        color: white;
+        font-weight: bold;
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 2;
+        /* Position: absolute --> z-index brings it forward */
+        width: 35%;
+        padding: 20px;
+        text-align: center;
+      }
+
+      #footer {
+        background-color: rgb(0, 0, 0);
+        /* Fallback color */
+        background-color: rgba(0, 0, 0, 0.4);
+        /* Black w/opacity/see-through */
+        color: white;
+        font-weight: bold;
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 2;
+        /* Position: absolute --> z-index brings it forward */
+        width: 100%;
+        padding: 20px;
+        text-align: center;
+      }
+
+      #downNote {
+        background-color: #6351ce;
+        display: inline-block;
+        width: 95%;
+        height: 25px;
+      }
+
+      input[type="checkbox"] {
+        -webkit-appearance: checkbox;
+        -moz-appearance: checkbox;
+        appearance: checkbox;
+        width: auto;
+      }
+
+      #forget {
+        display: block;
+        margin-right: auto;
+        margin-left: auto;
+        background-color: #6351ce;
+        width: 95%;
+        height: 25px;
+      }
+
+      #space1 {
+        margin-top: 40px;
+      }
+
+      #space2 {
+        margin: 10px;
+      }
+    }
+
+    @media screen and (max-width: 1235px) {
+      * {
+        font-family: "Raleway";
+      }
+
+      #image {
+        background-image: url("images/login.jpg");
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 135%;
+        -webkit-filter: blur(5px);
+        -moz-filter: blur(5px);
+        -o-filter: blur(5px);
+        -ms-filter: blur(5px);
+        filter: brightness(25%);
+        z-index: -1;
+      }
+
+      /* Source: https://www.w3schools.com/howto/howto_css_blurred_background.asp */
+      .loginWindow {
+        background-color: rgb(0, 0, 0);
+        /* Fallback color */
+        background-color: rgba(0, 0, 0, 0.2);
+        /* Black w/opacity/see-through */
+        color: white;
+        font-weight: bold;
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 2;
+        /* Position: absolute --> z-index brings it forward */
+        width: 35%;
+        padding: 20px;
+        text-align: center;
+      }
+
+      #footer {
+        background-color: rgb(0, 0, 0);
+        /* Fallback color */
+        background-color: rgba(0, 0, 0, 0.4);
+        /* Black w/opacity/see-through */
+        color: white;
+        font-weight: bold;
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 2;
+        /* Position: absolute --> z-index brings it forward */
+        width: 100%;
+        padding: 20px;
+        text-align: center;
+      }
+
+      #downNote {
+        background-color: #6351ce;
+        display: inline-block;
+        width: 95%;
+        height: 25px;
+      }
+
+      input[type="checkbox"] {
+        -webkit-appearance: checkbox;
+        -moz-appearance: checkbox;
+        appearance: checkbox;
+        width: auto;
+      }
+
+      #forget {
+        display: block;
+        margin-right: auto;
+        margin-left: auto;
+        background-color: #6351ce;
+        width: 95%;
+        height: 25px;
+      }
+
+      #space1 {
+        margin-top: 40px;
+      }
+
+      #space2 {
+        margin: 10px;
+      }
+    }
+
+    @media screen and (max-width: 935px) {
+      * {
+        font-family: "Raleway";
+      }
+
+      #image {
+        background-image: url("images/login.jpg");
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 135%;
+        -webkit-filter: blur(5px);
+        -moz-filter: blur(5px);
+        -o-filter: blur(5px);
+        -ms-filter: blur(5px);
+        filter: brightness(25%);
+        z-index: -1;
+      }
+
+      /* Source: https://www.w3schools.com/howto/howto_css_blurred_background.asp */
+      .loginWindow {
+        background-color: rgb(0, 0, 0);
+        /* Fallback color */
+        background-color: rgba(0, 0, 0, 0.2);
+        /* Black w/opacity/see-through */
+        color: white;
+        font-weight: bold;
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 2;
+        /* Position: absolute --> z-index brings it forward */
+        width: 40%;
+        padding: 20px;
+        text-align: center;
+      }
+
+      #footer {
+        background-color: rgb(0, 0, 0);
+        /* Fallback color */
+        background-color: rgba(0, 0, 0, 0.4);
+        /* Black w/opacity/see-through */
+        color: white;
+        font-weight: bold;
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 2;
+        /* Position: absolute --> z-index brings it forward */
+        width: 100%;
+        padding: 20px;
+        text-align: center;
+      }
+
+      #downNote {
+        background-color: #6351ce;
+        display: inline-block;
+        width: 95%;
+        height: 25px;
+      }
+
+      input[type="checkbox"] {
+        -webkit-appearance: checkbox;
+        -moz-appearance: checkbox;
+        appearance: checkbox;
+        width: auto;
+      }
+
+      #forget {
+        display: block;
+        margin-right: auto;
+        margin-left: auto;
+        background-color: #6351ce;
+        width: 95%;
+        height: 25px;
+      }
+
+      #space1 {
+        margin-top: 40px;
+      }
+
+      #space2 {
+        margin: 10px;
+      }
+    }
+
+    @media screen and (max-width: 768px) {
+
+
+      * {
+        font-family: "Raleway";
+      }
+
+      #image {
+        background-image: url("images/login.jpg");
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 175%;
+        -webkit-filter: blur(5px);
+        -moz-filter: blur(5px);
+        -o-filter: blur(5px);
+        -ms-filter: blur(5px);
+        filter: brightness(25%);
+        z-index: -1;
+      }
+
+      /* Source: https://www.w3schools.com/howto/howto_css_blurred_background.asp */
+      .loginWindow {
+        background-color: rgb(0, 0, 0);
+        /* Fallback color */
+        background-color: rgba(0, 0, 0, 0.2);
+        /* Black w/opacity/see-through */
+        color: white;
+        font-weight: bold;
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 2;
+        /* Position: absolute --> z-index brings it forward */
+        width: 60%;
+        padding: 20px;
+        text-align: center;
+      }
+
+      #footer {
+        background-color: rgb(0, 0, 0);
+        /* Fallback color */
+        background-color: rgba(0, 0, 0, 0.4);
+        /* Black w/opacity/see-through */
+        color: white;
+        font-weight: bold;
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 2;
+        /* Position: absolute --> z-index brings it forward */
+        width: 100%;
+        padding: 20px;
+        text-align: center;
+        margin-top: 300px;
+      }
+
+      #downNote {
+        background-color: #6351ce;
+        display: inline-block;
+        width: 95%;
+        height: 25px;
+      }
+
+      input[type="checkbox"] {
+        -webkit-appearance: checkbox;
+        -moz-appearance: checkbox;
+        appearance: checkbox;
+        width: auto;
+      }
+
+      #forget {
+        display: block;
+        margin-right: auto;
+        margin-left: auto;
+        background-color: #6351ce;
+        width: 95%;
+        height: 25px;
+      }
+
+      #space1 {
+        margin-top: 40px;
+      }
+
+      #space2 {
+        margin: 10px;
+      }
+    }
+
+    @media screen and (max-width: 935px) {
+      * {
+        font-family: "Raleway";
+      }
+
+      #image {
+        background-image: url("images/login.jpg");
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 135%;
+        -webkit-filter: blur(5px);
+        -moz-filter: blur(5px);
+        -o-filter: blur(5px);
+        -ms-filter: blur(5px);
+        filter: brightness(25%);
+        z-index: -1;
+      }
+
+      /* Source: https://www.w3schools.com/howto/howto_css_blurred_background.asp */
+      .loginWindow {
+        background-color: rgb(0, 0, 0);
+        /* Fallback color */
+        background-color: rgba(0, 0, 0, 0.2);
+        /* Black w/opacity/see-through */
+        color: white;
+        font-weight: bold;
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 2;
+        /* Position: absolute --> z-index brings it forward */
+        width: 40%;
+        padding: 20px;
+        text-align: center;
+      }
+
+      #footer {
+        background-color: rgb(0, 0, 0);
+        /* Fallback color */
+        background-color: rgba(0, 0, 0, 0.4);
+        /* Black w/opacity/see-through */
+        color: white;
+        font-weight: bold;
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 2;
+        /* Position: absolute --> z-index brings it forward */
+        width: 100%;
+        padding: 20px;
+        text-align: center;
+      }
+
+      #downNote {
+        background-color: #6351ce;
+        display: inline-block;
+        width: 95%;
+        height: 25px;
+      }
+
+      input[type="checkbox"] {
+        -webkit-appearance: checkbox;
+        -moz-appearance: checkbox;
+        appearance: checkbox;
+        width: auto;
+      }
+
+      #forget {
+        display: block;
+        margin-right: auto;
+        margin-left: auto;
+        background-color: #6351ce;
+        width: 95%;
+        height: 25px;
+      }
+
+      #space1 {
+        margin-top: 40px;
+      }
+
+      #space2 {
+        margin: 10px;
+      }
+    }
+
+
+    @media screen and (max-width: 768px) {
+
+
+      * {
+        font-family: "Raleway";
+      }
+
+      #image {
+        background-image: url("images/login.jpg");
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 205%;
+        -webkit-filter: blur(5px);
+        -moz-filter: blur(5px);
+        -o-filter: blur(5px);
+        -ms-filter: blur(5px);
+        filter: brightness(25%);
+        z-index: -1;
+      }
+
+      /* Source: https://www.w3schools.com/howto/howto_css_blurred_background.asp */
+      .loginWindow {
+        background-color: rgb(0, 0, 0);
+        /* Fallback color */
+        background-color: rgba(0, 0, 0, 0.2);
+        /* Black w/opacity/see-through */
+        color: white;
+        font-weight: bold;
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 2;
+        /* Position: absolute --> z-index brings it forward */
+        width: 60%;
+        padding: 20px;
+        text-align: center;
+      }
+
+      #footer {
+        background-color: rgb(0, 0, 0);
+        /* Fallback color */
+        background-color: rgba(0, 0, 0, 0.4);
+        /* Black w/opacity/see-through */
+        color: white;
+        font-weight: bold;
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 2;
+        /* Position: absolute --> z-index brings it forward */
+        width: 100%;
+        padding: 20px;
+        text-align: center;
+        margin-top: 100px;
+      }
+
+      #downNote {
+        background-color: #6351ce;
+        display: inline-block;
+        width: 95%;
+        height: 25px;
+      }
+
+      input[type="checkbox"] {
+        -webkit-appearance: checkbox;
+        -moz-appearance: checkbox;
+        appearance: checkbox;
+        width: auto;
+      }
+
+      #forget {
+        display: block;
+        margin-right: auto;
+        margin-left: auto;
+        background-color: #6351ce;
+        width: 95%;
+        height: 25px;
+      }
+
+      #space1 {
+        margin-top: 40px;
+      }
+
+      #space2 {
+        margin: 10px;
+      }
+    }
+
+    @media screen and (max-width: 635px) {
+      * {
+        font-family: "Raleway";
+      }
+
+      #image {
+        background-image: url("images/login.jpg");
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 205%;
+        -webkit-filter: blur(5px);
+        -moz-filter: blur(5px);
+        -o-filter: blur(5px);
+        -ms-filter: blur(5px);
+        filter: brightness(25%);
+        z-index: -1;
+      }
+
+      /* Source: https://www.w3schools.com/howto/howto_css_blurred_background.asp */
+      .loginWindow {
+        background-color: rgb(0, 0, 0);
+        /* Fallback color */
+        background-color: rgba(0, 0, 0, 0.2);
+        /* Black w/opacity/see-through */
+        color: white;
+        font-weight: bold;
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 2;
+        /* Position: absolute --> z-index brings it forward */
+        width: 60%;
+        padding: 20px;
+        text-align: center;
+      }
+
+      #footer {
+        background-color: rgb(0, 0, 0);
+        /* Fallback color */
+        background-color: rgba(0, 0, 0, 0.4);
+        /* Black w/opacity/see-through */
+        color: white;
+        font-weight: bold;
+        position: absolute;
+        top: 130%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 2;
+        /* Position: absolute --> z-index brings it forward */
+        width: 100%;
+        padding: 20px;
+        text-align: center;
+      }
+
+      #downNote {
+        background-color: #6351ce;
+        display: inline-block;
+        width: 95%;
+        height: 25px;
+      }
+
+      input[type="checkbox"] {
+        -webkit-appearance: checkbox;
+        -moz-appearance: checkbox;
+        appearance: checkbox;
+        width: auto;
+      }
+
+      #forget {
+        display: block;
+        margin-right: auto;
+        margin-left: auto;
+        background-color: #6351ce;
+        width: 95%;
+        height: 25px;
+      }
+
+      #space1 {
+        margin-top: 40px;
+      }
+
+      #space2 {
+        margin: 10px;
+      }
+    }
+
+    @media screen and (max-width: 551px) {
+      * {
+        font-family: "Raleway";
+      }
+
+      #image {
+        background-image: url("images/login.jpg");
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 205%;
+        -webkit-filter: blur(5px);
+        -moz-filter: blur(5px);
+        -o-filter: blur(5px);
+        -ms-filter: blur(5px);
+        filter: brightness(25%);
+        z-index: -1;
+      }
+
+      /* Source: https://www.w3schools.com/howto/howto_css_blurred_background.asp */
+      .loginWindow {
+        background-color: rgb(0, 0, 0);
+        /* Fallback color */
+        background-color: rgba(0, 0, 0, 0.2);
+        /* Black w/opacity/see-through */
+        color: white;
+        font-weight: bold;
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 2;
+        /* Position: absolute --> z-index brings it forward */
+        width: 70%;
+        padding: 20px;
+        text-align: center;
+      }
+
+      #footer {
+        background-color: rgb(0, 0, 0);
+        /* Fallback color */
+        background-color: rgba(0, 0, 0, 0.4);
+        /* Black w/opacity/see-through */
+        color: white;
+        font-weight: bold;
+        position: absolute;
+        top: 130%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 2;
+        /* Position: absolute --> z-index brings it forward */
+        width: 100%;
+        padding: 20px;
+        text-align: center;
+      }
+
+      #downNote {
+        background-color: #6351ce;
+        display: inline-block;
+        width: 95%;
+        height: 25px;
+      }
+
+      input[type="checkbox"] {
+        -webkit-appearance: checkbox;
+        -moz-appearance: checkbox;
+        appearance: checkbox;
+        width: auto;
+      }
+
+      #forget {
+        display: block;
+        margin-right: auto;
+        margin-left: auto;
+        background-color: #6351ce;
+        width: 95%;
+        height: 25px;
+      }
+
+      #space1 {
+        margin-top: 40px;
+      }
+
+      #space2 {
+        margin: 10px;
+      }
+    }
+
+    @media screen and (max-width: 767px) {
+      * {
+        font-family: "Raleway";
+      }
+
+      #image {
+        background-image: url("images/login.jpg");
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 205%;
+        -webkit-filter: blur(5px);
+        -moz-filter: blur(5px);
+        -o-filter: blur(5px);
+        -ms-filter: blur(5px);
+        filter: brightness(25%);
+        z-index: -1;
+      }
+
+      /* Source: https://www.w3schools.com/howto/howto_css_blurred_background.asp */
+      .loginWindow {
+        background-color: rgb(0, 0, 0);
+        /* Fallback color */
+        background-color: rgba(0, 0, 0, 0.2);
+        /* Black w/opacity/see-through */
+        color: white;
+        font-weight: bold;
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 2;
+        /* Position: absolute --> z-index brings it forward */
+        width: 70%;
+        padding: 20px;
+        text-align: center;
+      }
+
+      #footer {
+        background-color: rgb(0, 0, 0);
+        /* Fallback color */
+        background-color: rgba(0, 0, 0, 0.4);
+        /* Black w/opacity/see-through */
+        color: white;
+        font-weight: bold;
+        position: absolute;
+        top: 130%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 2;
+        /* Position: absolute --> z-index brings it forward */
+        width: 100%;
+        padding: 20px;
+        text-align: center;
+      }
+
+      #downNote {
+        background-color: #6351ce;
+        display: inline-block;
+        width: 95%;
+        height: 25px;
+      }
+
+      input[type="checkbox"] {
+        -webkit-appearance: checkbox;
+        -moz-appearance: checkbox;
+        appearance: checkbox;
+        width: auto;
+      }
+
+      #forget {
+        display: block;
+        margin-right: auto;
+        margin-left: auto;
+        background-color: #6351ce;
+        width: 95%;
+        height: 25px;
+      }
+
+      #space1 {
+        margin-top: 40px;
+      }
+
+      #space2 {
+        margin: 10px;
+      }
+    }
+
+    @media screen and (max-width: 401px) {
+      * {
+        font-family: "Raleway";
+      }
+
+      #image {
+        background-image: url("images/login.jpg");
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 205%;
+        -webkit-filter: blur(5px);
+        -moz-filter: blur(5px);
+        -o-filter: blur(5px);
+        -ms-filter: blur(5px);
+        filter: brightness(25%);
+        z-index: -1;
+      }
+
+      /* Source: https://www.w3schools.com/howto/howto_css_blurred_background.asp */
+      .loginWindow {
+        background-color: rgb(0, 0, 0);
+        /* Fallback color */
+        background-color: rgba(0, 0, 0, 0.2);
+        /* Black w/opacity/see-through */
+        color: white;
+        font-weight: bold;
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 2;
+        /* Position: absolute --> z-index brings it forward */
+        width: 70%;
+        padding: 20px;
+        text-align: center;
+      }
+
+      #footer {
+        background-color: rgb(0, 0, 0);
+        /* Fallback color */
+        background-color: rgba(0, 0, 0, 0.4);
+        /* Black w/opacity/see-through */
+        color: white;
+        font-weight: bold;
+        position: absolute;
+        top: 150%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 2;
+        /* Position: absolute --> z-index brings it forward */
+        width: 100%;
+        padding: 20px;
+        text-align: center;
+      }
+
+      #downNote {
+        background-color: #6351ce;
+        display: inline-block;
+        width: 95%;
+        height: 25px;
+      }
+
+      input[type="checkbox"] {
+        -webkit-appearance: checkbox;
+        -moz-appearance: checkbox;
+        appearance: checkbox;
+        width: auto;
+      }
+
+      #forget {
+        display: block;
+        margin-right: auto;
+        margin-left: auto;
+        background-color: #6351ce;
+        width: 95%;
+        height: 25px;
+      }
+
+      #space1 {
+        margin-top: 40px;
+      }
+
+      #space2 {
+        margin: 10px;
+      }
+    }
+
+    @media screen and (max-width: 375px) {
+      * {
+        font-family: "Raleway";
+      }
+
+      #image {
+        background-image: url("images/login.jpg");
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 230%;
+        -webkit-filter: blur(5px);
+        -moz-filter: blur(5px);
+        -o-filter: blur(5px);
+        -ms-filter: blur(5px);
+        filter: brightness(25%);
+        z-index: -1;
+      }
+
+      /* Source: https://www.w3schools.com/howto/howto_css_blurred_background.asp */
+      .loginWindow {
+        background-color: rgb(0, 0, 0);
+        /* Fallback color */
+        background-color: rgba(0, 0, 0, 0.2);
+        /* Black w/opacity/see-through */
+        color: white;
+        font-weight: bold;
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 2;
+        /* Position: absolute --> z-index brings it forward */
+        width: 90%;
+        padding: 20px;
+        text-align: center;
+      }
+
+      #footer {
+        background-color: rgb(0, 0, 0);
+        /* Fallback color */
+        background-color: rgba(0, 0, 0, 0.4);
+        /* Black w/opacity/see-through */
+        color: white;
+        font-weight: bold;
+        position: absolute;
+        top: 110%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 2;
+        /* Position: absolute --> z-index brings it forward */
+        width: 100%;
+        padding: 20px;
+        text-align: center;
+        margin-top: 250px;
+      }
+
+      #downNote {
+        background-color: #6351ce;
+        display: inline-block;
+        width: 95%;
+        height: 25px;
+      }
+
+      input[type="checkbox"] {
+        -webkit-appearance: checkbox;
+        -moz-appearance: checkbox;
+        appearance: checkbox;
+        width: auto;
+      }
+
+      #forget {
+        display: block;
+        margin-right: auto;
+        margin-left: auto;
+        background-color: #6351ce;
+        width: 95%;
+        height: 25px;
+      }
+
+      #space1 {
+        margin-top: 40px;
+      }
+
+      #space2 {
+        margin: 10px;
+      }
+    }
+
+    @media screen and (max-width: 414px) {
+      * {
+        font-family: "Raleway";
+      }
+
+      #image {
+        background-image: url("images/login.jpg");
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 250%;
+        -webkit-filter: blur(5px);
+        -moz-filter: blur(5px);
+        -o-filter: blur(5px);
+        -ms-filter: blur(5px);
+        filter: brightness(25%);
+        z-index: -1;
+      }
+
+      /* Source: https://www.w3schools.com/howto/howto_css_blurred_background.asp */
+      .loginWindow {
+        background-color: rgb(0, 0, 0);
+        /* Fallback color */
+        background-color: rgba(0, 0, 0, 0.2);
+        /* Black w/opacity/see-through */
+        color: white;
+        font-weight: bold;
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 2;
+        /* Position: absolute --> z-index brings it forward */
+        width: 80%;
+        padding: 20px;
+        text-align: center;
+      }
+
+      #footer {
+        background-color: rgb(0, 0, 0);
+        /* Fallback color */
+        background-color: rgba(0, 0, 0, 0.4);
+        /* Black w/opacity/see-through */
+        color: white;
+        font-weight: bold;
+        position: absolute;
+        top: 120%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 2;
+        /* Position: absolute --> z-index brings it forward */
+        width: 100%;
+        padding: 20px;
+        text-align: center;
+      }
+
+      #downNote {
+        background-color: #6351ce;
+        display: inline-block;
+        width: 95%;
+        height: 25px;
+      }
+
+      input[type="checkbox"] {
+        -webkit-appearance: checkbox;
+        -moz-appearance: checkbox;
+        appearance: checkbox;
+        width: auto;
+      }
+
+      #forget {
+        display: block;
+        margin-right: auto;
+        margin-left: auto;
+        background-color: #6351ce;
+        width: 95%;
+        height: 25px;
+      }
+
+      #space1 {
+        margin-top: 40px;
+      }
+
+      #space2 {
+        margin: 10px;
+      }
+    }
+  </style>
 </head>
 
 <body>
@@ -1130,7 +1218,7 @@
           data-trigger="hover" title="Forums" data-placement="bottom">
           <a class="nav-link" href="#">Forums</a>
         </li>
-        
+
         <li class="nav-item" data-toggle="popover" data-content="Click here for help." data-trigger="hover" title="Help"
           data-placement="bottom">
           <a class="nav-link" href="#" onClick="$('#exampleModalLong').trigger('click');">Help</a>
@@ -1401,16 +1489,16 @@
   <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-firestore.js"></script>
 
   <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-  integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
-</script>
+    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
+  </script>
 
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-  integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
-</script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+  </script>
 
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-  integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
-</script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
+  </script>
 
 
   <!-- Your own Firebase API key information -->

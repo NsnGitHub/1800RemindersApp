@@ -101,41 +101,41 @@ body {
     font-family: "Raleway";
     color: black;
   }
-  
+
   html {
     font-size: 12pt;
     height: 100%;
     margin: auto;
   }
-  
+
   body {
     background-color: #212121;
     min-width: 1500px;
   }
-  
+
   .cardContainer {
     display: flex;
     justify-content: center;
   }
-  
+
   #streak {
     font-size: 25pt;
     font-weight: bold;
   }
-  
+
   #streakMessage {
     font-size: 20pt;
   }
-  
+
   .progress {
     height: 25px;
   }
-  
+
   .drop-down {
     position: relative;
     margin-left: 950px;
   }
-  
+
   .drop-down:hover .button-content {
     display: grid;
     position: absolute;
@@ -145,12 +145,12 @@ body {
     top: 40px;
     text-align: center;
   }
-  
+
   .button {
     border: none;
     background-color: white;
   }
-  
+
   .button-content {
     display: none;
     position: absolute;
@@ -159,32 +159,32 @@ body {
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     z-index: 1;
   }
-  
+
   .btn {
     background-color: #6351ce;
   }
-  
+
   #reminderShot {
     display: block;
     margin-left: auto;
     margin-right: auto;
     padding-bottom: 10px;
   }
-  
+
   #calendarShot {
     display: block;
     margin-left: auto;
     margin-right: auto;
     padding-bottom: 10px;
   }
-  
+
   #forumShot {
     display: block;
     margin-left: auto;
     margin-right: auto;
     padding-bottom: 10px;
   }
-  
+
   #exampleModalLong {
     overflow-y: auto;
   }
@@ -198,40 +198,40 @@ body {
     font-family: "Raleway";
     color: black;
   }
-  
+
   html {
     font-size: 12pt;
     height: 100%;
     margin: auto;
   }
-  
+
   body {
     background-color: #212121;
     min-width: 200px;
   }
-  
+
   .cardContainer {
     display: flex;
     justify-content: center;
   }
-  
+
   #streak {
     font-size: 25pt;
     font-weight: bold;
   }
-  
+
   #streakMessage {
     font-size: 20pt;
   }
-  
+
   .progress {
     height: 25px;
   }
-  
+
   .drop-down {
     position: relative;
   }
-  
+
   .drop-down:hover .button-content {
     display: grid;
     position: absolute;
@@ -241,12 +241,12 @@ body {
     top: 40px;
     text-align: center;
   }
-  
+
   .button {
     border: none;
     background-color: white;
   }
-  
+
   .button-content {
     display: none;
     position: absolute;
@@ -255,32 +255,32 @@ body {
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     z-index: 1;
   }
-  
+
   .btn {
     background-color: #6351ce;
   }
-  
+
   #reminderShot {
     display: block;
     margin-left: auto;
     margin-right: auto;
     padding-bottom: 10px;
   }
-  
+
   #calendarShot {
     display: block;
     margin-left: auto;
     margin-right: auto;
     padding-bottom: 10px;
   }
-  
+
   #forumShot {
     display: block;
     margin-left: auto;
     margin-right: auto;
     padding-bottom: 10px;
   }
-  
+
   #exampleModalLong {
     overflow-y: auto;
   }

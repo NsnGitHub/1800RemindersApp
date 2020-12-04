@@ -15,7 +15,7 @@ html {
 }
 
 .container {
-    background-color:#212121;
+    background-color: #212121;
     width: 100vw;
     height: 50rem;
     display: flex;
@@ -25,7 +25,7 @@ html {
 
 .calendar {
     margin-top: -8rem;
-    background-color:#bbb6b6;
+    background-color: #bbb6b6;
     width: 100%;
     height: 40rem;
     box-shadow: 0 0.5rem 3rem rgba(0, 0, 0, 0.4);
@@ -39,7 +39,7 @@ html {
     justify-content: center;
     text-align: center;
     height: 12rem;
-    background-color:#424246;
+    background-color: #424246;
     text-shadow: 0 0.3rem 0.5rem rgba(0, 0, 0, 0.5);
 }
 
@@ -86,7 +86,7 @@ html {
     align-items: center;
     justify-content: center;
 
-    
+
 }
 
 .nextday {
@@ -98,7 +98,7 @@ html {
 }
 
 .today {
-    background-color:darkgrey;
+    background-color: darkgrey;
 }
 
 #success {
@@ -120,9 +120,9 @@ html {
 .drop-down {
     position: relative;
     margin-left: 950px;
-  }
+}
 
-  .drop-down:hover .button-content {
+.drop-down:hover .button-content {
     display: grid;
     position: absolute;
     grid-template-rows: auto auto auto;
@@ -130,21 +130,21 @@ html {
     right: 0px;
     top: 40px;
     text-align: center;
-  }
+}
 
-  .button {
+.button {
     border: none;
     background-color: white;
-  }
+}
 
-  .button-content {
+.button-content {
     display: none;
     position: absolute;
     background-color: #f1f1f1;
     min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     z-index: 1;
-  }
+}
 
 @media (min-width: 1200px) {
     .container {
