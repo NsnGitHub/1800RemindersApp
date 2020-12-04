@@ -32,17 +32,17 @@ $(document).ready(function () {
 function updateStreak(){ 
   firebase.auth().onAuthStateChanged(function (user) {
     console.log(user.uid);
+
     db.collection("users").doc(user.uid).onSnapshot(function(snap) {
-        console.log(snap.data().streak); 
-        document.getElementById("streak").innerText = snap.data().streak;
-        document.getElementById("streakBar").innerText = snap.data().streak + "%";
+      console.log(snap.data().streak); 
+      document.getElementById("streak").innerText = snap.data().streak;
+      document.getElementById("streakBar").innerText = snap.data().streak + "%";
 
-        //Super hacky solution to make the progress bar update
-        $("#streakBar").css("width", snap.data().daystreak + "%");
+      $("#streakBar").css("width", snap.data().streak + "%");
 
-        if (snap.data().daystreak == 100) {
-            document.getElementById("streakMessage").innerText = "Congratulations! You've made it to 100 days! We hope your bad habit has been defeated.";
-        }
+      if (snap.data().streak == 100) {
+        document.getElementById("streakMessage").innerText = "Congratulations! You've made it to 100 days!";
+      }
     })
   })
 }
