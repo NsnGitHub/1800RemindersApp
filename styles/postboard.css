@@ -107,3 +107,14 @@ body {
     width: 70%;
     margin-left: 5%;
 }
+
+.nav-link {
+    display: block;
+    text-align: left;
+}
+
+.btn {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
