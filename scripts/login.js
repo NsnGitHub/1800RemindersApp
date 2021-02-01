@@ -17,16 +17,16 @@ var uiConfig = {
             var user = authResult.user;
             if (authResult.additionalUserInfo.isNewUser) {
                 db.collection("users").doc(user.uid).set({
-                        name: user.displayName,
-                        email: user.email,
-                        streak: 0
-                    }).then(function () {
-                        console.log("New user added to firestore");
-                        window.location.assign("index.html");
-                    })
-                    .catch(function (error) {
-                        console.log("Error adding new user: " + error);
-                    });
+                    name: user.displayName,
+                    email: user.email,
+                    streak: 0
+                }).then(function () {
+                    console.log("New user added to firestore");
+                    window.location.assign("index.html");
+                })
+                .catch(function (error) {
+                    console.log("Error adding new user: " + error);
+                });
             } else {
                 return true;
             }

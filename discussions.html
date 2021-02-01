@@ -12,8 +12,10 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 
   <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;
-                1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">
+
 
   <!-- Firebase CSS for Authentication UI     -->
   <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.6.1/firebase-ui-auth.css" />
@@ -28,7 +30,7 @@
 <body>
 
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="index.html">1800Habits</a>
+    <a class="navbar-brand" href="index.html">1800Reminders</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
       aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -53,120 +55,29 @@
           data-trigger="hover" title="Forums" data-placement="bottom">
           <a class="nav-link" href="Board.html">Forums</a>
         </li>
-        
-        <li class="nav-item" data-toggle="popover" data-content="Click here for help." data-trigger="hover" title="Help"
-          data-placement="bottom">
-          <a class="nav-link" href="#" onClick="$('#exampleModalLong').trigger('click');">Help</a>
-        </li>
-        <li class="nav-item" data-toggle="popover" data-content="A place where you can view/edit your profile." data-trigger="hover" title="Profile" data-placement="bottom">
-          <a class="nav-link" href="homepage.html">Logout</a>
+        <li class="nav-item" data-toggle="popover" data-content="Logout from the website" data-trigger="hover" title="Logout" data-placement="bottom">
+          <a class="nav-link" href="login.html">Logout</a>
         </li>
       </ul>
       </div>
     </div>
   </nav>
 
-  <!-- Modal Popups -->
-  <div id="notnav">
-  <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"
-    aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h2 class="modal-title" id="exampleModalLongTitle">Features</h2>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          <h5><b>1) Reminders</b></h5>
-          <img id="reminderShot" src="images/ReminderScreenShot.png" alt="Reminders" width="300px" height="400px"></img>
-          <h6>You can set your habits straight from the reminders to begin your routine. At any time, date, interval,
-            you can have unlimited access and flexibility in how you manage your habits. <br><br> You can share your
-            progress, completed tasks with your friends all on real-time, and even view others on the "active feed."
-            Your well on your way to becoming a better person!</h6>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal"
-            onClick="$('#exampleModalLong2').trigger('click');">Next</button>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="modal fade" id="exampleModalLong2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"
-    aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h2 class="modal-title" id="exampleModalLongTitle">Features</h2>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          <h5><b>2) Calendar</b></h5>
-          <img id="calendarShot" src="images/calendarScreenShot.png" alt="Calendar" width="300px" height="400px"></img>
-          <h6>Track your habits every month right through the calendar feature. Besides tracking your habit schedule,
-            you can also use the calendar to make plans and events so that you can stay consistent!</h6>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal"
-            onClick="$('#exampleModalLong3').trigger('click');">Next</button>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="modal fade" id="exampleModalLong3" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"
-    aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h2 class="modal-title" id="exampleModalLongTitle">Features</h2>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          <h5><b>3) Online Forums</b></h5>
-          <img id="forumShot" src="images/ForumScreenShot2.png" alt="Forum" width="300px" height="400px"></img>
-          <h6>Stay in touch with the community! Share what's on your mind and inspire. View success stories from others.
-            View challenges that others have. Almost anything that you post here can be shared and viewed by others.
-            Have fun and be social!</h6>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- END OF MODAL  -->
-
+  <br />
   <br />
   <br />
 
-  <br />
   <div id="bottom">
 
-    <br />
+    <h2>Create a post</h2>
 
     <div class="form-group">
-      <label for="exampleInputName">Post topic</label>
-      <input type="email" class="form-control" id="exampleInputName" aria-describedby="emailHelp" placeholder="">
+      <input type="email" class="form-control" id="title" aria-describedby="emailHelp" placeholder="Post Title">
       <small id="emailHelp" class="form-text text-muted"></small>
     </div>
-    <br />
-    <div class="form-group">
-      <label for="exampleInputName">Habit Referred</label>
-      <input type="email" class="form-control" id="Habit" aria-describedby="emailHelp" placeholder="">
-      <small id="emailHelp" class="form-text text-muted"></small>
-    </div>
-    <br />
+   
     <div class="form" id="create">
-      <label for="exampleFormControlTextarea1">Create a new post</label>
-      <textarea class="form-control" id="TextArea" rows="5"></textarea>
+      <textarea class="form-control" id="textArea" rows="5" placeholder="Content"></textarea>
     </div>
 
     <button type="button" class="btn btn-primary" id="createButton"><b>+</b> Create post</button>
@@ -191,7 +102,7 @@
       integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
     </script>
 
-    <script src="scripts/1800_database.js"></script>
+    <script src="scripts/databaseAPI.js"></script>
     <script src="scripts/discussions.js"></script>
     <script src="scripts/examples.js"></script>
   </div>
